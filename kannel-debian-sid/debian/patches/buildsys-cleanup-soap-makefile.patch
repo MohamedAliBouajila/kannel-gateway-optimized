@@ -1,0 +1,22 @@
+From: Jonas Smedegaard <dr@jones.dk>
+Date: Fri, 27 Sep 2024 23:19:10 +0200
+Subject: Remove soap/Makefile in distclean target
+
+Forwarded: not-needed
+---
+ Makefile.in | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/Makefile.in b/Makefile.in
+index fb23287..86c4f8e 100644
+--- a/Makefile.in
++++ b/Makefile.in
+@@ -332,7 +332,7 @@ distclean: clean
+ 	for dir in $(SUBDIRS); do \
+ 		$(MAKE) -C $$dir $@; \
+ 	done
+-	rm -f Makefile gw-config.h config.cache config.log config.status config.nice .depend gwlib/gw_uuid_types.h
++	rm -f Makefile soap/Makefile gw-config.h config.cache config.log config.status config.nice .depend gwlib/gw_uuid_types.h
+ 
+ nag:
+ 	utils/find-long-lines

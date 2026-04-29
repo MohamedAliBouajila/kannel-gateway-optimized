@@ -1,0 +1,19 @@
+[Unit]
+Description=Kannel WAP gateway (wapbox)
+Documentation=man:kannel(8) man:wapbox(8)
+After=network-online.target
+After=nss-lookup.target
+Wants=network-online.target
+Wants=nss-lookup.target
+
+[Service]
+Type=simple
+User=kannel
+Group=adm
+UMask=0027
+RuntimeDirectory=kannel-wapbox
+PIDFile=/run/kannel-wapbox/kannel-wapbox.pid
+ExecStart=/usr/sbin/wapbox --pid-file /run/kannel-wapbox/kannel-wapbox.pid -v 4 /etc/kannel/kannel.conf
+
+[Install]
+WantedBy=multi-user.target

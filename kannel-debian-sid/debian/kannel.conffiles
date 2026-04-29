@@ -1,0 +1,2 @@
+remove-on-upgrade /etc/init.d/kannel
+remove-on-upgrade /etc/default/kannel

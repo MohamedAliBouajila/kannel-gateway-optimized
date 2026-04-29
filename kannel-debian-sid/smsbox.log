@@ -1,0 +1,241 @@
+2026-04-25 12:05:56 [491354] [0] INFO: Debug_lvl = 0, log_file = <none>, log_lvl = 0
+2026-04-25 12:05:56 [491354] [0] DEBUG: Kannel smsbox version `1.4.5'.
+Build `Apr 24 2026 15:53:47', compiler `13.3.0'.
+System Linux, release 6.17.0-20-generic, version #20~24.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Mar 19 01:28:37 UTC 2, machine x86_64.
+Hostname medali, IP 192.168.1.79.
+Libxml version 2.13.9.
+Using OpenSSL 3.0.18 30 Sep 2025.
+Using hiredis API 1.2.0
+Using native malloc.
+
+2026-04-25 12:05:56 [491354] [0] INFO: Service global sender set as '13013'
+2026-04-25 12:05:56 [491354] [0] INFO: HTTP: Opening server at port 13013.
+2026-04-25 12:05:56 [491354] [0] DEBUG: Started thread 1 (gwlib/fdset.c:poller)
+2026-04-25 12:05:56 [491354] [0] DEBUG: Started thread 2 (gwlib/http.c:server_thread)
+2026-04-25 12:05:56 [491354] [0] INFO: Set up send sms service at port 13013
+2026-04-25 12:05:56 [491354] [1] DEBUG: Thread 1 (gwlib/fdset.c:poller) maps to pid 491354.
+2026-04-25 12:05:56 [491354] [0] DEBUG: Started thread 3 (gw/smsbox.c:sendsms_thread)
+2026-04-25 12:05:56 [491354] [3] DEBUG: Thread 3 (gw/smsbox.c:sendsms_thread) maps to pid 491354.
+2026-04-25 12:05:56 [491354] [2] DEBUG: Thread 2 (gwlib/http.c:server_thread) maps to pid 491354.
+2026-04-25 12:05:56 [491354] [2] DEBUG: HTTP: Including port 13013, fd 8 for polling in server thread
+2026-04-25 12:05:56 [491354] [0] DEBUG: ----------------------------------------------
+2026-04-25 12:05:56 [491354] [0] DEBUG: Kannel smsbox version 1.4.5 starting
+2026-04-25 12:05:56 [491354] [0] DEBUG:   dumping group (sendsms-user):
+2026-04-25 12:05:56 [491354] [0] DEBUG:     <group> = <sendsms-user>
+2026-04-25 12:05:56 [491354] [0] DEBUG:     <password> = <foobar>
+2026-04-25 12:05:56 [491354] [0] DEBUG:     <username> = <tester>
+2026-04-25 12:05:56 [491354] [0] DEBUG: Started thread 4 (gwlib/gw-timer.c:watch_timers)
+2026-04-25 12:05:56 [491354] [0] DEBUG: Started thread 5 (gw/smsbox.c:obey_request_thread)
+2026-04-25 12:05:56 [491354] [0] DEBUG: Started thread 6 (gw/smsbox.c:url_result_thread)
+2026-04-25 12:05:56 [491354] [6] DEBUG: Thread 6 (gw/smsbox.c:url_result_thread) maps to pid 491354.
+2026-04-25 12:05:56 [491354] [0] DEBUG: Started thread 7 (gw/smsbox.c:http_queue_thread)
+2026-04-25 12:05:56 [491354] [7] DEBUG: Thread 7 (gw/smsbox.c:http_queue_thread) maps to pid 491354.
+2026-04-25 12:05:56 [491354] [0] DEBUG: Connecting to <127.0.0.1>
+2026-04-25 12:05:56 [491354] [4] DEBUG: Thread 4 (gwlib/gw-timer.c:watch_timers) maps to pid 491354.
+2026-04-25 12:05:56 [491354] [5] DEBUG: Thread 5 (gw/smsbox.c:obey_request_thread) maps to pid 491354.
+2026-04-25 12:05:56 [491354] [0] INFO: Connected to bearerbox at 127.0.0.1 port 13001.
+2026-04-25 12:05:56 [491354] [0] DEBUG: Started thread 8 (gw/heartbeat.c:heartbeat_thread)
+2026-04-25 12:05:56 [491354] [8] DEBUG: Thread 8 (gw/heartbeat.c:heartbeat_thread) maps to pid 491354.
+2026-04-25 12:12:33 [491354] [2] DEBUG: HTTP: Creating HTTPClient for `127.0.0.1'.
+2026-04-25 12:12:33 [491354] [2] DEBUG: HTTP: Created HTTPClient area 0x7b5608000d80.
+2026-04-25 12:12:33 [491354] [3] INFO: smsbox: Got HTTP request </cgi-bin/sendsms> from <127.0.0.1>
+2026-04-25 12:12:33 [491354] [3] INFO: sendsms used by <tester>
+2026-04-25 12:12:33 [491354] [3] INFO: sendsms sender:<tester:13013> (127.0.0.1) to:<123> msg:<Hello from Kannel>
+2026-04-25 12:12:33 [491354] [3] DEBUG: Stored UUID fba532d5-a264-46d8-adb7-b32525f296c0
+2026-04-25 12:12:33 [491354] [3] DEBUG: message length 17, sending 1 messages
+2026-04-25 12:12:33 [491354] [3] DEBUG: Status: 202 Answer: <Sent.>
+2026-04-25 12:12:33 [491354] [3] DEBUG: Delayed reply - wait for bearerbox
+2026-04-25 12:12:33 [491354] [0] DEBUG: Got ACK (3) of fba532d5-a264-46d8-adb7-b32525f296c0
+2026-04-25 12:12:33 [491354] [0] DEBUG: HTTP: Resetting HTTPClient for `127.0.0.1'.
+2026-04-25 12:12:33 [491354] [1] DEBUG: HTTP: Destroying HTTPClient area 0x7b5608000d80.
+2026-04-25 12:12:33 [491354] [1] DEBUG: HTTP: Destroying HTTPClient for `127.0.0.1'.
+2026-04-26 16:10:39 [491354] [5] DEBUG: match found: ^[ ]*(nop)[ ]*
+2026-04-26 16:10:39 [491354] [5] INFO: Starting to service <nop> from <123> to <234>
+2026-04-26 16:10:39 [491354] [5] DEBUG: formatted text answer: <You asked nothing and I did it!>
+2026-04-26 16:10:39 [491354] [5] DEBUG: message length 31, sending 1 messages
+2026-04-26 16:10:39 [491354] [5] DEBUG: match found: ^[ ]*(nop)[ ]*
+2026-04-26 16:10:39 [491354] [5] INFO: Starting to service <nop> from <123> to <234>
+2026-04-26 16:10:39 [491354] [5] DEBUG: formatted text answer: <You asked nothing and I did it!>
+2026-04-26 16:10:39 [491354] [5] DEBUG: message length 31, sending 1 messages
+2026-04-26 16:10:39 [491354] [5] DEBUG: match found: ^[ ]*(nop)[ ]*
+2026-04-26 16:10:39 [491354] [5] INFO: Starting to service <nop> from <123> to <234>
+2026-04-26 16:10:39 [491354] [5] DEBUG: formatted text answer: <You asked nothing and I did it!>
+2026-04-26 16:10:39 [491354] [5] DEBUG: message length 31, sending 1 messages
+2026-04-26 16:10:39 [491354] [5] DEBUG: match found: ^[ ]*(nop)[ ]*
+2026-04-26 16:10:39 [491354] [5] INFO: Starting to service <nop> from <123> to <234>
+2026-04-26 16:10:39 [491354] [5] DEBUG: formatted text answer: <You asked nothing and I did it!>
+2026-04-26 16:10:39 [491354] [5] DEBUG: message length 31, sending 1 messages
+2026-04-26 16:10:39 [491354] [5] DEBUG: match found: ^[ ]*(nop)[ ]*
+2026-04-26 16:10:39 [491354] [5] INFO: Starting to service <nop> from <123> to <234>
+2026-04-26 16:10:39 [491354] [5] DEBUG: formatted text answer: <You asked nothing and I did it!>
+2026-04-26 16:10:39 [491354] [5] DEBUG: message length 31, sending 1 messages
+2026-04-26 16:10:39 [491354] [5] DEBUG: match found: ^[ ]*(nop)[ ]*
+2026-04-26 16:10:39 [491354] [5] INFO: Starting to service <nop> from <123> to <234>
+2026-04-26 16:10:39 [491354] [5] DEBUG: formatted text answer: <You asked nothing and I did it!>
+2026-04-26 16:10:39 [491354] [5] DEBUG: message length 31, sending 1 messages
+2026-04-26 16:10:39 [491354] [0] DEBUG: Got ACK (0) of 42b3c22b-30a1-4388-b7f9-afd96e495823
+2026-04-26 16:10:39 [491354] [0] DEBUG: No client - multi-send or ACK to pull-reply
+2026-04-26 16:10:39 [491354] [5] DEBUG: match found: ^[ ]*(nop)[ ]*
+2026-04-26 16:10:39 [491354] [5] INFO: Starting to service <nop> from <123> to <234>
+2026-04-26 16:10:39 [491354] [0] DEBUG: Got ACK (0) of ef5339db-c33d-436d-8dd9-bc162c3c596d
+2026-04-26 16:10:39 [491354] [5] DEBUG: formatted text answer: <You asked nothing and I did it!>
+2026-04-26 16:10:39 [491354] [0] DEBUG: No client - multi-send or ACK to pull-reply
+2026-04-26 16:10:39 [491354] [0] DEBUG: Got ACK (0) of cdada142-1f9e-46bf-9284-f7d4141c10a3
+2026-04-26 16:10:39 [491354] [0] DEBUG: No client - multi-send or ACK to pull-reply
+2026-04-26 16:10:39 [491354] [5] DEBUG: message length 31, sending 1 messages
+2026-04-26 16:10:39 [491354] [5] DEBUG: match found: ^[ ]*(nop)[ ]*
+2026-04-26 16:10:39 [491354] [5] INFO: Starting to service <nop> from <123> to <234>
+2026-04-26 16:10:39 [491354] [5] DEBUG: formatted text answer: <You asked nothing and I did it!>
+2026-04-26 16:10:39 [491354] [0] DEBUG: Got ACK (0) of a7dcae56-7b53-4812-b8df-975889e9554e
+2026-04-26 16:10:39 [491354] [0] DEBUG: No client - multi-send or ACK to pull-reply
+2026-04-26 16:10:39 [491354] [5] DEBUG: message length 31, sending 1 messages
+2026-04-26 16:10:39 [491354] [5] DEBUG: match found: ^[ ]*(nop)[ ]*
+2026-04-26 16:10:39 [491354] [5] INFO: Starting to service <nop> from <123> to <234>
+2026-04-26 16:10:39 [491354] [5] DEBUG: formatted text answer: <You asked nothing and I did it!>
+2026-04-26 16:10:39 [491354] [0] DEBUG: Got ACK (0) of fe34c62c-8e01-4d70-8dfb-082d90a27b38
+2026-04-26 16:10:39 [491354] [0] DEBUG: No client - multi-send or ACK to pull-reply
+2026-04-26 16:10:39 [491354] [5] DEBUG: message length 31, sending 1 messages
+2026-04-26 16:10:39 [491354] [5] DEBUG: match found: ^[ ]*(nop)[ ]*
+2026-04-26 16:10:39 [491354] [5] INFO: Starting to service <nop> from <123> to <234>
+2026-04-26 16:10:39 [491354] [5] DEBUG: formatted text answer: <You asked nothing and I did it!>
+2026-04-26 16:10:39 [491354] [5] DEBUG: message length 31, sending 1 messages
+2026-04-26 16:10:39 [491354] [0] DEBUG: Got ACK (0) of 80f73687-86c6-4809-8028-78952b13d37d
+2026-04-26 16:10:39 [491354] [0] DEBUG: No client - multi-send or ACK to pull-reply
+2026-04-26 16:10:39 [491354] [0] DEBUG: Got ACK (0) of 4c566912-919b-4df6-828f-34724d1b8af1
+2026-04-26 16:10:39 [491354] [0] DEBUG: No client - multi-send or ACK to pull-reply
+2026-04-26 16:10:39 [491354] [0] DEBUG: Got ACK (0) of ea56be1e-b1d1-454e-bb98-8dbd060c325a
+2026-04-26 16:10:39 [491354] [0] DEBUG: No client - multi-send or ACK to pull-reply
+2026-04-26 16:10:39 [491354] [0] DEBUG: Got ACK (0) of a98a66aa-a523-4e37-aad0-a39c86ab57be
+2026-04-26 16:10:39 [491354] [0] DEBUG: No client - multi-send or ACK to pull-reply
+2026-04-26 16:10:39 [491354] [0] DEBUG: Got ACK (0) of a9b5f523-61c9-4d4f-919b-e941b96ec574
+2026-04-26 16:10:39 [491354] [0] DEBUG: No client - multi-send or ACK to pull-reply
+2026-04-26 16:11:17 [491354] [2] DEBUG: HTTP: Creating HTTPClient for `127.0.0.1'.
+2026-04-26 16:11:17 [491354] [2] DEBUG: HTTP: Created HTTPClient area 0x7b5608000fe0.
+2026-04-26 16:11:17 [491354] [3] INFO: smsbox: Got HTTP request </cgi-bin/sendsms> from <127.0.0.1>
+2026-04-26 16:11:17 [491354] [3] INFO: sendsms used by <tester>
+2026-04-26 16:11:17 [491354] [3] INFO: sendsms sender:<tester:123> (127.0.0.1) to:<234> msg:<test>
+2026-04-26 16:11:17 [491354] [3] DEBUG: Stored UUID 31ae9333-4423-4b17-9e1a-9759f846f593
+2026-04-26 16:11:17 [491354] [3] DEBUG: message length 4, sending 1 messages
+2026-04-26 16:11:17 [491354] [3] DEBUG: Status: 202 Answer: <Sent.>
+2026-04-26 16:11:17 [491354] [3] DEBUG: Delayed reply - wait for bearerbox
+2026-04-26 16:11:17 [491354] [0] DEBUG: Got ACK (0) of 31ae9333-4423-4b17-9e1a-9759f846f593
+2026-04-26 16:11:17 [491354] [0] DEBUG: HTTP: Resetting HTTPClient for `127.0.0.1'.
+2026-04-26 16:11:17 [491354] [1] DEBUG: HTTP: Destroying HTTPClient area 0x7b5608000fe0.
+2026-04-26 16:11:17 [491354] [1] DEBUG: HTTP: Destroying HTTPClient for `127.0.0.1'.
+2026-04-26 16:11:17 [491354] [2] DEBUG: HTTP: Creating HTTPClient for `127.0.0.1'.
+2026-04-26 16:11:17 [491354] [2] DEBUG: HTTP: Created HTTPClient area 0x7b5608001130.
+2026-04-26 16:11:17 [491354] [3] INFO: smsbox: Got HTTP request </cgi-bin/sendsms> from <127.0.0.1>
+2026-04-26 16:11:17 [491354] [3] INFO: sendsms used by <tester>
+2026-04-26 16:11:17 [491354] [3] INFO: sendsms sender:<tester:123> (127.0.0.1) to:<234> msg:<test>
+2026-04-26 16:11:17 [491354] [3] DEBUG: Stored UUID a80606ac-0a63-4b63-9963-aae5449b7dee
+2026-04-26 16:11:17 [491354] [3] DEBUG: message length 4, sending 1 messages
+2026-04-26 16:11:17 [491354] [3] DEBUG: Status: 202 Answer: <Sent.>
+2026-04-26 16:11:17 [491354] [3] DEBUG: Delayed reply - wait for bearerbox
+2026-04-26 16:11:17 [491354] [0] DEBUG: Got ACK (0) of a80606ac-0a63-4b63-9963-aae5449b7dee
+2026-04-26 16:11:17 [491354] [0] DEBUG: HTTP: Resetting HTTPClient for `127.0.0.1'.
+2026-04-26 16:11:17 [491354] [1] DEBUG: HTTP: Destroying HTTPClient area 0x7b5608001130.
+2026-04-26 16:11:17 [491354] [1] DEBUG: HTTP: Destroying HTTPClient for `127.0.0.1'.
+2026-04-26 16:11:17 [491354] [2] DEBUG: HTTP: Creating HTTPClient for `127.0.0.1'.
+2026-04-26 16:11:17 [491354] [2] DEBUG: HTTP: Created HTTPClient area 0x7b5608001260.
+2026-04-26 16:11:17 [491354] [3] INFO: smsbox: Got HTTP request </cgi-bin/sendsms> from <127.0.0.1>
+2026-04-26 16:11:17 [491354] [3] INFO: sendsms used by <tester>
+2026-04-26 16:11:17 [491354] [3] INFO: sendsms sender:<tester:123> (127.0.0.1) to:<234> msg:<test>
+2026-04-26 16:11:17 [491354] [3] DEBUG: Stored UUID 471de47f-31ab-494f-9688-2a1d359c7fba
+2026-04-26 16:11:17 [491354] [3] DEBUG: message length 4, sending 1 messages
+2026-04-26 16:11:17 [491354] [3] DEBUG: Status: 202 Answer: <Sent.>
+2026-04-26 16:11:17 [491354] [3] DEBUG: Delayed reply - wait for bearerbox
+2026-04-26 16:11:17 [491354] [0] DEBUG: Got ACK (0) of 471de47f-31ab-494f-9688-2a1d359c7fba
+2026-04-26 16:11:17 [491354] [0] DEBUG: HTTP: Resetting HTTPClient for `127.0.0.1'.
+2026-04-26 16:11:17 [491354] [1] DEBUG: HTTP: Destroying HTTPClient area 0x7b5608001260.
+2026-04-26 16:11:17 [491354] [1] DEBUG: HTTP: Destroying HTTPClient for `127.0.0.1'.
+2026-04-26 16:11:17 [491354] [2] DEBUG: HTTP: Creating HTTPClient for `127.0.0.1'.
+2026-04-26 16:11:17 [491354] [2] DEBUG: HTTP: Created HTTPClient area 0x7b5608001390.
+2026-04-26 16:11:17 [491354] [3] INFO: smsbox: Got HTTP request </cgi-bin/sendsms> from <127.0.0.1>
+2026-04-26 16:11:17 [491354] [3] INFO: sendsms used by <tester>
+2026-04-26 16:11:17 [491354] [3] INFO: sendsms sender:<tester:123> (127.0.0.1) to:<234> msg:<test>
+2026-04-26 16:11:17 [491354] [3] DEBUG: Stored UUID b47ca68f-d010-403c-8621-d01b7fe98e72
+2026-04-26 16:11:17 [491354] [3] DEBUG: message length 4, sending 1 messages
+2026-04-26 16:11:17 [491354] [3] DEBUG: Status: 202 Answer: <Sent.>
+2026-04-26 16:11:17 [491354] [3] DEBUG: Delayed reply - wait for bearerbox
+2026-04-26 16:11:17 [491354] [0] DEBUG: Got ACK (0) of b47ca68f-d010-403c-8621-d01b7fe98e72
+2026-04-26 16:11:17 [491354] [0] DEBUG: HTTP: Resetting HTTPClient for `127.0.0.1'.
+2026-04-26 16:11:17 [491354] [1] DEBUG: HTTP: Destroying HTTPClient area 0x7b5608001390.
+2026-04-26 16:11:17 [491354] [1] DEBUG: HTTP: Destroying HTTPClient for `127.0.0.1'.
+2026-04-26 16:11:17 [491354] [2] DEBUG: HTTP: Creating HTTPClient for `127.0.0.1'.
+2026-04-26 16:11:17 [491354] [2] DEBUG: HTTP: Created HTTPClient area 0x7b5608001480.
+2026-04-26 16:11:17 [491354] [3] INFO: smsbox: Got HTTP request </cgi-bin/sendsms> from <127.0.0.1>
+2026-04-26 16:11:17 [491354] [3] INFO: sendsms used by <tester>
+2026-04-26 16:11:17 [491354] [3] INFO: sendsms sender:<tester:123> (127.0.0.1) to:<234> msg:<test>
+2026-04-26 16:11:17 [491354] [3] DEBUG: Stored UUID 23c1361d-59b4-44bc-bae9-326cc3990ece
+2026-04-26 16:11:17 [491354] [3] DEBUG: message length 4, sending 1 messages
+2026-04-26 16:11:17 [491354] [3] DEBUG: Status: 202 Answer: <Sent.>
+2026-04-26 16:11:17 [491354] [3] DEBUG: Delayed reply - wait for bearerbox
+2026-04-26 16:11:17 [491354] [0] DEBUG: Got ACK (0) of 23c1361d-59b4-44bc-bae9-326cc3990ece
+2026-04-26 16:11:17 [491354] [0] DEBUG: HTTP: Resetting HTTPClient for `127.0.0.1'.
+2026-04-26 16:11:17 [491354] [1] DEBUG: HTTP: Destroying HTTPClient area 0x7b5608001480.
+2026-04-26 16:11:17 [491354] [1] DEBUG: HTTP: Destroying HTTPClient for `127.0.0.1'.
+2026-04-26 16:11:17 [491354] [2] DEBUG: HTTP: Creating HTTPClient for `127.0.0.1'.
+2026-04-26 16:11:17 [491354] [2] DEBUG: HTTP: Created HTTPClient area 0x7b5608001570.
+2026-04-26 16:11:17 [491354] [3] INFO: smsbox: Got HTTP request </cgi-bin/sendsms> from <127.0.0.1>
+2026-04-26 16:11:17 [491354] [3] INFO: sendsms used by <tester>
+2026-04-26 16:11:17 [491354] [3] INFO: sendsms sender:<tester:123> (127.0.0.1) to:<234> msg:<test>
+2026-04-26 16:11:17 [491354] [3] DEBUG: Stored UUID f2fb3996-7c50-40f7-8ad7-1067431b04f0
+2026-04-26 16:11:17 [491354] [3] DEBUG: message length 4, sending 1 messages
+2026-04-26 16:11:17 [491354] [3] DEBUG: Status: 202 Answer: <Sent.>
+2026-04-26 16:11:17 [491354] [3] DEBUG: Delayed reply - wait for bearerbox
+2026-04-26 16:11:17 [491354] [0] DEBUG: Got ACK (0) of f2fb3996-7c50-40f7-8ad7-1067431b04f0
+2026-04-26 16:11:17 [491354] [0] DEBUG: HTTP: Resetting HTTPClient for `127.0.0.1'.
+2026-04-26 16:11:17 [491354] [1] DEBUG: HTTP: Destroying HTTPClient area 0x7b5608001570.
+2026-04-26 16:11:17 [491354] [1] DEBUG: HTTP: Destroying HTTPClient for `127.0.0.1'.
+2026-04-26 16:11:17 [491354] [2] DEBUG: HTTP: Creating HTTPClient for `127.0.0.1'.
+2026-04-26 16:11:17 [491354] [2] DEBUG: HTTP: Created HTTPClient area 0x7b5608001660.
+2026-04-26 16:11:17 [491354] [3] INFO: smsbox: Got HTTP request </cgi-bin/sendsms> from <127.0.0.1>
+2026-04-26 16:11:17 [491354] [3] INFO: sendsms used by <tester>
+2026-04-26 16:11:17 [491354] [3] INFO: sendsms sender:<tester:123> (127.0.0.1) to:<234> msg:<test>
+2026-04-26 16:11:17 [491354] [3] DEBUG: Stored UUID c4e5ae3e-0cf8-463c-aee6-6f85317b3da9
+2026-04-26 16:11:17 [491354] [3] DEBUG: message length 4, sending 1 messages
+2026-04-26 16:11:17 [491354] [3] DEBUG: Status: 202 Answer: <Sent.>
+2026-04-26 16:11:17 [491354] [3] DEBUG: Delayed reply - wait for bearerbox
+2026-04-26 16:11:17 [491354] [0] DEBUG: Got ACK (0) of c4e5ae3e-0cf8-463c-aee6-6f85317b3da9
+2026-04-26 16:11:17 [491354] [0] DEBUG: HTTP: Resetting HTTPClient for `127.0.0.1'.
+2026-04-26 16:11:17 [491354] [1] DEBUG: HTTP: Destroying HTTPClient area 0x7b5608001660.
+2026-04-26 16:11:17 [491354] [1] DEBUG: HTTP: Destroying HTTPClient for `127.0.0.1'.
+2026-04-26 16:11:17 [491354] [2] DEBUG: HTTP: Creating HTTPClient for `127.0.0.1'.
+2026-04-26 16:11:17 [491354] [2] DEBUG: HTTP: Created HTTPClient area 0x7b5608001660.
+2026-04-26 16:11:17 [491354] [3] INFO: smsbox: Got HTTP request </cgi-bin/sendsms> from <127.0.0.1>
+2026-04-26 16:11:17 [491354] [3] INFO: sendsms used by <tester>
+2026-04-26 16:11:17 [491354] [3] INFO: sendsms sender:<tester:123> (127.0.0.1) to:<234> msg:<test>
+2026-04-26 16:11:17 [491354] [3] DEBUG: Stored UUID 4c158277-f9ff-4be8-85ec-2edc4f9b6639
+2026-04-26 16:11:17 [491354] [3] DEBUG: message length 4, sending 1 messages
+2026-04-26 16:11:17 [491354] [3] DEBUG: Status: 202 Answer: <Sent.>
+2026-04-26 16:11:17 [491354] [3] DEBUG: Delayed reply - wait for bearerbox
+2026-04-26 16:11:17 [491354] [0] DEBUG: Got ACK (0) of 4c158277-f9ff-4be8-85ec-2edc4f9b6639
+2026-04-26 16:11:17 [491354] [0] DEBUG: HTTP: Resetting HTTPClient for `127.0.0.1'.
+2026-04-26 16:11:17 [491354] [1] DEBUG: HTTP: Destroying HTTPClient area 0x7b5608001660.
+2026-04-26 16:11:17 [491354] [1] DEBUG: HTTP: Destroying HTTPClient for `127.0.0.1'.
+2026-04-26 16:11:17 [491354] [2] DEBUG: HTTP: Creating HTTPClient for `127.0.0.1'.
+2026-04-26 16:11:17 [491354] [2] DEBUG: HTTP: Created HTTPClient area 0x7b5608001660.
+2026-04-26 16:11:17 [491354] [3] INFO: smsbox: Got HTTP request </cgi-bin/sendsms> from <127.0.0.1>
+2026-04-26 16:11:17 [491354] [3] INFO: sendsms used by <tester>
+2026-04-26 16:11:17 [491354] [3] INFO: sendsms sender:<tester:123> (127.0.0.1) to:<234> msg:<test>
+2026-04-26 16:11:17 [491354] [3] DEBUG: Stored UUID c53abc1f-843d-459c-a5bf-6726c1d44e94
+2026-04-26 16:11:17 [491354] [3] DEBUG: message length 4, sending 1 messages
+2026-04-26 16:11:17 [491354] [3] DEBUG: Status: 202 Answer: <Sent.>
+2026-04-26 16:11:17 [491354] [3] DEBUG: Delayed reply - wait for bearerbox
+2026-04-26 16:11:17 [491354] [0] DEBUG: Got ACK (0) of c53abc1f-843d-459c-a5bf-6726c1d44e94
+2026-04-26 16:11:17 [491354] [0] DEBUG: HTTP: Resetting HTTPClient for `127.0.0.1'.
+2026-04-26 16:11:17 [491354] [1] DEBUG: HTTP: Destroying HTTPClient area 0x7b5608001660.
+2026-04-26 16:11:17 [491354] [1] DEBUG: HTTP: Destroying HTTPClient for `127.0.0.1'.
+2026-04-26 16:11:17 [491354] [2] DEBUG: HTTP: Creating HTTPClient for `127.0.0.1'.
+2026-04-26 16:11:17 [491354] [2] DEBUG: HTTP: Created HTTPClient area 0x7b5608001660.
+2026-04-26 16:11:17 [491354] [3] INFO: smsbox: Got HTTP request </cgi-bin/sendsms> from <127.0.0.1>
+2026-04-26 16:11:17 [491354] [3] INFO: sendsms used by <tester>
+2026-04-26 16:11:17 [491354] [3] INFO: sendsms sender:<tester:123> (127.0.0.1) to:<234> msg:<test>
+2026-04-26 16:11:17 [491354] [3] DEBUG: Stored UUID 65676512-b3d8-44da-a62e-461898cf91e5
+2026-04-26 16:11:17 [491354] [3] DEBUG: message length 4, sending 1 messages
+2026-04-26 16:11:17 [491354] [3] DEBUG: Status: 202 Answer: <Sent.>
+2026-04-26 16:11:17 [491354] [3] DEBUG: Delayed reply - wait for bearerbox
+2026-04-26 16:11:17 [491354] [0] DEBUG: Got ACK (0) of 65676512-b3d8-44da-a62e-461898cf91e5
+2026-04-26 16:11:17 [491354] [0] DEBUG: HTTP: Resetting HTTPClient for `127.0.0.1'.
+2026-04-26 16:11:17 [491354] [1] DEBUG: HTTP: Destroying HTTPClient area 0x7b5608001660.
+2026-04-26 16:11:17 [491354] [1] DEBUG: HTTP: Destroying HTTPClient for `127.0.0.1'.

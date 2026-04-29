@@ -1,0 +1,4 @@
+kannel-extras: executable-in-usr-lib [usr/lib/kannel/checks/*]
+kannel-extras: executable-in-usr-lib [usr/lib/kannel/test/*]
+kannel-extras: package-contains-documentation-outside-usr-share-doc [usr/lib/kannel/test/*]
+kannel-extras: package-contains-documentation-outside-usr-share-doc [usr/share/kannel/contrib/*]

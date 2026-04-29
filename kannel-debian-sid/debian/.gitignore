@@ -1,0 +1,12 @@
+/*.debhelper
+/*.log
+/*.substvars
+/.debhelper/
+/autoreconf.*
+/debhelper-build-stamp
+/files
+/kannel-dev/
+/kannel-docs/
+/kannel-extras/
+/kannel/
+/tmp/

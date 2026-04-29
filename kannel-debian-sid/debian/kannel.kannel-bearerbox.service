@@ -1,0 +1,20 @@
+[Unit]
+Description=Kannel SMPP gateway (bearerbox)
+Documentation=man:kannel(8) man:bearerbox(8)
+After=network-online.target
+After=nss-lookup.target
+Wants=network-online.target
+Wants=nss-lookup.target
+
+[Service]
+Type=simple
+User=kannel
+Group=adm
+UMask=0027
+RuntimeDirectory=kannel-bearerbox
+PIDFile=/run/kannel-bearerbox/kannel-bearerbox.pid
+ExecStart=/usr/sbin/bearerbox --pid-file /run/kannel-bearerbox/kannel-bearerbox.pid -v 4 /etc/kannel/kannel.conf
+ExecStartPost=/usr/libexec/kannel/kannel-bearerbox-waiter
+
+[Install]
+WantedBy=multi-user.target

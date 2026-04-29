@@ -1,0 +1,8 @@
+2026-04-27 11:44:52 [157973] [0] INFO: fakewap: starting
+2026-04-27 11:44:52 [157973] [0] INFO: fakewap: Received WSP Reply with status code 200OK
+2026-04-27 11:44:53 [157973] [0] INFO: fakewap: Received WSP Reply with status code 200OK
+2026-04-27 11:44:53 [157973] [0] INFO: fakewap: complete.
+2026-04-27 11:44:53 [157973] [0] INFO: fakewap: 1 client threads made total 2 transactions.
+2026-04-27 11:44:53 [157973] [0] INFO: fakewap: total running time 1.0 seconds
+2026-04-27 11:44:53 [157973] [0] INFO: fakewap: 2.0 messages/seconds on average
+2026-04-27 11:44:53 [157973] [0] INFO: fakewap: time of best, worst and average transaction: 0.0 s, 0.0 s, 0.0 s

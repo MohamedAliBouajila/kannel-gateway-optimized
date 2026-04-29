@@ -1,0 +1,44 @@
+#!/bin/sh
+
+usage()
+{
+	echo "usage: $0 [--cflags] [--libs] [--version]"
+	exit 0
+}
+
+cflags=no
+libs=no
+version=no
+
+test "$1" || usage
+
+while test "$1"; do
+	case "$1" in
+	--cflags )
+		cflags=yes
+		;;
+	--libs )
+		libs=yes
+		;;
+	--version )
+		version=yes
+		;;
+	* )
+		usage
+		;;
+	esac
+	shift
+done
+
+test "$cflags" = yes && cat << FOO
+-I/usr/include/kannel -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/usr/include/libxml2 -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -I/usr/include -I/usr/include/mysql  -I/usr/include/postgresql -I/usr/include/hiredis -I/usr/include
+FOO
+
+test "$libs" = yes && cat << FOO
+-L/usr/lib/x86_64-linux-gnu/kannel -lgw -lwap -lgwlib -lpq -lmysqlclient -lssl -ldl -lpam -lrt -lresolv -lm  -lpthread -lxml2 -L/usr/lib -lcrypto -lssl -lmysqlclient  -L/usr/local/lib -lsqlite3 -L/usr/lib/x86_64-linux-gnu -L/usr/lib -lhiredis -L/usr/lib -lct 
+FOO
+
+test "$version" = yes && cat << FOO
+1.4.5
+FOO
+

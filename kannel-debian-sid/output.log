@@ -1,0 +1,141 @@
+gcc -D_REENTRANT=1 -I. -Igw -g -O2 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/home/medali/miniconda3/include/libxml2 -I/home/medali/miniconda3/include -Wall -I/usr/include/openssl -I/usr/include/mysql -I/usr/include/postgresql -I/usr/include/hiredis -rdynamic -o wmlscript/wmlsc wmlscript/wmlsc.o libgw.a libwmlscript.a libwap.a libgwlib.a -lpq -lmysqlclient -lssl -lrt -lresolv -lm  -lpthread -L/home/medali/miniconda3/lib -lxml2 -L/home/medali/miniconda3/lib -lz -L/home/medali/miniconda3/lib -llzma -L/home/medali/miniconda3/lib -licui18n -licuuc -licudata -L/home/medali/miniconda3/lib -lm -ldl -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -lcrypto -lssl -L/usr/lib/x86_64-linux-gnu -lmysqlclient -lz  -lzstd -lssl -lcrypto -lresolv -lm -L/usr/local/lib -lsqlite3 -L/usr/lib/x86_64-linux-gnu -L/usr/lib -lhiredis 
+gcc -D_REENTRANT=1 -I. -Igw -g -O2 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/home/medali/miniconda3/include/libxml2 -I/home/medali/miniconda3/include -Wall -I/usr/include/openssl -I/usr/include/mysql -I/usr/include/postgresql -I/usr/include/hiredis -rdynamic -o wmlscript/wmlsdasm wmlscript/wmlsdasm.o libgw.a libwmlscript.a libwap.a libgwlib.a -lpq -lmysqlclient -lssl -lrt -lresolv -lm  -lpthread -L/home/medali/miniconda3/lib -lxml2 -L/home/medali/miniconda3/lib -lz -L/home/medali/miniconda3/lib -llzma -L/home/medali/miniconda3/lib -licui18n -licuuc -licudata -L/home/medali/miniconda3/lib -lm -ldl -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -lcrypto -lssl -L/usr/lib/x86_64-linux-gnu -lmysqlclient -lz  -lzstd -lssl -lcrypto -lresolv -lm -L/usr/local/lib -lsqlite3 -L/usr/lib/x86_64-linux-gnu -L/usr/lib -lhiredis 
+gcc -D_REENTRANT=1 -I. -Igw -g -O2 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/home/medali/miniconda3/include/libxml2 -I/home/medali/miniconda3/include -Wall -I/usr/include/openssl -I/usr/include/mysql -I/usr/include/postgresql -I/usr/include/hiredis -rdynamic -o gw/bearerbox gw/bearerbox.o libgw.a libwmlscript.a libwap.a libgwlib.a -lpq -lmysqlclient -lssl -lrt -lresolv -lm  -lpthread -L/home/medali/miniconda3/lib -lxml2 -L/home/medali/miniconda3/lib -lz -L/home/medali/miniconda3/lib -llzma -L/home/medali/miniconda3/lib -licui18n -licuuc -licudata -L/home/medali/miniconda3/lib -lm -ldl -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -lcrypto -lssl -L/usr/lib/x86_64-linux-gnu -lmysqlclient -lz  -lzstd -lssl -lcrypto -lresolv -lm -L/usr/local/lib -lsqlite3 -L/usr/lib/x86_64-linux-gnu -L/usr/lib -lhiredis 
+gcc -D_REENTRANT=1 -I. -Igw -g -O2 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/home/medali/miniconda3/include/libxml2 -I/home/medali/miniconda3/include -Wall -I/usr/include/openssl -I/usr/include/mysql -I/usr/include/postgresql -I/usr/include/hiredis -rdynamic -o gw/smsbox gw/smsbox.o libgw.a libwmlscript.a libwap.a libgwlib.a -lpq -lmysqlclient -lssl -lrt -lresolv -lm  -lpthread -L/home/medali/miniconda3/lib -lxml2 -L/home/medali/miniconda3/lib -lz -L/home/medali/miniconda3/lib -llzma -L/home/medali/miniconda3/lib -licui18n -licuuc -licudata -L/home/medali/miniconda3/lib -lm -ldl -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -lcrypto -lssl -L/usr/lib/x86_64-linux-gnu -lmysqlclient -lz  -lzstd -lssl -lcrypto -lresolv -lm -L/usr/local/lib -lsqlite3 -L/usr/lib/x86_64-linux-gnu -L/usr/lib -lhiredis 
+gcc -D_REENTRANT=1 -I. -Igw -g -O2 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/home/medali/miniconda3/include/libxml2 -I/home/medali/miniconda3/include -Wall -I/usr/include/openssl -I/usr/include/mysql -I/usr/include/postgresql -I/usr/include/hiredis -rdynamic -o gw/wapbox gw/wapbox.o libgw.a libwmlscript.a libwap.a libgwlib.a -lpq -lmysqlclient -lssl -lrt -lresolv -lm  -lpthread -L/home/medali/miniconda3/lib -lxml2 -L/home/medali/miniconda3/lib -lz -L/home/medali/miniconda3/lib -llzma -L/home/medali/miniconda3/lib -licui18n -licuuc -licudata -L/home/medali/miniconda3/lib -lm -ldl -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -lcrypto -lssl -L/usr/lib/x86_64-linux-gnu -lmysqlclient -lz  -lzstd -lssl -lcrypto -lresolv -lm -L/usr/local/lib -lsqlite3 -L/usr/lib/x86_64-linux-gnu -L/usr/lib -lhiredis 
+gcc -D_REENTRANT=1 -I. -Igw -g -O2 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/home/medali/miniconda3/include/libxml2 -I/home/medali/miniconda3/include -Wall -I/usr/include/openssl -I/usr/include/mysql -I/usr/include/postgresql -I/usr/include/hiredis -rdynamic -o test/drive_smpp test/drive_smpp.o libgw.a libwmlscript.a libwap.a libgwlib.a -lpq -lmysqlclient -lssl -lrt -lresolv -lm  -lpthread -L/home/medali/miniconda3/lib -lxml2 -L/home/medali/miniconda3/lib -lz -L/home/medali/miniconda3/lib -llzma -L/home/medali/miniconda3/lib -licui18n -licuuc -licudata -L/home/medali/miniconda3/lib -lm -ldl -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -lcrypto -lssl -L/usr/lib/x86_64-linux-gnu -lmysqlclient -lz  -lzstd -lssl -lcrypto -lresolv -lm -L/usr/local/lib -lsqlite3 -L/usr/lib/x86_64-linux-gnu -L/usr/lib -lhiredis 
+gcc -D_REENTRANT=1 -I. -Igw -g -O2 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/home/medali/miniconda3/include/libxml2 -I/home/medali/miniconda3/include -Wall -I/usr/include/openssl -I/usr/include/mysql -I/usr/include/postgresql -I/usr/include/hiredis -rdynamic -o test/drive_wapbox test/drive_wapbox.o libgw.a libwmlscript.a libwap.a libgwlib.a -lpq -lmysqlclient -lssl -lrt -lresolv -lm  -lpthread -L/home/medali/miniconda3/lib -lxml2 -L/home/medali/miniconda3/lib -lz -L/home/medali/miniconda3/lib -llzma -L/home/medali/miniconda3/lib -licui18n -licuuc -licudata -L/home/medali/miniconda3/lib -lm -ldl -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -lcrypto -lssl -L/usr/lib/x86_64-linux-gnu -lmysqlclient -lz  -lzstd -lssl -lcrypto -lresolv -lm -L/usr/local/lib -lsqlite3 -L/usr/lib/x86_64-linux-gnu -L/usr/lib -lhiredis 
+gcc -D_REENTRANT=1 -I. -Igw -g -O2 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/home/medali/miniconda3/include/libxml2 -I/home/medali/miniconda3/include -Wall -I/usr/include/openssl -I/usr/include/mysql -I/usr/include/postgresql -I/usr/include/hiredis -rdynamic -o test/fakesmsc test/fakesmsc.o libgw.a libwmlscript.a libwap.a libgwlib.a -lpq -lmysqlclient -lssl -lrt -lresolv -lm  -lpthread -L/home/medali/miniconda3/lib -lxml2 -L/home/medali/miniconda3/lib -lz -L/home/medali/miniconda3/lib -llzma -L/home/medali/miniconda3/lib -licui18n -licuuc -licudata -L/home/medali/miniconda3/lib -lm -ldl -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -lcrypto -lssl -L/usr/lib/x86_64-linux-gnu -lmysqlclient -lz  -lzstd -lssl -lcrypto -lresolv -lm -L/usr/local/lib -lsqlite3 -L/usr/lib/x86_64-linux-gnu -L/usr/lib -lhiredis 
+gcc -D_REENTRANT=1 -I. -Igw -g -O2 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/home/medali/miniconda3/include/libxml2 -I/home/medali/miniconda3/include -Wall -I/usr/include/openssl -I/usr/include/mysql -I/usr/include/postgresql -I/usr/include/hiredis -rdynamic -o test/fakewap test/fakewap.o libgw.a libwmlscript.a libwap.a libgwlib.a -lpq -lmysqlclient -lssl -lrt -lresolv -lm  -lpthread -L/home/medali/miniconda3/lib -lxml2 -L/home/medali/miniconda3/lib -lz -L/home/medali/miniconda3/lib -llzma -L/home/medali/miniconda3/lib -licui18n -licuuc -licudata -L/home/medali/miniconda3/lib -lm -ldl -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -lcrypto -lssl -L/usr/lib/x86_64-linux-gnu -lmysqlclient -lz  -lzstd -lssl -lcrypto -lresolv -lm -L/usr/local/lib -lsqlite3 -L/usr/lib/x86_64-linux-gnu -L/usr/lib -lhiredis 
+gcc -D_REENTRANT=1 -I. -Igw -g -O2 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/home/medali/miniconda3/include/libxml2 -I/home/medali/miniconda3/include -Wall -I/usr/include/openssl -I/usr/include/mysql -I/usr/include/postgresql -I/usr/include/hiredis -rdynamic -o test/test_boxc test/test_boxc.o libgw.a libwmlscript.a libwap.a libgwlib.a -lpq -lmysqlclient -lssl -lrt -lresolv -lm  -lpthread -L/home/medali/miniconda3/lib -lxml2 -L/home/medali/miniconda3/lib -lz -L/home/medali/miniconda3/lib -llzma -L/home/medali/miniconda3/lib -licui18n -licuuc -licudata -L/home/medali/miniconda3/lib -lm -ldl -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -lcrypto -lssl -L/usr/lib/x86_64-linux-gnu -lmysqlclient -lz  -lzstd -lssl -lcrypto -lresolv -lm -L/usr/local/lib -lsqlite3 -L/usr/lib/x86_64-linux-gnu -L/usr/lib -lhiredis 
+gcc -D_REENTRANT=1 -I. -Igw -g -O2 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/home/medali/miniconda3/include/libxml2 -I/home/medali/miniconda3/include -Wall -I/usr/include/openssl -I/usr/include/mysql -I/usr/include/postgresql -I/usr/include/hiredis -rdynamic -o test/test_cfg test/test_cfg.o libgw.a libwmlscript.a libwap.a libgwlib.a -lpq -lmysqlclient -lssl -lrt -lresolv -lm  -lpthread -L/home/medali/miniconda3/lib -lxml2 -L/home/medali/miniconda3/lib -lz -L/home/medali/miniconda3/lib -llzma -L/home/medali/miniconda3/lib -licui18n -licuuc -licudata -L/home/medali/miniconda3/lib -lm -ldl -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -lcrypto -lssl -L/usr/lib/x86_64-linux-gnu -lmysqlclient -lz  -lzstd -lssl -lcrypto -lresolv -lm -L/usr/local/lib -lsqlite3 -L/usr/lib/x86_64-linux-gnu -L/usr/lib -lhiredis 
+gcc -D_REENTRANT=1 -I. -Igw -g -O2 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/home/medali/miniconda3/include/libxml2 -I/home/medali/miniconda3/include -Wall -I/usr/include/openssl -I/usr/include/mysql -I/usr/include/postgresql -I/usr/include/hiredis -rdynamic -o test/test_charset test/test_charset.o libgw.a libwmlscript.a libwap.a libgwlib.a -lpq -lmysqlclient -lssl -lrt -lresolv -lm  -lpthread -L/home/medali/miniconda3/lib -lxml2 -L/home/medali/miniconda3/lib -lz -L/home/medali/miniconda3/lib -llzma -L/home/medali/miniconda3/lib -licui18n -licuuc -licudata -L/home/medali/miniconda3/lib -lm -ldl -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -lcrypto -lssl -L/usr/lib/x86_64-linux-gnu -lmysqlclient -lz  -lzstd -lssl -lcrypto -lresolv -lm -L/usr/local/lib -lsqlite3 -L/usr/lib/x86_64-linux-gnu -L/usr/lib -lhiredis 
+gcc -D_REENTRANT=1 -I. -Igw -g -O2 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/home/medali/miniconda3/include/libxml2 -I/home/medali/miniconda3/include -Wall -I/usr/include/openssl -I/usr/include/mysql -I/usr/include/postgresql -I/usr/include/hiredis -rdynamic -o test/test_cimd2 test/test_cimd2.o libgw.a libwmlscript.a libwap.a libgwlib.a -lpq -lmysqlclient -lssl -lrt -lresolv -lm  -lpthread -L/home/medali/miniconda3/lib -lxml2 -L/home/medali/miniconda3/lib -lz -L/home/medali/miniconda3/lib -llzma -L/home/medali/miniconda3/lib -licui18n -licuuc -licudata -L/home/medali/miniconda3/lib -lm -ldl -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -lcrypto -lssl -L/usr/lib/x86_64-linux-gnu -lmysqlclient -lz  -lzstd -lssl -lcrypto -lresolv -lm -L/usr/local/lib -lsqlite3 -L/usr/lib/x86_64-linux-gnu -L/usr/lib -lhiredis 
+gcc -D_REENTRANT=1 -I. -Igw -g -O2 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/home/medali/miniconda3/include/libxml2 -I/home/medali/miniconda3/include -Wall -I/usr/include/openssl -I/usr/include/mysql -I/usr/include/postgresql -I/usr/include/hiredis -rdynamic -o test/test_conn test/test_conn.o libgw.a libwmlscript.a libwap.a libgwlib.a -lpq -lmysqlclient -lssl -lrt -lresolv -lm  -lpthread -L/home/medali/miniconda3/lib -lxml2 -L/home/medali/miniconda3/lib -lz -L/home/medali/miniconda3/lib -llzma -L/home/medali/miniconda3/lib -licui18n -licuuc -licudata -L/home/medali/miniconda3/lib -lm -ldl -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -lcrypto -lssl -L/usr/lib/x86_64-linux-gnu -lmysqlclient -lz  -lzstd -lssl -lcrypto -lresolv -lm -L/usr/local/lib -lsqlite3 -L/usr/lib/x86_64-linux-gnu -L/usr/lib -lhiredis 
+gcc -D_REENTRANT=1 -I. -Igw -g -O2 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/home/medali/miniconda3/include/libxml2 -I/home/medali/miniconda3/include -Wall -I/usr/include/openssl -I/usr/include/mysql -I/usr/include/postgresql -I/usr/include/hiredis -rdynamic -o test/test_date test/test_date.o libgw.a libwmlscript.a libwap.a libgwlib.a -lpq -lmysqlclient -lssl -lrt -lresolv -lm  -lpthread -L/home/medali/miniconda3/lib -lxml2 -L/home/medali/miniconda3/lib -lz -L/home/medali/miniconda3/lib -llzma -L/home/medali/miniconda3/lib -licui18n -licuuc -licudata -L/home/medali/miniconda3/lib -lm -ldl -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -lcrypto -lssl -L/usr/lib/x86_64-linux-gnu -lmysqlclient -lz  -lzstd -lssl -lcrypto -lresolv -lm -L/usr/local/lib -lsqlite3 -L/usr/lib/x86_64-linux-gnu -L/usr/lib -lhiredis 
+gcc -D_REENTRANT=1 -I. -Igw -g -O2 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/home/medali/miniconda3/include/libxml2 -I/home/medali/miniconda3/include -Wall -I/usr/include/openssl -I/usr/include/mysql -I/usr/include/postgresql -I/usr/include/hiredis -rdynamic -o test/test_dbpool test/test_dbpool.o libgw.a libwmlscript.a libwap.a libgwlib.a -lpq -lmysqlclient -lssl -lrt -lresolv -lm  -lpthread -L/home/medali/miniconda3/lib -lxml2 -L/home/medali/miniconda3/lib -lz -L/home/medali/miniconda3/lib -llzma -L/home/medali/miniconda3/lib -licui18n -licuuc -licudata -L/home/medali/miniconda3/lib -lm -ldl -L/usr/lib/gcc/x86_64-linux-gnu/13/../../../x86_64-linux-gnu -lcrypto -lssl -L/usr/lib/x86_64-linux-gnu -lmysqlclient -lz  -lzstd -lssl -lcrypto -lresolv -lm -L/usr/local/lib -lsqlite3 -L/usr/lib/x86_64-linux-gnu -L/usr/lib -lhiredis 
+/usr/bin/ld: libwmlscript.a(ws.o): warning: relocation against `global_compiler' in read-only section `.text'
+/usr/bin/ld: libwmlscript.a(ws.o): in function `compile_stream':
+/home/medali/Downloads/kannel-optimized/kannel-debian-sid/wmlscript/ws.c:377:(.text+0x115): undefined reference to `global_compiler'
+/usr/bin/ld: libgwlib.a(charset.o): in function `charset_convert':
+/home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:602:(.text+0xc47): undefined reference to `libiconv_open'
+/usr/bin/ld: /home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:618:(.text+0xcf4): undefined reference to `libiconv'
+/usr/bin/ld: /home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:654:(.text+0xd2f): undefined reference to `libiconv_close'
+/usr/bin/ld: /home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:654:(.text+0xe5e): undefined reference to `libiconv_close'
+/usr/bin/ld: libwmlscript.a(ws.o): warning: relocation against `global_compiler' in read-only section `.text'
+/usr/bin/ld: warning: creating DT_TEXTREL in a PIE
+collect2: error: ld returned 1 exit status
+make: *** [Makefile:377: wmlscript/wmlsdasm] Error 1
+make: *** Waiting for unfinished jobs....
+/usr/bin/ld: libgwlib.a(charset.o): in function `charset_convert':
+/home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:602:(.text+0xc47): undefined reference to `libiconv_open'
+/usr/bin/ld: /home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:618:(.text+0xcf4): undefined reference to `libiconv'
+/usr/bin/ld: /home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:654:(.text+0xd2f): undefined reference to `libiconv_close'
+/usr/bin/ld: /home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:654:(.text+0xe5e): undefined reference to `libiconv_close'
+/usr/bin/ld: libgwlib.a(charset.o): in function `charset_convert':
+/home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:602:(.text+0xc47): undefined reference to `libiconv_open'
+/usr/bin/ld: /home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:618:(.text+0xcf4): undefined reference to `libiconv'
+/usr/bin/ld: /home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:654:(.text+0xd2f): undefined reference to `libiconv_close'
+/usr/bin/ld: /home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:654:(.text+0xe5e): undefined reference to `libiconv_close'
+/usr/bin/ld: libgwlib.a(charset.o): in function `charset_convert':
+/home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:602:(.text+0xc47): undefined reference to `libiconv_open'
+/usr/bin/ld: /home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:618:(.text+0xcf4): undefined reference to `libiconv'
+/usr/bin/ld: /home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:654:(.text+0xd2f): undefined reference to `libiconv_close'
+/usr/bin/ld: /home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:654:(.text+0xe5e): undefined reference to `libiconv_close'
+/usr/bin/ld: libgwlib.a(charset.o): in function `charset_convert':
+/home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:602:(.text+0xc47): undefined reference to `libiconv_open'
+/usr/bin/ld: /home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:618:(.text+0xcf4): undefined reference to `libiconv'
+/usr/bin/ld: /home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:654:(.text+0xd2f): undefined reference to `libiconv_close'
+/usr/bin/ld: /home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:654:(.text+0xe5e): undefined reference to `libiconv_close'
+/usr/bin/ld: libwmlscript.a(ws.o): in function `compile_stream':
+/home/medali/Downloads/kannel-optimized/kannel-debian-sid/wmlscript/ws.c:377:(.text+0x115): undefined reference to `global_compiler'
+/usr/bin/ld: libwmlscript.a(ws.o): warning: relocation against `global_compiler' in read-only section `.text'
+/usr/bin/ld: libgwlib.a(charset.o): in function `charset_convert':
+/home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:602:(.text+0xc47): undefined reference to `libiconv_open'
+/usr/bin/ld: /home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:618:(.text+0xcf4): undefined reference to `libiconv'
+/usr/bin/ld: /home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:654:(.text+0xd2f): undefined reference to `libiconv_close'
+/usr/bin/ld: /home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:654:(.text+0xe5e): undefined reference to `libiconv_close'
+collect2: error: ld returned 1 exit status
+make: *** [Makefile:380: test/fakewap] Error 1
+collect2: error: ld returned 1 exit status
+make: *** [Makefile:380: test/test_charset] Error 1
+collect2: error: ld returned 1 exit status
+collect2: error: ld returned 1 exit status
+make: *** [Makefile:380: test/test_cfg] Error 1
+make: *** [Makefile:380: test/test_date] Error 1
+/usr/bin/ld: libgwlib.a(charset.o): in function `charset_convert':
+/home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:602:(.text+0xc47): undefined reference to `libiconv_open'
+/usr/bin/ld: /home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:618:(.text+0xcf4): undefined reference to `libiconv'
+/usr/bin/ld: /home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:654:(.text+0xd2f): undefined reference to `libiconv_close'
+/usr/bin/ld: /home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:654:(.text+0xe5e): undefined reference to `libiconv_close'
+/usr/bin/ld: /usr/bin/ld: warning: creating DT_TEXTREL in a PIE
+libgwlib.a(charset.o): in function `charset_convert':
+/home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:602:(.text+0xc47): undefined reference to `libiconv_open'
+/usr/bin/ld: /home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:618:(.text+0xcf4): undefined reference to `libiconv'
+/usr/bin/ld: /home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:654:(.text+0xd2f): undefined reference to `libiconv_close'
+/usr/bin/ld: /home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:654:(.text+0xe5e): undefined reference to `libiconv_close'
+collect2: error: ld returned 1 exit status
+make: *** [Makefile:377: wmlscript/wmlsc] Error 1
+/usr/bin/ld: libgwlib.a(charset.o): in function `charset_convert':
+/home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:602:(.text+0xc47): undefined reference to `libiconv_open'
+/usr/bin/ld: /home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:618:(.text+0xcf4): undefined reference to `libiconv'
+/usr/bin/ld: /home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:654:(.text+0xd2f): undefined reference to `libiconv_close'
+/usr/bin/ld: /home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:654:(.text+0xe5e): undefined reference to `libiconv_close'
+/usr/bin/ld: libgwlib.a(charset.o): in function `charset_convert':
+/home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:602:(.text+0xc47): undefined reference to `libiconv_open'
+/usr/bin/ld: /home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:618:(.text+0xcf4): undefined reference to `libiconv'
+/usr/bin/ld: /home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:654:(.text+0xd2f): undefined reference to `libiconv_close'
+/usr/bin/ld: /home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:654:(.text+0xe5e): undefined reference to `libiconv_close'
+/usr/bin/ld: libgwlib.a(charset.o): in function `charset_convert':
+/home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:602:(.text+0xc47): undefined reference to `libiconv_open'
+/usr/bin/ld: /home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:618:(.text+0xcf4): undefined reference to `libiconv'
+/usr/bin/ld: /home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:654:(.text+0xd2f): undefined reference to `libiconv_close'
+/usr/bin/ld: /home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:654:(.text+0xe5e): undefined reference to `libiconv_close'
+/usr/bin/ld: libgwlib.a(charset.o): in function `charset_convert':
+/home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:602:(.text+0xc47): undefined reference to `libiconv_open'
+/usr/bin/ld: /home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:618:(.text+0xcf4): undefined reference to `libiconv'
+/usr/bin/ld: /home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:654:(.text+0xd2f): undefined reference to `libiconv_close'
+/usr/bin/ld: /home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:654:(.text+0xe5e): undefined reference to `libiconv_close'
+collect2: error: ld returned 1 exit status
+make: *** [Makefile:380: test/fakesmsc] Error 1
+/usr/bin/ld: collect2: error: ld returned 1 exit status
+/usr/bin/ld: libgwlib.a(charset.o): in function `charset_convert':
+/home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:602:(.text+0xc47): undefined reference to `libiconv_open'
+/usr/bin/ld: /home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:618:(.text+0xcf4): undefined reference to `libiconv'
+/usr/bin/ld: /home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:654:(.text+0xd2f): undefined reference to `libiconv_close'
+/usr/bin/ld: /home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:654:(.text+0xe5e): undefined reference to `libiconv_close'
+make: *** [Makefile:380: test/drive_wapbox] Error 1
+collect2: error: ld returned 1 exit status
+libgwlib.a(charset.o): in function `charset_convert':
+/home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:602:(.text+0xc47): undefined reference to `libiconv_open'
+/usr/bin/ld: /home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:618:(.text+0xcf4): undefined reference to `libiconv'
+/usr/bin/ld: /home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:654:(.text+0xd2f): undefined reference to `libiconv_close'
+/usr/bin/ld: /home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:654:(.text+0xe5e): undefined reference to `libiconv_close'
+make: *** [Makefile:380: test/test_boxc] Error 1
+/usr/bin/ld: libwmlscript.a(ws.o): in function `compile_stream':
+/home/medali/Downloads/kannel-optimized/kannel-debian-sid/wmlscript/ws.c:377:(.text+0x115): undefined reference to `global_compiler'
+collect2: error: ld returned 1 exit status
+/usr/bin/ld: libgwlib.a(charset.o): in function `charset_convert':
+/home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:602:(.text+0xc47): undefined reference to `libiconv_open'
+/usr/bin/ld: /home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:618:(.text+0xcf4): undefined reference to `libiconv'
+/usr/bin/ld: /home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:654:(.text+0xd2f): undefined reference to `libiconv_close'
+/usr/bin/ld: /home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:654:(.text+0xe5e): undefined reference to `libiconv_close'
+make: *** [Makefile:380: test/test_cimd2] Error 1
+collect2: error: ld returned 1 exit status
+make: *** [Makefile:380: test/test_conn] Error 1
+/usr/bin/ld: libgwlib.a(charset.o): in function `charset_convert':
+/home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:602:(.text+0xc47): undefined reference to `libiconv_open'
+/usr/bin/ld: /home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:618:(.text+0xcf4): undefined reference to `libiconv'
+/usr/bin/ld: /home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:654:(.text+0xd2f): undefined reference to `libiconv_close'
+/usr/bin/ld: /home/medali/Downloads/kannel-optimized/kannel-debian-sid/gwlib/charset.c:654:(.text+0xe5e): undefined reference to `libiconv_close'
+collect2: error: ld returned 1 exit status
+make: *** [Makefile:377: gw/smsbox] Error 1
+collect2: error: ld returned 1 exit status
+make: *** [Makefile:380: test/test_dbpool] Error 1
+collect2: error: ld returned 1 exit status
+make: *** [Makefile:380: test/drive_smpp] Error 1
+/usr/bin/ld: warning: creating DT_TEXTREL in a PIE
+collect2: error: ld returned 1 exit status
+make: *** [Makefile:377: gw/bearerbox] Error 1
+collect2: error: ld returned 1 exit status
+make: *** [Makefile:377: gw/wapbox] Error 1

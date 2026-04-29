@@ -1,0 +1,238 @@
+From: Guillem Jover <gjover@sipwise.com>
+Date: Tue, 8 Oct 2024 16:10:51 +0000
+Subject: Add partial time64 support on 32-bit arches
+
+This fixes the code to handle time_t correctly on 32-bit and 64-bit
+architectures, including 32-bit architectures with 64-bit time_t.
+
+This does not implement full support for time64, as that might require
+modifying the protocol to encode time 64-bit fields, which the protocol
+currently seems to encode in 32-bit fields. It's not clear whether the
+current encoding is part of the protocols used or just an internal
+serialization used by the code.
+---
+ gw/bb_store_redis.c |  9 +++++++++
+ gw/msg-decl.h       |  7 ++++---
+ gw/msg.c            | 33 +++++++++++++++++++++++++++++++++
+ gw/msg.h            |  1 +
+ gw/smsc/smsc_smpp.c |  2 +-
+ gw/smsc/smsc_soap.c |  4 ++--
+ 6 files changed, 50 insertions(+), 6 deletions(-)
+
+diff --git a/gw/bb_store_redis.c b/gw/bb_store_redis.c
+index caba8f0..bb30c74 100644
+--- a/gw/bb_store_redis.c
++++ b/gw/bb_store_redis.c
+@@ -115,6 +115,7 @@ static Dict *hash_msg_pack(Msg *msg)
+     h = dict_create(32, octstr_destroy_item);
+ 
+ #define INTEGER(name) dict_put(h, octstr_imm(#name), octstr_format("%ld", p->name));
++#define TIME(name) dict_put(h, octstr_imm(#name), octstr_format("%lld", (long long)p->name));
+ #define OCTSTR(name) dict_put(h, octstr_imm(#name), octstr_duplicate(p->name));
+ #define UUID(name) { \
+         char id[UUID_STR_LEN + 1]; \
+@@ -149,6 +150,9 @@ static Msg *hash_msg_unpack(Dict *hash)
+ #define INTEGER(name) \
+     if ((os = dict_get(hash, octstr_imm(#name))) != NULL) \
+         p->name = atol(octstr_get_cstr(os));
++#define TIME(name) \
++    if ((os = dict_get(hash, octstr_imm(#name))) != NULL) \
++        p->name = atoll(octstr_get_cstr(os));
+ #define OCTSTR(name) p->name = octstr_duplicate(dict_get(hash, octstr_imm(#name)));
+ #define UUID(name) \
+     if ((os = dict_get(hash, octstr_imm(#name))) != NULL) \
+@@ -269,6 +273,11 @@ static void store_redis_add_msg(Octstr *id, Msg *msg)
+         gwlist_produce(b, octstr_imm(#name)); \
+         gwlist_produce(b, octstr_format("%ld", p->name)); \
+     }
++#define TIME(name) \
++    if (p->name != MSG_PARAM_UNDEFINED) { \
++        gwlist_produce(b, octstr_imm(#name)); \
++        gwlist_produce(b, octstr_format("%lld", (long long)p->name)); \
++    }
+ #define OCTSTR(name) \
+     if (p->name != NULL) { \
+         gwlist_produce(b, octstr_imm(#name)); \
+diff --git a/gw/msg-decl.h b/gw/msg-decl.h
+index 1fad7a7..e0f1cc6 100644
+--- a/gw/msg-decl.h
++++ b/gw/msg-decl.h
+@@ -83,7 +83,7 @@ MSG(sms,
+         OCTSTR(receiver)
+         OCTSTR(udhdata)
+         OCTSTR(msgdata)
+-        INTEGER(time)
++        TIME(time)
+         OCTSTR(smsc_id)
+         OCTSTR(smsc_number)
+         OCTSTR(foreign_id)
+@@ -109,14 +109,14 @@ MSG(sms,
+         VOID(split_parts)
+         INTEGER(priority)
+         INTEGER(resend_try)
+-        INTEGER(resend_time)
++        TIME(resend_time)
+         OCTSTR(meta_data)
+     })
+ 
+ MSG(ack,
+     {
+         INTEGER(nack)
+-        INTEGER(time)
++        TIME(time)
+         UUID(id)
+     })
+     
+@@ -131,6 +131,7 @@ MSG(wdp_datagram,
+ 
+ #undef MSG
+ #undef INTEGER
++#undef TIME
+ #undef OCTSTR
+ #undef UUID
+ #undef VOID
+diff --git a/gw/msg.c b/gw/msg.c
+index f1ba589..430a8fb 100644
+--- a/gw/msg.c
++++ b/gw/msg.c
+@@ -76,10 +76,12 @@
+  */
+ 
+ static void append_integer(Octstr *os, long i);
++static void append_time(Octstr *os, time_t t);
+ static void append_string(Octstr *os, Octstr *field);
+ static void append_uuid(Octstr *os, uuid_t id);
+ 
+ static int parse_integer(long *i, Octstr *packed, int *off);
++static int parse_time(time_t *t, Octstr *packed, int *off);
+ static int parse_string(Octstr **os, Octstr *packed, int *off);
+ static int parse_uuid(uuid_t id, Octstr *packed, int *off);
+ 
+@@ -99,6 +101,7 @@ Msg *msg_create_real(enum msg_type type, const char *file, long line,
+ 
+     msg->type = type;
+ #define INTEGER(name) p->name = MSG_PARAM_UNDEFINED;
++#define TIME(name) INTEGER(name)
+ #define OCTSTR(name) p->name = NULL;
+ #define UUID(name) uuid_generate(p->name);
+ #define VOID(name) p->name = NULL;
+@@ -115,6 +118,7 @@ Msg *msg_duplicate(Msg *msg)
+     new = msg_create(msg->type);
+ 
+ #define INTEGER(name) p->name = q->name;
++#define TIME(name) INTEGER(name)
+ #define OCTSTR(name) \
+     if (q->name == NULL) p->name = NULL; \
+     else p->name = octstr_duplicate(q->name);
+@@ -135,6 +139,7 @@ void msg_destroy(Msg *msg)
+         return;
+ 
+ #define INTEGER(name) p->name = 0;
++#define TIME(name) INTEGER(name)
+ #define OCTSTR(name) octstr_destroy(p->name);
+ #define UUID(name) uuid_clear(p->name);
+ #define VOID(name)
+@@ -157,6 +162,8 @@ void msg_dump(Msg *msg, int level)
+     debug("gw.msg", 0, "%*s type: %s", level, "", type_as_str(msg));
+ #define INTEGER(name) \
+     debug("gw.msg", 0, "%*s %s.%s: %ld", level, "", t, #name, (long) p->name);
++#define TIME(name) \
++    debug("gw.msg", 0, "%*s %s.%s: %lld", level, "", t, #name, (long long) p->name);
+ #define OCTSTR(name) \
+     debug("gw.msg", 0, "%*s %s.%s:", level, "", t, #name); \
+     octstr_dump(p->name, level + 1);
+@@ -186,6 +193,7 @@ Octstr *msg_pack(Msg *msg)
+     append_integer(os, msg->type);
+ 
+ #define INTEGER(name) append_integer(os, p->name);
++#define TIME(name) append_time(os, p->name);
+ #define OCTSTR(name) append_string(os, p->name);
+ #define UUID(name) append_uuid(os, p->name);
+ #define VOID(name)
+@@ -221,6 +229,8 @@ Msg *msg_unpack_real(Octstr *os, const char *file, long line, const char *func)
+ 
+ #define INTEGER(name) \
+     if (parse_integer(&(p->name), os, &off) == -1) goto error;
++#define TIME(name) \
++    if (parse_time(&(p->name), os, &off) == -1) goto error;
+ #define OCTSTR(name) \
+     if (parse_string(&(p->name), os, &off) == -1) goto error;
+ #define UUID(name) \
+@@ -272,6 +282,14 @@ static void append_integer(Octstr *os, long i)
+     octstr_append_data(os, (char *)buf, 4);
+ }
+ 
++static void append_time(Octstr *os, time_t t)
++{
++    unsigned char buf[4];
++
++    encode_network_long(buf, t);
++    octstr_append_data(os, (char *)buf, 4);
++}
++
+ static void append_string(Octstr *os, Octstr *field)
+ {
+     if (field == NULL)
+@@ -307,6 +325,21 @@ static int parse_integer(long *i, Octstr *packed, int *off)
+     return 0;
+ }
+ 
++static int parse_time(time_t *t, Octstr *packed, int *off)
++{
++    unsigned char buf[4];
++
++    gw_assert(*off >= 0);
++    if (*off + 4 > octstr_len(packed)) {
++        error(0, "Packet too short while unpacking Msg.");
++        return -1;
++    }
++
++    octstr_get_many_chars((char *)buf, packed, *off, 4);
++    *t = decode_network_long(buf);
++    *off += 4;
++    return 0;
++}
+ 
+ static int parse_string(Octstr **os, Octstr *packed, int *off)
+ {
+diff --git a/gw/msg.h b/gw/msg.h
+index 4263a36..b472c0e 100644
+--- a/gw/msg.h
++++ b/gw/msg.h
+@@ -80,6 +80,7 @@ typedef struct {
+ 	enum msg_type type;
+ 
+ 	#define INTEGER(name) long name;
++	#define TIME(name) time_t name;
+ 	#define OCTSTR(name) Octstr *name;
+ 	#define UUID(name) uuid_t name;
+ 	#define VOID(name) void *name;
+diff --git a/gw/smsc/smsc_smpp.c b/gw/smsc/smsc_smpp.c
+index 5c5097e..1b15db0 100644
+--- a/gw/smsc/smsc_smpp.c
++++ b/gw/smsc/smsc_smpp.c
+@@ -1170,7 +1170,7 @@ static SMPP_PDU *msg_to_pdu(SMPP *smpp, Msg *msg)
+ }
+ 
+ 
+-static int send_enquire_link(SMPP *smpp, Connection *conn, long *last_sent)
++static int send_enquire_link(SMPP *smpp, Connection *conn, time_t *last_sent)
+ {
+     SMPP_PDU *pdu;
+     Octstr *os;
+diff --git a/gw/smsc/smsc_soap.c b/gw/smsc/smsc_soap.c
+index fb02d87..bc44fad 100644
+--- a/gw/smsc/smsc_soap.c
++++ b/gw/smsc/smsc_soap.c
+@@ -2052,9 +2052,9 @@ static Octstr* soap_convert_token(Msg* msg, Octstr* name, PrivData* privdata)
+                 sprintf(buf,"%ld", p->fieldname); \
+                 return octstr_create(buf); \
+         }
+-#define INT64(fieldname) \
++#define TIME(fieldname) \
+         if (!octstr_str_compare(name, #fieldname)) { \
+-                sprintf(buf,"%lld", p->fieldname); \
++                sprintf(buf,"%lld", (long long)p->fieldname); \
+                 return octstr_create(buf); \
+         }
+ #define OCTSTR(fieldname) \

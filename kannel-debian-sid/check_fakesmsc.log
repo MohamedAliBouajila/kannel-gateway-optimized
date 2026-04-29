@@ -1,0 +1,14 @@
+2026-04-28 15:52:43 [373181] [0] INFO: Debug_lvl = -1, log_file = <none>, log_lvl = 0
+2026-04-28 15:52:43 [373181] [0] INFO: Host 127.0.0.1 Port 20000 interval 0.000 max-messages 10
+2026-04-28 15:52:43 [373181] [0] INFO: fakesmsc starting
+2026-04-28 15:52:43 [373181] [0] DEBUG: Connecting to <127.0.0.1>
+2026-04-28 15:52:43 [373181] [0] ERROR: connect to <127.0.0.1> failed
+2026-04-28 15:52:43 [373181] [0] ERROR: System error 111: Connection refused
+2026-04-28 15:52:43 [373181] [0] ERROR: error connecting to server `127.0.0.1' at port `20000'
+2026-04-28 15:52:43 [373181] [0] PANIC: Failed to open connection
+2026-04-28 15:52:43 [373181] [0] PANIC: test/fakesmsc(gw_backtrace+0xe4) [0x5a96d8f77614]
+2026-04-28 15:52:43 [373181] [0] PANIC: test/fakesmsc(gw_panic+0x16d) [0x5a96d8f7779d]
+2026-04-28 15:52:43 [373181] [0] PANIC: test/fakesmsc(main+0x81e) [0x5a96d8f6d21e]
+2026-04-28 15:52:43 [373181] [0] PANIC: /lib/x86_64-linux-gnu/libc.so.6(+0x2a1ca) [0x79132f62a1ca]
+2026-04-28 15:52:43 [373181] [0] PANIC: /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x8b) [0x79132f62a28b]
+2026-04-28 15:52:43 [373181] [0] PANIC: test/fakesmsc(_start+0x25) [0x5a96d8f6d755]

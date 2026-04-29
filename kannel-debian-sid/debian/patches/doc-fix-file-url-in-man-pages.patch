@@ -1,0 +1,32 @@
+From: Paul Dwerryhouse <paul@dwerryhouse.com.au>
+Date: Fri, 27 Sep 2024 23:19:10 +0200
+Subject: Puts correct url to local docs in man pages
+
+---
+ gw/kannel.8            | 2 +-
+ utils/run_kannel_box.8 | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/gw/kannel.8 b/gw/kannel.8
+index ed95a6d..95ce349 100644
+--- a/gw/kannel.8
++++ b/gw/kannel.8
+@@ -37,7 +37,7 @@ For more information,
+ see 
+ .B http://www.kannel.org
+ or
+-.BR file://usr/doc/kannel/ .
++.BR file:///usr/share/doc/kannel/ .
+ .SH "SEE ALSO"
+ .BR run_kannel_box (8),
+ .BR seewbmp (1).
+diff --git a/utils/run_kannel_box.8 b/utils/run_kannel_box.8
+index e31a730..ba66567 100644
+--- a/utils/run_kannel_box.8
++++ b/utils/run_kannel_box.8
+@@ -28,4 +28,4 @@ For more information,
+ see 
+ .B http://www.kannel.org
+ or
+-.BR file://usr/doc/kannel/ .
++.BR file:///usr/share/doc/kannel/ .

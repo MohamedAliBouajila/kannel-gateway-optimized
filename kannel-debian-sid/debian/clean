@@ -1,0 +1,9 @@
+aclocal.m4
+check_http.log
+check_http_server.log
+check_https.log
+check_https_server.log
+libtool
+stamp-h1
+wmlscript/wsgram.c
+wmlscript/wsgram.h

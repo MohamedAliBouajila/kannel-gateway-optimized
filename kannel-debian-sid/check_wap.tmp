@@ -1,0 +1,420 @@
+2026-04-27 11:45:14 [158487] [0] INFO: Debug_lvl = 0, log_file = <none>, log_lvl = 0
+2026-04-27 11:45:14 [158487] [0] DEBUG: Kannel wapbox version `1.4.5'.
+Compiler `13.3.0'.
+System Linux, release 6.17.0-22-generic, version #22~24.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Mar 26 15:25:54 UTC 2, machine x86_64.
+Hostname medali, IP 192.168.1.79.
+Libxml version 2.9.14.
+Using OpenSSL 3.0.13 30 Jan 2024.
+Compiled with MySQL 8.0.45, using MySQL 8.0.45.
+Compiled with PostgreSQL 18.3 (Ubuntu 18.3-1.pgdg24.04+1).
+Using SQLite 3.45.1.
+Using hiredis API 1.2.0
+Using native malloc.
+
+2026-04-27 11:45:14 [158487] [0] DEBUG: Dumping Cfg 0x5ce10e05a160
+2026-04-27 11:45:14 [158487] [0] DEBUG:   filename = <gw/pushkannel.conf>
+2026-04-27 11:45:14 [158487] [0] DEBUG:   dumping group (wapbox):
+2026-04-27 11:45:14 [158487] [0] DEBUG:     <syslog-level> = <none>
+2026-04-27 11:45:14 [158487] [0] DEBUG:     <group> = <wapbox>
+2026-04-27 11:45:14 [158487] [0] DEBUG:     <bearerbox-host> = <127.0.0.1>
+2026-04-27 11:45:14 [158487] [0] DEBUG:   dumping group (ppg):
+2026-04-27 11:45:14 [158487] [0] DEBUG:     <group> = <ppg>
+2026-04-27 11:45:14 [158487] [0] DEBUG:     <ppg-port> = <18080>
+2026-04-27 11:45:14 [158487] [0] DEBUG:     <trusted-pi> = <false>
+2026-04-27 11:45:14 [158487] [0] DEBUG:     <ppg-url> = </cgi-bin/wap-push.cgi>
+2026-04-27 11:45:14 [158487] [0] DEBUG:     <concurrent-pushes> = <100>
+2026-04-27 11:45:14 [158487] [0] DEBUG:     <ppg-allow-ip> = <*.*.*.*>
+2026-04-27 11:45:14 [158487] [0] DEBUG:     <users> = <1024>
+2026-04-27 11:45:14 [158487] [0] DEBUG:   dumping group (smsbox):
+2026-04-27 11:45:14 [158487] [0] DEBUG:     <group> = <smsbox>
+2026-04-27 11:45:14 [158487] [0] DEBUG:     <bearerbox-host> = <127.0.0.1>
+2026-04-27 11:45:14 [158487] [0] DEBUG:   dumping group (core):
+2026-04-27 11:45:14 [158487] [0] DEBUG:     <group> = <core>
+2026-04-27 11:45:14 [158487] [0] DEBUG:     <admin-port> = <13000>
+2026-04-27 11:45:14 [158487] [0] DEBUG:     <box-allow-ip> = <127.0.0.1>
+2026-04-27 11:45:14 [158487] [0] DEBUG:     <smsbox-port> = <13001>
+2026-04-27 11:45:14 [158487] [0] DEBUG:     <wapbox-port> = <13002>
+2026-04-27 11:45:14 [158487] [0] DEBUG:     <box-deny-ip> = <*.*.*.*>
+2026-04-27 11:45:14 [158487] [0] DEBUG:     <admin-password> = <bar>
+2026-04-27 11:45:14 [158487] [0] DEBUG:   dumping group (smsc):
+2026-04-27 11:45:14 [158487] [0] DEBUG:     <group> = <smsc>
+2026-04-27 11:45:14 [158487] [0] DEBUG:     <smsc> = <fake>
+2026-04-27 11:45:14 [158487] [0] DEBUG:     <smsc-id> = <FAKE>
+2026-04-27 11:45:14 [158487] [0] DEBUG:     <connect-allow-ip> = <127.0.0.1>
+2026-04-27 11:45:14 [158487] [0] DEBUG:     <port> = <10010>
+2026-04-27 11:45:14 [158487] [0] DEBUG:   dumping group (wap-push-user):
+2026-04-27 11:45:14 [158487] [0] DEBUG:     <group> = <wap-push-user>
+2026-04-27 11:45:14 [158487] [0] DEBUG:     <ppg-password> = <bar>
+2026-04-27 11:45:14 [158487] [0] DEBUG:     <wap-push-user> = <foo>
+2026-04-27 11:45:14 [158487] [0] DEBUG:     <ppg-username> = <foo>
+2026-04-27 11:45:14 [158487] [0] DEBUG: Dump ends.
+2026-04-27 11:45:14 [158487] [0] DEBUG: map_url_max = -1
+2026-04-27 11:45:14 [158487] [0] DEBUG: syslog parameter is none
+2026-04-27 11:45:14 [158487] [0] INFO: ------------------------------------------------------------
+2026-04-27 11:45:14 [158487] [0] INFO: Kannel wapbox version 1.4.5 starting up.
+2026-04-27 11:45:14 [158487] [0] DEBUG: Started thread 1 (wap/wsp_session.c:main_thread)
+2026-04-27 11:45:14 [158487] [0] DEBUG: Started thread 2 (wap/wsp_unit.c:main_thread)
+2026-04-27 11:45:14 [158487] [0] DEBUG: Started thread 3 (wap/wsp_push_client.c:main_thread)
+2026-04-27 11:45:14 [158487] [3] DEBUG: Thread 3 (wap/wsp_push_client.c:main_thread) maps to pid 158487.
+2026-04-27 11:45:14 [158487] [0] DEBUG: Started thread 4 (wap/timers.c:watch_timers)
+2026-04-27 11:45:14 [158487] [4] DEBUG: Thread 4 (wap/timers.c:watch_timers) maps to pid 158487.
+2026-04-27 11:45:14 [158487] [1] DEBUG: Thread 1 (wap/wsp_session.c:main_thread) maps to pid 158487.
+2026-04-27 11:45:14 [158487] [0] DEBUG: Started thread 5 (wap/wtp_init.c:main_thread)
+2026-04-27 11:45:14 [158487] [0] DEBUG: Started thread 6 (wap/wtp_resp.c:main_thread)
+2026-04-27 11:45:14 [158487] [6] DEBUG: Thread 6 (wap/wtp_resp.c:main_thread) maps to pid 158487.
+2026-04-27 11:45:14 [158487] [0] DEBUG: Started thread 7 (gw/wap-appl.c:main_thread)
+2026-04-27 11:45:14 [158487] [0] DEBUG: Started thread 8 (gw/wap-appl.c:return_replies_thread)
+2026-04-27 11:45:14 [158487] [2] DEBUG: Thread 2 (wap/wsp_unit.c:main_thread) maps to pid 158487.
+2026-04-27 11:45:14 [158487] [7] DEBUG: Thread 7 (gw/wap-appl.c:main_thread) maps to pid 158487.
+2026-04-27 11:45:14 [158487] [0] DEBUG: Started thread 9 (gw/wap_push_ota.c:main_thread)
+2026-04-27 11:45:14 [158487] [8] DEBUG: Thread 8 (gw/wap-appl.c:return_replies_thread) maps to pid 158487.
+2026-04-27 11:45:14 [158487] [9] DEBUG: Thread 9 (gw/wap_push_ota.c:main_thread) maps to pid 158487.
+2026-04-27 11:45:14 [158487] [5] DEBUG: Thread 5 (wap/wtp_init.c:main_thread) maps to pid 158487.
+2026-04-27 11:45:14 [158487] [0] INFO: HTTP: Opening server at port 18080.
+2026-04-27 11:45:14 [158487] [0] DEBUG: Started thread 10 (gwlib/fdset.c:poller)
+2026-04-27 11:45:14 [158487] [10] DEBUG: Thread 10 (gwlib/fdset.c:poller) maps to pid 158487.
+2026-04-27 11:45:14 [158487] [0] DEBUG: Started thread 11 (gwlib/http.c:server_thread)
+2026-04-27 11:45:14 [158487] [11] DEBUG: Thread 11 (gwlib/http.c:server_thread) maps to pid 158487.
+2026-04-27 11:45:14 [158487] [11] DEBUG: HTTP: Including port 18080, fd 26 for polling in server thread
+2026-04-27 11:45:14 [158487] [0] DEBUG: Started thread 12 (gw/wap_push_ppg.c:ota_read_thread)
+2026-04-27 11:45:14 [158487] [0] DEBUG: Started thread 13 (gw/wap_push_ppg.c:http_read_thread)
+2026-04-27 11:45:14 [158487] [0] DEBUG: Started thread 14 (gw/wap_push_ppg.c:pap_request_thread)
+2026-04-27 11:45:14 [158487] [13] DEBUG: Thread 13 (gw/wap_push_ppg.c:http_read_thread) maps to pid 158487.
+2026-04-27 11:45:14 [158487] [12] DEBUG: Thread 12 (gw/wap_push_ppg.c:ota_read_thread) maps to pid 158487.
+2026-04-27 11:45:14 [158487] [14] DEBUG: Thread 14 (gw/wap_push_ppg.c:pap_request_thread) maps to pid 158487.
+2026-04-27 11:45:14 [158487] [0] DEBUG: Connecting to <127.0.0.1>
+2026-04-27 11:45:14 [158487] [0] INFO: Connected to bearerbox at 127.0.0.1 port 13002.
+2026-04-27 11:45:14 [158487] [0] DEBUG: Started thread 15 (gw/heartbeat.c:heartbeat_thread)
+2026-04-27 11:45:14 [158487] [15] DEBUG: Thread 15 (gw/heartbeat.c:heartbeat_thread) maps to pid 158487.
+2026-04-27 11:45:16 [158487] [11] DEBUG: HTTP: Creating HTTPClient for `127.0.0.1'.
+2026-04-27 11:45:16 [158487] [11] DEBUG: HTTP: Created HTTPClient area 0x7d685c000d80.
+2026-04-27 11:45:16 [158487] [14] WARNING: Your ppg core configuration allow all ips
+2026-04-27 11:45:16 [158487] [14] INFO: PPG: Accept request </cgi-bin/wap-push.cgi> from <127.0.0.1>
+2026-04-27 11:45:16 [158487] [14] DEBUG: PPG: http_read_thread: pap multipart accepted
+2026-04-27 11:45:16 [158487] [14] INFO: client address was <213.243.140.102>, accepted
+2026-04-27 11:45:16 [158487] [14] DEBUG: PAP COMPILER: doing semantic analysis for address type a IPv4 address
+2026-04-27 11:45:16 [158487] [14] DEBUG: using defaults instead of anys
+2026-04-27 11:45:16 [158487] [14] DEBUG: PPG: http_read_thread: pap control entity compiled ok
+2026-04-27 11:45:16 [158487] [14] DEBUG: PPG: transform_message: push message content and headers valid
+2026-04-27 11:45:16 [158487] [14] DEBUG: PPG: push machine 0 created
+2026-04-27 11:45:16 [158487] [14] DEBUG: PPG: store_push_data: push machine 0 appended to unit push list
+2026-04-27 11:45:16 [158487] [14] DEBUG: PPG: send_push_response: telling pi
+2026-04-27 11:45:16 [158487] [14] DEBUG: HTTP: Resetting HTTPClient for `127.0.0.1'.
+2026-04-27 11:45:16 [158487] [14] INFO: PPG: handle_push_message: push message accepted for processing
+2026-04-27 11:45:16 [158487] [14] DEBUG: PPG: OTA request for unit push
+2026-04-27 11:45:16 [158487] [14] INFO: PPG: unconfirmed push delivered to OTA
+2026-04-27 11:45:16 [158487] [14] DEBUG: PPG: destroying push machine 0
+2026-04-27 11:45:16 [158487] [9] DEBUG: OTA: event arrived
+2026-04-27 11:45:16 [158487] [9] DEBUG: OTA: made connectionless session service request
+2026-04-27 11:45:16 [158487] [2] DEBUG: WSP (UNIT): event arrived
+2026-04-27 11:45:16 [158487] [2] DEBUG: WSP_UNIT: Connectionless push accepted
+2026-04-27 11:45:16 [158487] [2] DEBUG: WSP: Mapping `application/vnd.wap.slc', WSP 1.2 to 0x0030.
+2026-04-27 11:45:16 [158487] [2] DEBUG: WSP: Mapping `Content-Length', WSP 1.3 to 0x000d.
+2026-04-27 11:45:16 [158487] [2] DEBUG: WSP: Known header 0x000d, value `22'.
+2026-04-27 11:45:16 [158487] [2] DEBUG: WSP: wsp_pack_integer_string: value `22', integer 0x0016
+2026-04-27 11:45:16 [158487] [2] DEBUG: WSP: Mapping `Content-Type', WSP 1.3 to 0x0011.
+2026-04-27 11:45:16 [158487] [2] DEBUG: WSP: content type already handled.
+2026-04-27 11:45:16 [158487] [2] DEBUG: WSP: Mapping `Encoding-Version', WSP 1.3 to 0x0043.
+2026-04-27 11:45:16 [158487] [2] DEBUG: WSP: Known header 0x0043, value `1.3'.
+2026-04-27 11:45:16 [158487] [2] DEBUG: WSP: wsp_pack_version_value: value `1.3', integer 0x0013
+2026-04-27 11:45:16 [158487] [2] DEBUG: WSP Push PDU at 0x7d6844001000:
+2026-04-27 11:45:16 [158487] [2] DEBUG:  Length of headers: 0
+2026-04-27 11:45:16 [158487] [2] DEBUG:  Content type and headers:
+2026-04-27 11:45:16 [158487] [2] DEBUG:  Octet string at 0x7d6844000ba0:
+2026-04-27 11:45:16 [158487] [2] DEBUG:    len:  5
+2026-04-27 11:45:16 [158487] [2] DEBUG:    size: 1024
+2026-04-27 11:45:16 [158487] [2] DEBUG:    immutable: 0
+2026-04-27 11:45:16 [158487] [2] DEBUG:    data: b0 8d 96 c3 93                                    .....
+2026-04-27 11:45:16 [158487] [2] DEBUG:  Octet string dump ends.
+2026-04-27 11:45:16 [158487] [2] DEBUG:  Push data:
+2026-04-27 11:45:16 [158487] [2] DEBUG:  Octet string at 0x7d68440014d0:
+2026-04-27 11:45:16 [158487] [2] DEBUG:    len:  22
+2026-04-27 11:45:16 [158487] [2] DEBUG:    size: 23
+2026-04-27 11:45:16 [158487] [2] DEBUG:    immutable: 0
+2026-04-27 11:45:16 [158487] [2] DEBUG:    data: 02 06 6a 00 85 09 03 77 61 70 2e 69 6f 62 6f 78   ..j....wap.iobox
+2026-04-27 11:45:16 [158487] [2] DEBUG:    data: 2e 66 69 00 06 01                                 .fi...
+2026-04-27 11:45:16 [158487] [2] DEBUG:  Octet string dump ends.
+2026-04-27 11:45:16 [158487] [2] DEBUG: WSP PDU dump ends.
+2026-04-27 11:45:16 [158487] [2] DEBUG: WSP (UNIT): delivering to wdp
+2026-04-27 11:45:16 [158487] [10] DEBUG: HTTP: Destroying HTTPClient area 0x7d685c000d80.
+2026-04-27 11:45:16 [158487] [10] DEBUG: HTTP: Destroying HTTPClient for `127.0.0.1'.
+2026-04-27 11:45:17 [158487] [0] ERROR: SIGINT or SIGTERM received, let's die.
+2026-04-27 11:45:17 [158487] [0] ERROR: Bearerbox is gone, restarting
+2026-04-27 11:45:17 [158487] [0] INFO: Kannel wapbox terminating.
+2026-04-27 11:45:17 [158487] [15] DEBUG: Thread 15 (gw/heartbeat.c:heartbeat_thread) terminates.
+2026-04-27 11:45:17 [158487] [0] DEBUG: Waiting for 5 (wap/wtp_init.c:main_thread) to terminate
+2026-04-27 11:45:17 [158487] [5] DEBUG: Thread 5 (wap/wtp_init.c:main_thread) terminates.
+2026-04-27 11:45:17 [158487] [0] DEBUG: wtp_initiator_shutdown: 0 init_machines left
+2026-04-27 11:45:17 [158487] [0] DEBUG: Waiting for 6 (wap/wtp_resp.c:main_thread) to terminate
+2026-04-27 11:45:17 [158487] [6] DEBUG: Thread 6 (wap/wtp_resp.c:main_thread) terminates.
+2026-04-27 11:45:17 [158487] [0] DEBUG: wtp_resp_shutdown: 0 resp_machines left
+2026-04-27 11:45:17 [158487] [0] DEBUG: 0 items left in the tid cache
+2026-04-27 11:45:17 [158487] [4] DEBUG: Thread 4 (wap/timers.c:watch_timers) terminates.
+2026-04-27 11:45:17 [158487] [0] DEBUG: Waiting for 3 (wap/wsp_push_client.c:main_thread) to terminate
+2026-04-27 11:45:17 [158487] [3] DEBUG: Thread 3 (wap/wsp_push_client.c:main_thread) terminates.
+2026-04-27 11:45:17 [158487] [0] DEBUG: wsp_push_client_shutdown: 0 push client machinesleft
+2026-04-27 11:45:17 [158487] [0] DEBUG: Waiting for 2 (wap/wsp_unit.c:main_thread) to terminate
+2026-04-27 11:45:17 [158487] [2] DEBUG: Thread 2 (wap/wsp_unit.c:main_thread) terminates.
+2026-04-27 11:45:17 [158487] [0] DEBUG: Waiting for 1 (wap/wsp_session.c:main_thread) to terminate
+2026-04-27 11:45:17 [158487] [1] DEBUG: Thread 1 (wap/wsp_session.c:main_thread) terminates.
+2026-04-27 11:45:17 [158487] [0] DEBUG: WSP: 0 session machines left.
+2026-04-27 11:45:17 [158487] [0] DEBUG: Waiting for 7 (gw/wap-appl.c:main_thread) to terminate
+2026-04-27 11:45:17 [158487] [7] DEBUG: Thread 7 (gw/wap-appl.c:main_thread) terminates.
+2026-04-27 11:45:17 [158487] [0] DEBUG: Waiting for 8 (gw/wap-appl.c:return_replies_thread) to terminate
+2026-04-27 11:45:17 [158487] [8] DEBUG: Thread 8 (gw/wap-appl.c:return_replies_thread) terminates.
+2026-04-27 11:45:17 [158487] [0] DEBUG: Waiting for 9 (gw/wap_push_ota.c:main_thread) to terminate
+2026-04-27 11:45:17 [158487] [9] DEBUG: Thread 9 (gw/wap_push_ota.c:main_thread) terminates.
+2026-04-27 11:45:17 [158487] [0] DEBUG: Waiting for 11 (gwlib/http.c:server_thread) to terminate
+2026-04-27 11:45:17 [158487] [12] DEBUG: Thread 12 (gw/wap_push_ppg.c:ota_read_thread) terminates.
+2026-04-27 11:45:17 [158487] [14] DEBUG: Thread 14 (gw/wap_push_ppg.c:pap_request_thread) terminates.
+2026-04-27 11:45:17 [158487] [13] DEBUG: HTTP: No clients with requests, quitting.
+2026-04-27 11:45:17 [158487] [13] DEBUG: Thread 13 (gw/wap_push_ppg.c:http_read_thread) terminates.
+2026-04-27 11:45:17 [158487] [10] DEBUG: Thread 10 (gwlib/fdset.c:poller) terminates.
+2026-04-27 11:45:17 [158487] [11] DEBUG: Thread 11 (gwlib/http.c:server_thread) terminates.
+2026-04-27 11:45:17 [158487] [0] DEBUG: PPG: 0 push session machines left.
+2026-04-27 11:45:17 [158487] [0] DEBUG: PPG: 0 unit pushes left
+2026-04-27 11:45:28 [158846] [0] INFO: Debug_lvl = 0, log_file = <none>, log_lvl = 0
+2026-04-27 11:45:28 [158846] [0] DEBUG: Kannel wapbox version `1.4.5'.
+Compiler `13.3.0'.
+System Linux, release 6.17.0-22-generic, version #22~24.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Mar 26 15:25:54 UTC 2, machine x86_64.
+Hostname medali, IP 192.168.1.79.
+Libxml version 2.9.14.
+Using OpenSSL 3.0.13 30 Jan 2024.
+Compiled with MySQL 8.0.45, using MySQL 8.0.45.
+Compiled with PostgreSQL 18.3 (Ubuntu 18.3-1.pgdg24.04+1).
+Using SQLite 3.45.1.
+Using hiredis API 1.2.0
+Using native malloc.
+
+2026-04-27 11:45:28 [158846] [0] DEBUG: Dumping Cfg 0x5981ed18e160
+2026-04-27 11:45:28 [158846] [0] DEBUG:   filename = <gw/pushkannel.conf>
+2026-04-27 11:45:28 [158846] [0] DEBUG:   dumping group (wapbox):
+2026-04-27 11:45:28 [158846] [0] DEBUG:     <syslog-level> = <none>
+2026-04-27 11:45:28 [158846] [0] DEBUG:     <group> = <wapbox>
+2026-04-27 11:45:28 [158846] [0] DEBUG:     <bearerbox-host> = <127.0.0.1>
+2026-04-27 11:45:28 [158846] [0] DEBUG:   dumping group (ppg):
+2026-04-27 11:45:28 [158846] [0] DEBUG:     <group> = <ppg>
+2026-04-27 11:45:28 [158846] [0] DEBUG:     <ppg-port> = <18080>
+2026-04-27 11:45:28 [158846] [0] DEBUG:     <trusted-pi> = <false>
+2026-04-27 11:45:28 [158846] [0] DEBUG:     <ppg-url> = </cgi-bin/wap-push.cgi>
+2026-04-27 11:45:28 [158846] [0] DEBUG:     <concurrent-pushes> = <100>
+2026-04-27 11:45:28 [158846] [0] DEBUG:     <ppg-allow-ip> = <*.*.*.*>
+2026-04-27 11:45:28 [158846] [0] DEBUG:     <users> = <1024>
+2026-04-27 11:45:28 [158846] [0] DEBUG:   dumping group (smsbox):
+2026-04-27 11:45:28 [158846] [0] DEBUG:     <group> = <smsbox>
+2026-04-27 11:45:28 [158846] [0] DEBUG:     <bearerbox-host> = <127.0.0.1>
+2026-04-27 11:45:28 [158846] [0] DEBUG:   dumping group (core):
+2026-04-27 11:45:28 [158846] [0] DEBUG:     <group> = <core>
+2026-04-27 11:45:28 [158846] [0] DEBUG:     <admin-port> = <13000>
+2026-04-27 11:45:28 [158846] [0] DEBUG:     <box-allow-ip> = <127.0.0.1>
+2026-04-27 11:45:28 [158846] [0] DEBUG:     <smsbox-port> = <13001>
+2026-04-27 11:45:28 [158846] [0] DEBUG:     <wapbox-port> = <13002>
+2026-04-27 11:45:28 [158846] [0] DEBUG:     <box-deny-ip> = <*.*.*.*>
+2026-04-27 11:45:28 [158846] [0] DEBUG:     <admin-password> = <bar>
+2026-04-27 11:45:28 [158846] [0] DEBUG:   dumping group (smsc):
+2026-04-27 11:45:28 [158846] [0] DEBUG:     <group> = <smsc>
+2026-04-27 11:45:28 [158846] [0] DEBUG:     <smsc> = <fake>
+2026-04-27 11:45:28 [158846] [0] DEBUG:     <smsc-id> = <FAKE>
+2026-04-27 11:45:28 [158846] [0] DEBUG:     <connect-allow-ip> = <127.0.0.1>
+2026-04-27 11:45:28 [158846] [0] DEBUG:     <port> = <10010>
+2026-04-27 11:45:28 [158846] [0] DEBUG:   dumping group (wap-push-user):
+2026-04-27 11:45:28 [158846] [0] DEBUG:     <group> = <wap-push-user>
+2026-04-27 11:45:28 [158846] [0] DEBUG:     <ppg-password> = <bar>
+2026-04-27 11:45:28 [158846] [0] DEBUG:     <wap-push-user> = <foo>
+2026-04-27 11:45:28 [158846] [0] DEBUG:     <ppg-username> = <foo>
+2026-04-27 11:45:28 [158846] [0] DEBUG: Dump ends.
+2026-04-27 11:45:28 [158846] [0] DEBUG: map_url_max = -1
+2026-04-27 11:45:28 [158846] [0] DEBUG: syslog parameter is none
+2026-04-27 11:45:28 [158846] [0] INFO: ------------------------------------------------------------
+2026-04-27 11:45:28 [158846] [0] INFO: Kannel wapbox version 1.4.5 starting up.
+2026-04-27 11:45:28 [158846] [0] DEBUG: Started thread 1 (wap/wsp_session.c:main_thread)
+2026-04-27 11:45:28 [158846] [0] DEBUG: Started thread 2 (wap/wsp_unit.c:main_thread)
+2026-04-27 11:45:28 [158846] [2] DEBUG: Thread 2 (wap/wsp_unit.c:main_thread) maps to pid 158846.
+2026-04-27 11:45:28 [158846] [0] DEBUG: Started thread 3 (wap/wsp_push_client.c:main_thread)
+2026-04-27 11:45:28 [158846] [4] DEBUG: Thread 4 (wap/timers.c:watch_timers) maps to pid 158846.
+2026-04-27 11:45:28 [158846] [3] DEBUG: Thread 3 (wap/wsp_push_client.c:main_thread) maps to pid 158846.
+2026-04-27 11:45:28 [158846] [0] DEBUG: Started thread 4 (wap/timers.c:watch_timers)
+2026-04-27 11:45:28 [158846] [0] DEBUG: Started thread 5 (wap/wtp_init.c:main_thread)
+2026-04-27 11:45:28 [158846] [0] DEBUG: Started thread 6 (wap/wtp_resp.c:main_thread)
+2026-04-27 11:45:28 [158846] [6] DEBUG: Thread 6 (wap/wtp_resp.c:main_thread) maps to pid 158846.
+2026-04-27 11:45:28 [158846] [0] DEBUG: Started thread 7 (gw/wap-appl.c:main_thread)
+2026-04-27 11:45:28 [158846] [0] DEBUG: Started thread 8 (gw/wap-appl.c:return_replies_thread)
+2026-04-27 11:45:28 [158846] [0] DEBUG: Started thread 9 (gw/wap_push_ota.c:main_thread)
+2026-04-27 11:45:28 [158846] [9] DEBUG: Thread 9 (gw/wap_push_ota.c:main_thread) maps to pid 158846.
+2026-04-27 11:45:28 [158846] [1] DEBUG: Thread 1 (wap/wsp_session.c:main_thread) maps to pid 158846.
+2026-04-27 11:45:28 [158846] [0] INFO: HTTP: Opening server at port 18080.
+2026-04-27 11:45:28 [158846] [8] DEBUG: Thread 8 (gw/wap-appl.c:return_replies_thread) maps to pid 158846.
+2026-04-27 11:45:28 [158846] [7] DEBUG: Thread 7 (gw/wap-appl.c:main_thread) maps to pid 158846.
+2026-04-27 11:45:28 [158846] [0] DEBUG: Started thread 10 (gwlib/fdset.c:poller)
+2026-04-27 11:45:28 [158846] [5] DEBUG: Thread 5 (wap/wtp_init.c:main_thread) maps to pid 158846.
+2026-04-27 11:45:28 [158846] [0] DEBUG: Started thread 11 (gwlib/http.c:server_thread)
+2026-04-27 11:45:28 [158846] [11] DEBUG: Thread 11 (gwlib/http.c:server_thread) maps to pid 158846.
+2026-04-27 11:45:28 [158846] [11] DEBUG: HTTP: Including port 18080, fd 29 for polling in server thread
+2026-04-27 11:45:28 [158846] [0] DEBUG: Started thread 12 (gw/wap_push_ppg.c:ota_read_thread)
+2026-04-27 11:45:28 [158846] [12] DEBUG: Thread 12 (gw/wap_push_ppg.c:ota_read_thread) maps to pid 158846.
+2026-04-27 11:45:28 [158846] [0] DEBUG: Started thread 13 (gw/wap_push_ppg.c:http_read_thread)
+2026-04-27 11:45:28 [158846] [0] DEBUG: Started thread 14 (gw/wap_push_ppg.c:pap_request_thread)
+2026-04-27 11:45:28 [158846] [14] DEBUG: Thread 14 (gw/wap_push_ppg.c:pap_request_thread) maps to pid 158846.
+2026-04-27 11:45:28 [158846] [13] DEBUG: Thread 13 (gw/wap_push_ppg.c:http_read_thread) maps to pid 158846.
+2026-04-27 11:45:28 [158846] [0] DEBUG: Connecting to <127.0.0.1>
+2026-04-27 11:45:28 [158846] [10] DEBUG: Thread 10 (gwlib/fdset.c:poller) maps to pid 158846.
+2026-04-27 11:45:28 [158846] [0] INFO: Connected to bearerbox at 127.0.0.1 port 13002.
+2026-04-27 11:45:28 [158846] [0] DEBUG: Started thread 15 (gw/heartbeat.c:heartbeat_thread)
+2026-04-27 11:45:28 [158846] [15] DEBUG: Thread 15 (gw/heartbeat.c:heartbeat_thread) maps to pid 158846.
+2026-04-27 16:23:18 [158846] [0] ERROR: Connection closed by the bearerbox.
+2026-04-27 16:23:18 [158846] [0] ERROR: Bearerbox is gone, restarting
+2026-04-27 16:23:18 [158846] [0] INFO: Kannel wapbox terminating.
+2026-04-27 16:23:18 [158846] [15] DEBUG: Thread 15 (gw/heartbeat.c:heartbeat_thread) terminates.
+2026-04-27 16:23:18 [158846] [0] DEBUG: Waiting for 5 (wap/wtp_init.c:main_thread) to terminate
+2026-04-27 16:23:18 [158846] [5] DEBUG: Thread 5 (wap/wtp_init.c:main_thread) terminates.
+2026-04-27 16:23:18 [158846] [0] DEBUG: wtp_initiator_shutdown: 0 init_machines left
+2026-04-27 16:23:18 [158846] [0] DEBUG: Waiting for 6 (wap/wtp_resp.c:main_thread) to terminate
+2026-04-27 16:23:18 [158846] [6] DEBUG: Thread 6 (wap/wtp_resp.c:main_thread) terminates.
+2026-04-27 16:23:18 [158846] [0] DEBUG: wtp_resp_shutdown: 0 resp_machines left
+2026-04-27 16:23:18 [158846] [0] DEBUG: 0 items left in the tid cache
+2026-04-27 16:23:18 [158846] [4] DEBUG: Thread 4 (wap/timers.c:watch_timers) terminates.
+2026-04-27 16:23:18 [158846] [0] DEBUG: Waiting for 3 (wap/wsp_push_client.c:main_thread) to terminate
+2026-04-27 16:23:18 [158846] [3] DEBUG: Thread 3 (wap/wsp_push_client.c:main_thread) terminates.
+2026-04-27 16:23:18 [158846] [0] DEBUG: wsp_push_client_shutdown: 0 push client machinesleft
+2026-04-27 16:23:18 [158846] [0] DEBUG: Waiting for 2 (wap/wsp_unit.c:main_thread) to terminate
+2026-04-27 16:23:18 [158846] [2] DEBUG: Thread 2 (wap/wsp_unit.c:main_thread) terminates.
+2026-04-27 16:23:18 [158846] [0] DEBUG: Waiting for 1 (wap/wsp_session.c:main_thread) to terminate
+2026-04-27 16:23:18 [158846] [1] DEBUG: Thread 1 (wap/wsp_session.c:main_thread) terminates.
+2026-04-27 16:23:18 [158846] [0] DEBUG: WSP: 0 session machines left.
+2026-04-27 16:23:18 [158846] [0] DEBUG: Waiting for 7 (gw/wap-appl.c:main_thread) to terminate
+2026-04-27 16:23:18 [158846] [7] DEBUG: Thread 7 (gw/wap-appl.c:main_thread) terminates.
+2026-04-27 16:23:18 [158846] [0] DEBUG: Waiting for 8 (gw/wap-appl.c:return_replies_thread) to terminate
+2026-04-27 16:23:18 [158846] [8] DEBUG: Thread 8 (gw/wap-appl.c:return_replies_thread) terminates.
+2026-04-27 16:23:18 [158846] [0] DEBUG: Waiting for 9 (gw/wap_push_ota.c:main_thread) to terminate
+2026-04-27 16:23:18 [158846] [9] DEBUG: Thread 9 (gw/wap_push_ota.c:main_thread) terminates.
+2026-04-27 16:23:18 [158846] [0] DEBUG: Waiting for 11 (gwlib/http.c:server_thread) to terminate
+2026-04-27 16:23:18 [158846] [14] DEBUG: Thread 14 (gw/wap_push_ppg.c:pap_request_thread) terminates.
+2026-04-27 16:23:18 [158846] [13] DEBUG: HTTP: No clients with requests, quitting.
+2026-04-27 16:23:18 [158846] [12] DEBUG: Thread 12 (gw/wap_push_ppg.c:ota_read_thread) terminates.
+2026-04-27 16:23:18 [158846] [13] DEBUG: Thread 13 (gw/wap_push_ppg.c:http_read_thread) terminates.
+2026-04-27 16:23:18 [158846] [10] DEBUG: Thread 10 (gwlib/fdset.c:poller) terminates.
+2026-04-27 16:23:18 [158846] [11] DEBUG: Thread 11 (gwlib/http.c:server_thread) terminates.
+2026-04-27 16:23:18 [158846] [0] DEBUG: PPG: 0 push session machines left.
+2026-04-27 16:23:18 [158846] [0] DEBUG: PPG: 0 unit pushes left
+2026-04-27 16:23:29 [265516] [0] INFO: Debug_lvl = 0, log_file = <none>, log_lvl = 0
+2026-04-27 16:23:29 [265516] [0] DEBUG: Kannel wapbox version `1.4.5'.
+Compiler `13.3.0'.
+System Linux, release 6.17.0-22-generic, version #22~24.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Mar 26 15:25:54 UTC 2, machine x86_64.
+Hostname medali, IP 192.168.1.79.
+Libxml version 2.9.14.
+Using OpenSSL 3.0.13 30 Jan 2024.
+Compiled with MySQL 8.0.45, using MySQL 8.0.45.
+Compiled with PostgreSQL 18.3 (Ubuntu 18.3-1.pgdg24.04+1).
+Using SQLite 3.45.1.
+Using hiredis API 1.2.0
+Using native malloc.
+
+2026-04-27 16:23:29 [265516] [0] DEBUG: Dumping Cfg 0x618a878bf160
+2026-04-27 16:23:29 [265516] [0] DEBUG:   filename = <gw/pushkannel.conf>
+2026-04-27 16:23:29 [265516] [0] DEBUG:   dumping group (wapbox):
+2026-04-27 16:23:29 [265516] [0] DEBUG:     <syslog-level> = <none>
+2026-04-27 16:23:29 [265516] [0] DEBUG:     <group> = <wapbox>
+2026-04-27 16:23:29 [265516] [0] DEBUG:     <bearerbox-host> = <127.0.0.1>
+2026-04-27 16:23:29 [265516] [0] DEBUG:   dumping group (ppg):
+2026-04-27 16:23:29 [265516] [0] DEBUG:     <group> = <ppg>
+2026-04-27 16:23:29 [265516] [0] DEBUG:     <ppg-port> = <18080>
+2026-04-27 16:23:29 [265516] [0] DEBUG:     <trusted-pi> = <false>
+2026-04-27 16:23:29 [265516] [0] DEBUG:     <ppg-url> = </cgi-bin/wap-push.cgi>
+2026-04-27 16:23:29 [265516] [0] DEBUG:     <concurrent-pushes> = <100>
+2026-04-27 16:23:29 [265516] [0] DEBUG:     <ppg-allow-ip> = <*.*.*.*>
+2026-04-27 16:23:29 [265516] [0] DEBUG:     <users> = <1024>
+2026-04-27 16:23:29 [265516] [0] DEBUG:   dumping group (smsbox):
+2026-04-27 16:23:29 [265516] [0] DEBUG:     <group> = <smsbox>
+2026-04-27 16:23:29 [265516] [0] DEBUG:     <bearerbox-host> = <127.0.0.1>
+2026-04-27 16:23:29 [265516] [0] DEBUG:   dumping group (core):
+2026-04-27 16:23:29 [265516] [0] DEBUG:     <group> = <core>
+2026-04-27 16:23:29 [265516] [0] DEBUG:     <admin-port> = <13000>
+2026-04-27 16:23:29 [265516] [0] DEBUG:     <box-allow-ip> = <127.0.0.1>
+2026-04-27 16:23:29 [265516] [0] DEBUG:     <smsbox-port> = <13001>
+2026-04-27 16:23:29 [265516] [0] DEBUG:     <wapbox-port> = <13002>
+2026-04-27 16:23:29 [265516] [0] DEBUG:     <box-deny-ip> = <*.*.*.*>
+2026-04-27 16:23:29 [265516] [0] DEBUG:     <admin-password> = <bar>
+2026-04-27 16:23:29 [265516] [0] DEBUG:   dumping group (smsc):
+2026-04-27 16:23:29 [265516] [0] DEBUG:     <group> = <smsc>
+2026-04-27 16:23:29 [265516] [0] DEBUG:     <smsc> = <fake>
+2026-04-27 16:23:29 [265516] [0] DEBUG:     <smsc-id> = <FAKE>
+2026-04-27 16:23:29 [265516] [0] DEBUG:     <connect-allow-ip> = <127.0.0.1>
+2026-04-27 16:23:29 [265516] [0] DEBUG:     <port> = <10010>
+2026-04-27 16:23:29 [265516] [0] DEBUG:   dumping group (wap-push-user):
+2026-04-27 16:23:29 [265516] [0] DEBUG:     <group> = <wap-push-user>
+2026-04-27 16:23:29 [265516] [0] DEBUG:     <ppg-password> = <bar>
+2026-04-27 16:23:29 [265516] [0] DEBUG:     <wap-push-user> = <foo>
+2026-04-27 16:23:29 [265516] [0] DEBUG:     <ppg-username> = <foo>
+2026-04-27 16:23:29 [265516] [0] DEBUG: Dump ends.
+2026-04-27 16:23:29 [265516] [0] DEBUG: map_url_max = -1
+2026-04-27 16:23:29 [265516] [0] DEBUG: syslog parameter is none
+2026-04-27 16:23:29 [265516] [0] INFO: ------------------------------------------------------------
+2026-04-27 16:23:29 [265516] [0] INFO: Kannel wapbox version 1.4.5 starting up.
+2026-04-27 16:23:29 [265516] [0] DEBUG: Started thread 1 (wap/wsp_session.c:main_thread)
+2026-04-27 16:23:29 [265516] [1] DEBUG: Thread 1 (wap/wsp_session.c:main_thread) maps to pid 265516.
+2026-04-27 16:23:29 [265516] [0] DEBUG: Started thread 2 (wap/wsp_unit.c:main_thread)
+2026-04-27 16:23:29 [265516] [0] DEBUG: Started thread 3 (wap/wsp_push_client.c:main_thread)
+2026-04-27 16:23:29 [265516] [3] DEBUG: Thread 3 (wap/wsp_push_client.c:main_thread) maps to pid 265516.
+2026-04-27 16:23:29 [265516] [2] DEBUG: Thread 2 (wap/wsp_unit.c:main_thread) maps to pid 265516.
+2026-04-27 16:23:29 [265516] [0] DEBUG: Started thread 4 (wap/timers.c:watch_timers)
+2026-04-27 16:23:29 [265516] [0] DEBUG: Started thread 5 (wap/wtp_init.c:main_thread)
+2026-04-27 16:23:29 [265516] [5] DEBUG: Thread 5 (wap/wtp_init.c:main_thread) maps to pid 265516.
+2026-04-27 16:23:29 [265516] [0] DEBUG: Started thread 6 (wap/wtp_resp.c:main_thread)
+2026-04-27 16:23:29 [265516] [6] DEBUG: Thread 6 (wap/wtp_resp.c:main_thread) maps to pid 265516.
+2026-04-27 16:23:29 [265516] [4] DEBUG: Thread 4 (wap/timers.c:watch_timers) maps to pid 265516.
+2026-04-27 16:23:29 [265516] [0] DEBUG: Started thread 7 (gw/wap-appl.c:main_thread)
+2026-04-27 16:23:29 [265516] [7] DEBUG: Thread 7 (gw/wap-appl.c:main_thread) maps to pid 265516.
+2026-04-27 16:23:29 [265516] [0] DEBUG: Started thread 8 (gw/wap-appl.c:return_replies_thread)
+2026-04-27 16:23:29 [265516] [8] DEBUG: Thread 8 (gw/wap-appl.c:return_replies_thread) maps to pid 265516.
+2026-04-27 16:23:29 [265516] [0] DEBUG: Started thread 9 (gw/wap_push_ota.c:main_thread)
+2026-04-27 16:23:29 [265516] [9] DEBUG: Thread 9 (gw/wap_push_ota.c:main_thread) maps to pid 265516.
+2026-04-27 16:23:29 [265516] [0] INFO: HTTP: Opening server at port 18080.
+2026-04-27 16:23:29 [265516] [0] DEBUG: Started thread 10 (gwlib/fdset.c:poller)
+2026-04-27 16:23:29 [265516] [10] DEBUG: Thread 10 (gwlib/fdset.c:poller) maps to pid 265516.
+2026-04-27 16:23:29 [265516] [0] DEBUG: Started thread 11 (gwlib/http.c:server_thread)
+2026-04-27 16:23:29 [265516] [11] DEBUG: Thread 11 (gwlib/http.c:server_thread) maps to pid 265516.
+2026-04-27 16:23:29 [265516] [11] DEBUG: HTTP: Including port 18080, fd 32 for polling in server thread
+2026-04-27 16:23:29 [265516] [0] DEBUG: Started thread 12 (gw/wap_push_ppg.c:ota_read_thread)
+2026-04-27 16:23:29 [265516] [12] DEBUG: Thread 12 (gw/wap_push_ppg.c:ota_read_thread) maps to pid 265516.
+2026-04-27 16:23:29 [265516] [0] DEBUG: Started thread 13 (gw/wap_push_ppg.c:http_read_thread)
+2026-04-27 16:23:29 [265516] [13] DEBUG: Thread 13 (gw/wap_push_ppg.c:http_read_thread) maps to pid 265516.
+2026-04-27 16:23:29 [265516] [0] DEBUG: Started thread 14 (gw/wap_push_ppg.c:pap_request_thread)
+2026-04-27 16:23:29 [265516] [14] DEBUG: Thread 14 (gw/wap_push_ppg.c:pap_request_thread) maps to pid 265516.
+2026-04-27 16:23:29 [265516] [0] DEBUG: Connecting to <127.0.0.1>
+2026-04-27 16:23:29 [265516] [0] INFO: Connected to bearerbox at 127.0.0.1 port 13002.
+2026-04-27 16:23:29 [265516] [0] DEBUG: Started thread 15 (gw/heartbeat.c:heartbeat_thread)
+2026-04-27 16:23:29 [265516] [15] DEBUG: Thread 15 (gw/heartbeat.c:heartbeat_thread) maps to pid 265516.
+2026-04-27 16:24:48 [265516] [0] INFO: Bearerbox told us to die
+2026-04-27 16:24:48 [265516] [0] INFO: Kannel wapbox terminating.
+2026-04-27 16:24:48 [265516] [15] DEBUG: Thread 15 (gw/heartbeat.c:heartbeat_thread) terminates.
+2026-04-27 16:24:48 [265516] [0] DEBUG: Waiting for 5 (wap/wtp_init.c:main_thread) to terminate
+2026-04-27 16:24:48 [265516] [5] DEBUG: Thread 5 (wap/wtp_init.c:main_thread) terminates.
+2026-04-27 16:24:48 [265516] [0] DEBUG: wtp_initiator_shutdown: 0 init_machines left
+2026-04-27 16:24:48 [265516] [0] DEBUG: Waiting for 6 (wap/wtp_resp.c:main_thread) to terminate
+2026-04-27 16:24:48 [265516] [6] DEBUG: Thread 6 (wap/wtp_resp.c:main_thread) terminates.
+2026-04-27 16:24:48 [265516] [0] DEBUG: wtp_resp_shutdown: 0 resp_machines left
+2026-04-27 16:24:48 [265516] [0] DEBUG: 0 items left in the tid cache
+2026-04-27 16:24:48 [265516] [4] DEBUG: Thread 4 (wap/timers.c:watch_timers) terminates.
+2026-04-27 16:24:48 [265516] [0] DEBUG: Waiting for 3 (wap/wsp_push_client.c:main_thread) to terminate
+2026-04-27 16:24:48 [265516] [3] DEBUG: Thread 3 (wap/wsp_push_client.c:main_thread) terminates.
+2026-04-27 16:24:48 [265516] [0] DEBUG: wsp_push_client_shutdown: 0 push client machinesleft
+2026-04-27 16:24:48 [265516] [0] DEBUG: Waiting for 2 (wap/wsp_unit.c:main_thread) to terminate
+2026-04-27 16:24:48 [265516] [2] DEBUG: Thread 2 (wap/wsp_unit.c:main_thread) terminates.
+2026-04-27 16:24:48 [265516] [0] DEBUG: Waiting for 1 (wap/wsp_session.c:main_thread) to terminate
+2026-04-27 16:24:48 [265516] [1] DEBUG: Thread 1 (wap/wsp_session.c:main_thread) terminates.
+2026-04-27 16:24:48 [265516] [0] DEBUG: WSP: 0 session machines left.
+2026-04-27 16:24:48 [265516] [0] DEBUG: Waiting for 7 (gw/wap-appl.c:main_thread) to terminate
+2026-04-27 16:24:48 [265516] [7] DEBUG: Thread 7 (gw/wap-appl.c:main_thread) terminates.
+2026-04-27 16:24:48 [265516] [0] DEBUG: Waiting for 8 (gw/wap-appl.c:return_replies_thread) to terminate
+2026-04-27 16:24:48 [265516] [8] DEBUG: Thread 8 (gw/wap-appl.c:return_replies_thread) terminates.
+2026-04-27 16:24:48 [265516] [0] DEBUG: Waiting for 9 (gw/wap_push_ota.c:main_thread) to terminate
+2026-04-27 16:24:48 [265516] [9] DEBUG: Thread 9 (gw/wap_push_ota.c:main_thread) terminates.
+2026-04-27 16:24:48 [265516] [0] DEBUG: Waiting for 11 (gwlib/http.c:server_thread) to terminate
+2026-04-27 16:24:48 [265516] [12] DEBUG: Thread 12 (gw/wap_push_ppg.c:ota_read_thread) terminates.
+2026-04-27 16:24:48 [265516] [14] DEBUG: Thread 14 (gw/wap_push_ppg.c:pap_request_thread) terminates.
+2026-04-27 16:24:48 [265516] [13] DEBUG: HTTP: No clients with requests, quitting.
+2026-04-27 16:24:48 [265516] [13] DEBUG: Thread 13 (gw/wap_push_ppg.c:http_read_thread) terminates.
+2026-04-27 16:24:48 [265516] [10] DEBUG: Thread 10 (gwlib/fdset.c:poller) terminates.
+2026-04-27 16:24:48 [265516] [11] DEBUG: Thread 11 (gwlib/http.c:server_thread) terminates.
+2026-04-27 16:24:48 [265516] [0] DEBUG: PPG: 0 push session machines left.
+2026-04-27 16:24:48 [265516] [0] DEBUG: PPG: 0 unit pushes left

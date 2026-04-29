@@ -1,0 +1,19 @@
+[Unit]
+Description=Kannel SMS gateway (smsbox)
+Documentation=man:kannel(8) man:smsbox(8)
+After=network-online.target
+After=nss-lookup.target
+Wants=network-online.target
+Wants=nss-lookup.target
+
+[Service]
+Type=simple
+User=kannel
+Group=adm
+UMask=0027
+RuntimeDirectory=kannel-smsbox
+PIDFile=/run/kannel-smsbox/kannel-smsbox.pid
+ExecStart=/usr/sbin/smsbox --pid-file /run/kannel-smsbox/kannel-smsbox.pid -v 4 /etc/kannel/kannel.conf
+
+[Install]
+WantedBy=multi-user.target

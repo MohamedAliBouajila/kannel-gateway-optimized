@@ -1,0 +1,28 @@
+From: Kalle Niemitalo <kalle.niemitalo@procomp.fi>
+Date: Fri, 27 Sep 2024 23:19:10 +0200
+Subject: Use sqlite3_libversion() instead of sqlite3_version[].
+
+Using sqlite3_version causes a "has different size in shared object"
+warning at run time if the length of the version number has changed
+in the sqlite3 shared library.  It is not clear whether anything
+worse will happen in addition to the warning, but we can avoid the
+problem altogether by calling sqlite_libversion() instead.
+
+Bug-Debian: https://bugs.debian.org/717728
+---
+ gwlib/dbpool_sqlite3.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/gwlib/dbpool_sqlite3.c b/gwlib/dbpool_sqlite3.c
+index 52e6b2b..0783370 100644
+--- a/gwlib/dbpool_sqlite3.c
++++ b/gwlib/dbpool_sqlite3.c
+@@ -86,7 +86,7 @@ static void *sqlite3_open_conn(const DBConf *db_conf)
+     }
+ 
+     info(0, "SQLite3: Opened or created database file `%s'.", octstr_get_cstr(conf->file));
+-    info(0, "SQLite3: library version %s.", sqlite3_version);
++    info(0, "SQLite3: library version %s.", sqlite3_libversion());
+ 
+     return db;
+ 

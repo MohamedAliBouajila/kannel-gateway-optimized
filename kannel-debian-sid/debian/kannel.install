@@ -1,0 +1,9 @@
+debian/kannel.conf /etc/kannel/
+debian/kannel-bearerbox-waiter /usr/libexec/kannel/
+usr/bin/decode_emimsg
+usr/bin/mtbatch
+usr/bin/seewbmp
+usr/bin/wmlsc
+usr/bin/wmlsdasm
+usr/sbin
+usr/share/man

@@ -1,0 +1,27 @@
+2026-04-28 15:52:44 [373201] [0] INFO: Debug_lvl = 0, log_file = <none>, log_lvl = 0
+2026-04-28 15:52:44 [373201] [0] DEBUG: Kannel smsbox version `1.4.5'.
+Compiler `13.3.0'.
+System Linux, release 6.17.0-22-generic, version #22~24.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Mar 26 15:25:54 UTC 2, machine x86_64.
+Hostname medali, IP 192.168.1.79.
+Libxml version 2.9.14.
+Using OpenSSL 3.0.13 30 Jan 2024.
+Compiled with MySQL 8.0.45, using MySQL 8.0.45.
+Compiled with PostgreSQL 18.3 (Ubuntu 18.3-1.pgdg24.04+1).
+Using SQLite 3.45.1.
+Using hiredis API 1.2.0
+Using native malloc.
+
+2026-04-28 15:52:44 [373201] [0] INFO: Service global sender set as '13013'
+2026-04-28 15:52:44 [373201] [0] INFO: HTTP: Opening server at port 13013.
+2026-04-28 15:52:44 [373201] [0] DEBUG: Started thread 1 (gwlib/fdset.c:poller)
+2026-04-28 15:52:44 [373201] [1] DEBUG: Thread 1 (gwlib/fdset.c:poller) maps to pid 373201.
+2026-04-28 15:52:44 [373201] [0] ERROR: bind failed
+2026-04-28 15:52:44 [373201] [0] ERROR: System error 98: Address already in use
+2026-04-28 15:52:44 [373201] [1] DEBUG: Thread 1 (gwlib/fdset.c:poller) terminates.
+2026-04-28 15:52:44 [373201] [0] PANIC: Failed to open HTTP socket
+2026-04-28 15:52:44 [373201] [0] PANIC: gw/smsbox(gw_backtrace+0xe4) [0x61bfbc09fc84]
+2026-04-28 15:52:44 [373201] [0] PANIC: gw/smsbox(gw_panic+0x16d) [0x61bfbc09fe0d]
+2026-04-28 15:52:44 [373201] [0] PANIC: gw/smsbox(main+0x1576) [0x61bfbc0612e6]
+2026-04-28 15:52:44 [373201] [0] PANIC: /lib/x86_64-linux-gnu/libc.so.6(+0x2a1ca) [0x7730f8e2a1ca]
+2026-04-28 15:52:44 [373201] [0] PANIC: /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x8b) [0x7730f8e2a28b]
+2026-04-28 15:52:44 [373201] [0] PANIC: gw/smsbox(_start+0x25) [0x61bfbc0614f5]

@@ -1,0 +1,644 @@
+kannel (1.4.5-22) unstable; urgency=medium
+
+  * Update debian/.gitignore file.
+  * Rework init system support:
+    - Add new kannel-bearerbox-waiter script to wait until bearerbox is
+      ready to give service, based on its HTTP status interface.
+    - Stop using run_kannel_box program in init scripts, and use
+      start-stop-daemon directly and kannel-bearerbox-waiter to wait for
+      bearerbox readiness.
+    - Split init scripts into one per daemon.
+    - Preserve the previous service disabled states from the default file.
+    - Remove default file used for the disabling variable anti-pattern.
+      Closes: #590544
+    - Add systemd units per daemon.
+      Closes: #1039247
+  * Bump Standards-Version to 4.7.2.
+  * Move Source field next to the Format field in debian/copyright.
+  * Simplify user creation and ownership setting in postinst.
+  * Cleanup coding style in maintscripts:
+    - Do not use unbalanced quotes in error messages.
+    - Use two space indentation.
+    - Use an if conditional instead of «test ... || else-code».
+    - Remove space in shebang.
+    - Remove boilerplate comments.
+  * Remove unused lintian source overrides.
+  * Fix python shebang and Suggests to use python3 for contrib scripts.
+  * Give patches more descriptive names and remove numbered prefixes.
+
+ -- Guillem Jover <gjover@sipwise.com>  Thu, 20 Nov 2025 01:19:09 +0100
+
+kannel (1.4.5-21) unstable; urgency=medium
+
+  [ Guillem Jover ]
+  * Update Vcs-* fields after move of project to pkg-voip-team namespace.
+  * Fix build failure with gcc-15. (Closes: #1096896)
+  * Remove «Rules-Requires-Root: no», which is the current default.
+  * Remove «Priority: optional», which is the current default.
+
+  [ Victor Seva ]
+  * Remove myself from Uploaders.
+
+ -- Guillem Jover <gjover@sipwise.com>  Tue, 23 Sep 2025 23:20:01 +0200
+
+kannel (1.4.5-20) unstable; urgency=medium
+
+  * Fix send_enquire_link() signature for time64 support.
+
+ -- Guillem Jover <gjover@sipwise.com>  Tue, 08 Oct 2024 21:49:00 +0200
+
+kannel (1.4.5-19) unstable; urgency=medium
+
+  * Move _GNU_SOURCE setting to more relevant patch.
+  * Update patch metadata.
+  * Update patches for «gbp pq» support.
+  * Add partial time64 support on 32-bit arches. (Closes: #1081951)
+
+ -- Guillem Jover <gjover@sipwise.com>  Tue, 08 Oct 2024 19:43:11 +0200
+
+kannel (1.4.5-18) unstable; urgency=medium
+
+  * fix build with autoconf-2.7 (Closes: #1080146)
+
+ -- Victor Seva <vseva@debian.org>  Mon, 09 Sep 2024 20:14:15 +0200
+
+kannel (1.4.5-17) unstable; urgency=medium
+
+  * Team upload.
+  * Drop unused dependency. (Closes: #1071618)
+
+ -- Bastian Germann <bage@debian.org>  Thu, 23 May 2024 18:43:57 +0200
+
+kannel (1.4.5-16) unstable; urgency=medium
+
+  * Fix logic inversion in test suppression for ppc64 and ppc64el.
+  * Improve gw-config(1) man page:
+    - Lower-case title name.
+    - Remove wrong information about info manual.
+    - Do not use unbalanced quotes.
+    - Use -- instead of - as example separator.
+    - Refer to <option> instead of spelling each on the synopsis.
+    - Fix markup and only embolden gw-config instead of entire line.
+
+ -- Guillem Jover <gjover@sipwise.com>  Tue, 19 Mar 2024 20:26:07 +0100
+
+kannel (1.4.5-15) unstable; urgency=medium
+
+  * Disable test suite on ppc64 and ppc64el via an override as it hangs there.
+  * Split each word into its own line for the dh_auto_install override.
+  * Refactor debian/tmp into a new D variable.
+  * Use $(MAKE) instead of calling make directly.
+  * Move examples from kannel to kannel-docs.
+  * Improve package build to support separate arch-indep and arch-dep builds.
+  * Remove debugging aid to print environment.
+  * Regenerate code from YACC source code and update it to build.
+  * Print the errors from the test suite on failure.
+
+ -- Guillem Jover <gjover@sipwise.com>  Tue, 19 Mar 2024 00:39:06 +0100
+
+kannel (1.4.5-14) unstable; urgency=medium
+
+  * Adopt package as part of the Debian VoIP Team. (Closes: #1049339)
+  * Run wrap-and-sort -sat.
+  * Remove obsolete lsb-base dependency.
+  * Add a debian/.gitignore file.
+  * Fix FTBFS due to -Werror=implicit-function-declaration in OpenSSL
+    configure check. (Closes: #1066507)
+  * Fix FTBFS when building twice in a row. (Closes: #1045568)
+  * Switch from pkg-config to pkgconf in build dependencies.
+  * Update copyright file and remove old generation scaffolding.
+  * Use spaces around Makefile variable assignments.
+  * Conditionally append nocheck to DEB_BUILD_MAINT_OPTIONS instead of
+    DEB_BUILD_OPTIONS which is a user controlled variable.
+  * Switch to debhelper-compat level 13.
+  * Update lintian-overrides.
+  * Stop using pristine-tar, and rename git branches.
+
+ -- Guillem Jover <gjover@sipwise.com>  Fri, 15 Mar 2024 23:52:28 +0100
+
+kannel (1.4.5-13) unstable; urgency=medium
+
+  * Disable PCRE support, as PCRE3 will go away from Debian (Closes: #1000133)
+
+ -- Chris Hofstaedtler <zeha@debian.org>  Sat, 15 Jul 2023 14:43:40 +0200
+
+kannel (1.4.5-12) unstable; urgency=medium
+
+  * Detect libxml2 without xml2-config.
+    Thanks to Hugh McMaster <hugh.mcmaster@outlook.com> (Closes: #949405)
+
+ -- Chris Hofstaedtler <zeha@debian.org>  Sat, 22 Oct 2022 16:05:32 +0000
+
+kannel (1.4.5-11) unstable; urgency=medium
+
+  * Re-add Build-Depends-Indep: imagemagick to fix kannel-docs.
+    Thanks to Adrian Bunk <bunk@debian.org> (Closes: #1018099)
+
+ -- Chris Hofstaedtler <zeha@debian.org>  Sat, 27 Aug 2022 20:33:59 +0000
+
+kannel (1.4.5-10) unstable; urgency=medium
+
+  [ Vagrant Cascadian ]
+  * debian/rules: Strip out the build directory from gw-config
+    (Closes: #995745)
+
+ -- Chris Hofstaedtler <zeha@debian.org>  Tue, 05 Oct 2021 08:26:39 +0000
+
+kannel (1.4.5-9) unstable; urgency=medium
+
+  * Fix FTBFS with gcc-10 by hiding some local symbols (Closes: #957396)
+
+ -- Chris Hofstaedtler <zeha@debian.org>  Wed, 22 Jul 2020 22:14:16 +0000
+
+kannel (1.4.5-8) unstable; urgency=medium
+
+  * Add patch to allow cross-builds.
+    Patch by Helmut Grohne <helmut@subdivi.de>, many thanks. (Closes: #949079)
+  * Turn off SQLite 2.x support
+
+ -- Chris Hofstaedtler <zeha@debian.org>  Fri, 17 Jan 2020 21:36:12 +0000
+
+kannel (1.4.5-7) unstable; urgency=medium
+
+  [ Robie Basak ]
+  * Disable PostScript documentation generation to fix the build now
+    that ImageMagick PostScript conversion is no longer permitted
+    (LP: #1838425).
+  * Drop Build-Depends-Indep on imagemagick since it is no required following
+    the above change.
+
+  [ Chris Hofstaedtler ]
+  * Mark kannel-docs Multi-Arch: foreign
+
+ -- Chris Hofstaedtler <zeha@debian.org>  Tue, 31 Dec 2019 17:11:04 +0000
+
+kannel (1.4.5-6) unstable; urgency=medium
+
+  * Disable tests on ppc64el
+
+ -- Chris Hofstaedtler <zeha@debian.org>  Thu, 28 Nov 2019 10:06:57 +0000
+
+kannel (1.4.5-5) unstable; urgency=medium
+
+  * d/copyright: update file wildcards
+  * d/copyright: add myself for debian/*
+  * d/changelog: fix trailing whitespace
+  * Fix missing hardening CPPFLAGS
+  * Bump Standards-Version to 4.4.1
+  * Stop Build-Depending on old libmysqlclient-dev package
+
+ -- Chris Hofstaedtler <zeha@debian.org>  Tue, 05 Nov 2019 21:31:57 +0000
+
+kannel (1.4.5-4) unstable; urgency=medium
+
+  * Switch Debian build system to dh (with compat v12)
+  * Remove alternate Build-Depends on obsolete libmysqlclient-dev
+  * configure.in: adapt for current autoheader
+  * Enable gitlab CI
+
+ -- Chris Hofstaedtler <zeha@debian.org>  Wed, 30 Oct 2019 01:39:41 +0000
+
+kannel (1.4.5-3) unstable; urgency=medium
+
+  [ Jonas Smedegaard ]
+  * Update watch file:
+    + Use substitution strings.
+    + Rewrite usage comment.
+  * Unfuzz patch 00.
+
+  [ Chris Hofstaedtler ]
+  * Take over package from Jonas, many thanks!
+  * d/copyright: fix syntax error
+
+ -- Chris Hofstaedtler <zeha@debian.org>  Mon, 29 Jul 2019 08:25:39 +0000
+
+kannel (1.4.5-2) unstable; urgency=medium
+
+  * Fix have kannel-dev depend on libssl-dev (not libssl1.0-dev).
+
+ -- Jonas Smedegaard <dr@jones.dk>  Mon, 08 Oct 2018 01:12:01 +0200
+
+kannel (1.4.5-1) unstable; urgency=medium
+
+  [ upstream ]
+  * New release.
+    + Add graceful-restarting of bearerbox via the SIGHUP signal.
+    + Add redis support as message store and DLR storage.
+    + Add Apache Cassandra 2.1, 2.2 and 3.0 support as DLR storage.
+    + Add OpenSSL 1.1.x support.
+      Closes: bug#858936. Thanks to Kurt Roeckx, Frans van Berckel,
+      and more.
+    + Add support for chained certificate files.
+    + Add support to define which SSL/TLS cipher suites to use.
+    + Add UCS-2 (Unicode) support for FAKE SMSC MOs.
+    + Allow override of specific SMPP values via meta-data forwarding.
+    + Splitting white/black-list into per direction (sender/receiver).
+    + Add 'instances' directive for 'group = smsc' contexts.
+    + Add per line PDU dump function for SMPP.
+    + Add support for constant SMPP TLVs.
+
+  [ Ondřej Nový ]
+  * d/changelog: Remove trailing whitespaces
+  * d/control: Set Vcs-* to salsa.debian.org
+
+  [ Jonas Smedegaard ]
+  * Update watch file: Fix typo in usage comment. Use https protocol.
+  * Unfuzz patches.
+  * Update package relations:
+    + Build-depend on libssl-dev (not libssl1.0-dev).
+    + Build-depend on texlive-formats-extra (not jadetex).
+      Closes: Bug#871742. Thanks to Norbert Preining.
+  * Update copyright info:
+    + Extend coverage for main upstream authors.
+    + Strip needless copyright signs.
+    + Extend coverage of autotools.
+    + Use https protocol in source and upstream contact URLs.
+  * Set myself as maintainer.
+    Closes: Bug#899559. Thanks to Christoph Biedl.
+  * Set Rules-Requires-Root: no.
+  * Declare compliance with Debian Policy 4.2.1.
+  * Use https protocol in homepage URL.
+  * Add patch 00 to cope with upstream unusual use of autotools.
+    Thanks to Guillem Jover.
+  * Treat libtool and stamp-h1 as upstream cruft.
+    Thanks to Guillem Jover.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sun, 07 Oct 2018 23:29:11 +0200
+
+kannel (1.4.4-5) unstable; urgency=medium
+
+  * Remove Paul Dwerryhouse as uploader. Thanks for your past
+    contributions.
+    Closes: Bug#873554. Thanks to Tobias Frost.
+  * Modernize Vcs-* fields:
+    + Use https protocol.
+    + Use git (not cgit) in path.
+  * Declare compliance with Debian Policy 4.1.0.
+  * Modernize cdbs:
+    + Drop upstream-tarball hints: Use gbp import-orig --uscan.
+    + Add copyright-check maintainer script.
+  * Update copyright info:
+    + Claim copyright over packaging.
+    + Use https protocol in file format URL.
+  * Drop obsolete lintian override regarding debhelper 9.
+  * Tighten lintian overrides regarding License-Reference.
+  * Update watch file:
+    + Bump format version.
+    + Mention gbp --uscan in usage comment.
+  * Advertise DEP-3 format in patch headers.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Tue, 29 Aug 2017 10:11:51 +0200
+
+kannel (1.4.4-4) unstable; urgency=medium
+
+  * (Build-)depend on default-libmysqlclient-dev, with
+    libmysqlclient-dev as fallback to ease backporting.
+    Closes: Bug#845858. Thanks to Otto.
+  * Stop build-depend on jade: Obsolete and needless (successor openjade
+    pulled in already bia docbook-dsssl).
+    Closes: Bug#840364. Thanks to Neil Roeth.
+  * (Build-)depend on libssl1.0-dev, with older libssl-dev only as
+    fallback (and only pre-1.1 versions) to ease backporting.
+    See bug#828362.
+  * Add patches to make build reproducible.
+    Closes: Bug#819915. Thanks to Alexis Bienvenüe.
+  * Declare compliance with Debian Policy 3.9.8.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sat, 03 Dec 2016 20:22:16 +0100
+
+kannel (1.4.4-3) unstable; urgency=medium
+
+  * Add patches 35-36 to fix FTBFS on GNU/kFreeBSD.
+    Closes: Bug#820155. Thanks to Steven Chamberlain.
+  * Add patch 37 to define _DEFAULT_SOURCE (not _VSD_SOURCE or
+    _SVID_SOURCE).
+  * Fix build-depend on gnulib: Needed for CDBS modernizing config.rpath
+    during build.
+  * Recreate autotools during build. Build-depend on dh-autoreconf.
+  * Add patch 38 to remove soap/Makefile in distclean target.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sun, 29 May 2016 12:43:33 +0200
+
+kannel (1.4.4-2) unstable; urgency=medium
+
+  * Fix Vcs-* field URLs. Closes: bug#793981.
+    Thanks to Kalle Niemitalo.
+  * Drop superfluous control fields inherited from source section.
+  * Update package relations: Fix have kannel-dev depend on
+    libhiredis-dev and freetds-dev.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Mon, 23 Nov 2015 11:09:20 +0100
+
+kannel (1.4.4-1) unstable; urgency=medium
+
+  [ upstream ]
+  * New release(s).
+    Closes: bug#786747. Thanks to Kalle Niemitalo.
+
+  [ Jonas Smedegaard ]
+  * Really enable support for Redis and FreeTDS.
+  * Include /usr/bin/decode_emimsg in kannel package.
+  * Unfuzz patch 34.
+  * Touch autogenerated Bison code before build, to avoid accidental
+    regenerating it.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sun, 02 Aug 2015 11:20:46 +0200
+
+kannel (1.4.3-4) unstable; urgency=medium
+
+  * Fix postrm script to not fail if package dirs were already gone.
+  * Drop broken pid file juggling in postinst script (handled in init
+    script).
+    Closes: Bug#793594. Thanks to Andreas Beckmann.
+  * Enable support for Redis and FreeTDS.
+    Build-depend on libhiredis-dev freetds-dev.
+  * Drop patch 32: Alpha no longer a supported architecture.
+  * Bump debhelper compatibility level to 9.
+  * Fix lintian overrides.
+  * Override lintian regarding build-depending unversioned on debhelper.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sun, 02 Aug 2015 09:16:46 +0200
+
+kannel (1.4.3-3) unstable; urgency=medium
+
+  * Add watch file.
+  * Add patch 34 to use sqlite3_libversion() instead of sqlite3_version.
+    Closes: Bug#717728. Thanks to Andreas Beckmann and Kalle Niemitalo.
+  * Declare compliance with Debian Policy 3.9.6.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Wed, 22 Jul 2015 22:13:49 +0200
+
+kannel (1.4.3-2) unstable; urgency=low
+
+  * Drop README.Debian: Contained only outdated or superfluous info.
+  * Ease building with git-buildpackage:
+    + Git-ignore quilt .pc dir.
+  * Drop old no longer used clutch from rules file.
+  * Rewrite rules file using CDBS.
+  * Fix postrm to not fail purge if /etc/kannel is not empty.
+  * Refresh patches w/ shortening options.
+  * Add README.source emphasizing that control.in file as *not* a
+    show-stopper for contributions, referring to wiki page for details.
+  * Move packaging to team maintenance, as agreed with Paul long ago.
+  * Wrap package relations.
+  * Update package relations:
+    + Build-depend on cdbs.
+    + Relax to build-depend unversioned on cdbs, debhelper and
+    libssl-dev: Needed versions satisified even in oldstable.
+    + Stop fallback-build-depend on libmysqlclient15-dev:
+      libmysqlclient-dev available even in oldstable.
+  * Remove debian/source/local-options: abort-on-upstream-changes and
+    unapply-patches are default in dpkg-source since 1.16.1.
+  * Update copyright info:
+    + Rewrite using copyright file format 1.0.
+      Closes: Bug#788335. Thanks to Kalle Niemitalo.
+  * Add lintian overrides regarding license in License-Reference field.
+    See bug#786450.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Wed, 22 Jul 2015 20:48:37 +0200
+
+kannel (1.4.3-1) unstable; urgency=low
+
+  [ Paul Dwerryhouse ]
+  * New upstream release. Closes: bug#563661.
+  * Add patch 33 fixing paths in gw/kannel.8. Closes: bug#527227, thanks
+    to Slaven Rezic.
+  * Depend on psmisc for killall in logrotate script. Closes: #539856,
+    thanks to Alan McNatty.
+
+  [ Jonas Smedegaard ]
+  * Source now git-maintained: Add Vcs-* stanzas to control file.
+  * Add git-buildpackage configfile, enabling signed tags and pristine-
+    tar.
+  * Use source format '3.0 (quilt)':
+    + Abandon dpatch: Drop build-depending on dpatch; drop patch-related
+      build rules.
+    + Convert patches from dpatch to quilt w/ DEP3 headers.
+    + Add hint file debian/source/format.
+  * put aside upstream config.guess and config.sub during build (instead
+    of overwriting and removing afterwards), to be VCS-friendly.
+  * Build-depend on unversioned libmysqlclient-dev (and only fallback on
+    deprecated libmysqlclient15-dev to ease backporting).
+  * Build-depend on automake (not older automake1.10).
+  * Depend on ${misc:Depends}.
+  * Cosmetics: Wrap long descriptions at 72 chars, and strip trailing
+    newlines.
+  * Fix patch 33 triple-slash fix.
+  * Add myself as uploader.
+  * Build with configure flag --enable-warnings.
+  * Enable SQLite2, SQLite3 and PostgreSQL support:
+    + Build-depend on libsqlite0-dev, sqlite, libsqlite3-dev, sqlite3
+      and libpq-dev
+    + Add relevant configure flags
+  * Enable PCRE support:
+    + Build-depend on libpcre3-dev
+    + Add relevant configure flag
+  * Tighten LSB init hints:
+    + Require local_fs and remote_fs (not only local_fs, and not only
+      should have)
+    + Should have named
+    + Drop requiring syslog (daemons write directly to log files)
+  * Bump Standards-Version to 3.8.4.
+  * Have kannel-dev depend on needed header packages.
+
+ -- Jonas Smedegaard <dr@jones.dk>  Sun, 07 Feb 2010 02:10:44 +0100
+
+kannel (1.4.1-4) unstable; urgency=low
+
+  * Applied patch from James Westby to use lsb_init
+    functions (Closes: #511882,#464451)
+  * Added autotools-dev to Build-Depends (Closes: #511880)
+
+ -- Paul Dwerryhouse <paul@dwerryhouse.com.au>  Sat, 14 Feb 2009 12:09:25 +1100
+
+kannel (1.4.1-3) unstable; urgency=low
+
+  * Added build-dep for docbook (Closes: #509970)
+  * Changed manpage references from file://usr/doc/kannel to
+    file://usr/share/doc/kannel (Closes: #510481)
+  * Added SMPP to package description (Closes: #465743)
+  * Upgraded to standards-version 3.8.0
+  * Updated config.guess and config.sub
+  * Changed gs to ghostscript in build-deps
+  * Changed libssl-dev build-dep from 0.9.8-1 to 0.9.8
+  * Changes ${Source-Version} to ${binary:Version}
+  * Added new Homepage: field in debian/control
+  * Put kannel-docs into doc Section
+
+ -- Paul Dwerryhouse <paul@dwerryhouse.com.au>  Sun, 11 Jan 2009 11:14:57 +1100
+
+kannel (1.4.1-2) unstable; urgency=low
+
+  * Loic Minier's patch to debian/rules to fix incorrect path being returned
+    by gw-config (Closes: #337616)
+
+ -- Paul Dwerryhouse <paul@dwerryhouse.com.au>  Sun, 15 Oct 2006 10:08:43 +1000
+
+kannel (1.4.1-1) unstable; urgency=low
+
+  * New upstream release (Closes: #346429)
+  * Removed mbuni patch, since it doesn't apply correctly (64_mbuni.dpatch).
+  * Removed libmysqlclient15 namespace patch (16_kannel_list.dpatch).
+  * Added LSB dependency info to the kannel.init file
+
+ -- Paul Dwerryhouse <paul@dwerryhouse.com.au>  Wed,  4 Oct 2006 12:46:07 +1000
+
+kannel (1.4.0-17) unstable; urgency=low
+
+  * Patch from Stefan Huehner <stefan@huehner.org> to fix the namespace
+    problem when compiling against libmysqlclient15 (Closes: #343769)
+
+ -- Paul Dwerryhouse <paul@dwerryhouse.com.au>  Mon, 17 Apr 2006 08:22:07 +1000
+
+kannel (1.4.0-16) unstable; urgency=low
+
+  * Updated debian/patches/00list for new patch
+
+ -- Paul Dwerryhouse <paul@dwerryhouse.com.au>  Mon, 24 Oct 2005 10:52:36 +1000
+
+kannel (1.4.0-15) unstable; urgency=low
+
+  * Patch from Loic Minier <lool@dooz.org> to allow compilation on
+    Alpha (Closes: #266148)
+
+ -- Paul Dwerryhouse <paul@dwerryhouse.com.au>  Sun, 23 Oct 2005 08:42:15 +1000
+
+kannel (1.4.0-14) unstable; urgency=low
+
+  * Build-Depends libssl-dev >= 0.9.8-1
+
+ -- Paul Dwerryhouse <paul@dwerryhouse.com.au>  Mon, 10 Oct 2005 21:08:57 +1000
+
+kannel (1.4.0-13) unstable; urgency=low
+
+  * Standards version changed to 3.6.2
+  * Add Source-Version to kannel-extras depends
+  * kannel-extras now depends on kannel
+  * Removed suggests from kannel-extras
+  * Change deluser to userdel to avoid having to put adduser into
+    Pre-Depends.
+  * kannel 1.4 compiles successfully with gcc-3.4 (Closes: #275947)
+  * Several changes provided by Loic Minier <lool@dooz.org>, to allow
+    support for Mbuni, see below. (Closes: #325730)
+  * Add dpatch support. [debian/control, debian/rules, debian/patches/00list]
+  * Required changes for Mbuni 1.0.0. [debian/patches/64_mbuni.dpatch]
+  * New kannel-dev package for development files. [debian/control,
+    debian/kannel-dev.install]
+  * Move *.a files from kannel-extras to kannel-dev.
+    [debian/kannel-dev.install, debian/kannel-extras.install]
+  * Move gw-config helper from kannel to kannel-dev.
+    [debian/kannel.install, debian/kannel-dev.install]
+
+ -- Paul Dwerryhouse <paul@dwerryhouse.com.au>  Mon, 12 Sep 2005 10:56:59 +1000
+
+kannel (1.4.0-6) unstable; urgency=low
+
+  * Replaced --enable-mysql and --with-mysql=/usr with
+    --with-mysql and --with-mysql-dir=/usr
+
+ -- Paul Dwerryhouse <paul@dwerryhouse.com.au>  Tue, 31 May 2005 22:04:28 +1000
+
+kannel (1.4.0-5) unstable; urgency=low
+
+  * Removed unused dh_* lines from debian/rules
+  * Added reference to kannel website in package description
+
+ -- Paul Dwerryhouse <paul@dwerryhouse.com.au>  Mon, 30 May 2005 12:05:54 +1000
+
+kannel (1.4.0-4) unstable; urgency=low
+
+  * Removed .cvsignore files and debian dir from upstream tarball
+
+ -- Paul Dwerryhouse <paul@dwerryhouse.com.au>  Sun, 22 May 2005 09:06:09 +1000
+
+kannel (1.4.0-3) unstable; urgency=low
+
+  * added man page for gw-config
+
+ -- Paul Dwerryhouse <paul@dwerryhouse.com.au>  Tue, 10 May 2005 22:14:44 +1000
+
+kannel (1.4.0-2) unstable; urgency=low
+
+  * Added jade to build-depends
+
+ -- Paul Dwerryhouse <paul@dwerryhouse.com.au>  Tue, 10 May 2005 19:27:09 +1000
+
+kannel (1.4.0-1) unstable; urgency=low
+
+  * New maintainer (Closes: #303610)
+  * Added Debian docbook DSSSL paths to configure.in & configure
+    (Closes: #275804)
+  * New upstream release (Closes: #300201)
+
+ -- Paul Dwerryhouse <paul@dwerryhouse.com.au>  Tue, 10 May 2005 08:53:21 +1000
+
+kannel (1.2.1-5) unstable; urgency=low
+
+  * New maintainer (Closes: #185224)
+  * Fix bug in init script
+
+ -- Bruno Rodrigues <bruno.rodrigues@litux.org>  Sun,  4 May 2003 18:54:43 +0000
+
+kannel (1.2.1-4) unstable; urgency=low
+
+  * Updated Standards-Version to 3.5.9 and other cleaning up
+  * Kannel-docs is now architecture independent. Updated control and rules
+
+ -- Bruno Rodrigues <bruno.rodrigues@litux.org>  Tue,  8 Apr 2003 20:08:40 +0000
+
+kannel (1.2.1-3) unstable; urgency=low
+
+  * Moved debian dir from orig to diff
+  * Added debian/compat
+  * Tidy up
+
+ -- Bruno Rodrigues <bruno.rodrigues@litux.org>  Mon, 17 Mar 2003 18:42:36 +0000
+
+kannel (1.2.1-2) unstable; urgency=low
+
+  * Updated Standards-Version to 3.5.8
+
+ -- Bruno Rodrigues <bruno.rodrigues@litux.org>  Sun, 26 Jan 2003 17:05:13 +0100
+
+kkannel (1.2.1-1) unstable; urgency=low
+
+  * New upstream version
+
+ -- Bruno Rodrigues <bruno.rodrigues@litux.org>  Sun, 26 Jan 2003 17:05:13 +0100
+
+kannel (1.2.0-1) unstable; urgency=low
+
+  * New upstream version
+
+ -- Bruno Rodrigues <bruno.rodrigues@litux.org>  Thu, 18 Jul 2002 10:30:39 +0100
+
+kannel (0.11.3.cvs-1) unstable; urgency=low
+
+  * New upstream version 0.11.3. This Debian package has a few additional
+    changes made in upstream CVS since the release:
+  * SMS timestamps are set by Kannel, if the SMS center did not set them.
+  * Bugfixes in assertions.
+  * Fixes to a couple of WMLScript compilation bugs.
+  * WTP protocol fix in cases when load is heavy and Ack packets are delayed.
+  * WTP state machine fix: if an event can't be handled, it is just ignored,
+    instead of the state machine being killed.
+  * Debian packaging: postinst creates user kannel, init.d/kannel runs
+    the boxes as that user.
+
+ -- Lars Wirzenius <liw@iki.fi>  Tue, 10 Oct 2000 15:54:01 +0300
+
+kannel (0.11.2.cvs-1) unstable; urgency=low
+
+  * Updated version of Debian packaging, for the CVS version. Also added
+    a Debian revision number to the version number: even though the debian/
+    directory is part of upstream sources, there may be several Debian
+    versions due to packaging etc per upstream release.
+
+ -- Lars Wirzenius <liw@iki.fi>  Tue,  3 Oct 2000 13:20:24 +0300
+
+kannel (0.7.9999) unstable; urgency=low
+
+  * Initial version of Debian package. This is not an upstream release
+    version. It is a CVS snapshot.
+
+ -- Lars Wirzenius <liw@iki.fi>  Wed, 29 Mar 2000 22:17:43 +0300

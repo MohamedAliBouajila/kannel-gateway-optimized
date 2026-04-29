@@ -1,0 +1,42 @@
+#!/bin/sh
+# preinst script for kannel
+#
+# see: dh_installdeb(1)
+
+set -e
+
+case "$1" in
+install|upgrade)
+  # If we are upgrading try to preserve the old init script start states
+  # from the default file variables.
+  if [ -n "$2" ] && dpkg --compare-versions "$2" lt "1.4.5-22~"; then
+    if [ -e /etc/default/kannel ]; then
+      mkdir -p /var/lib/kannel
+      (
+        . /etc/default/kannel
+
+        if [ -z "$START_WAPBOX" ]; then
+          echo STATE_WAPBOX=disable
+        else
+          echo STATE_WAPBOX=enable
+        fi
+        if [ -z "$START_SMSBOX" ]; then
+          echo STATE_SMSBOX=disable
+        else
+          echo STATE_SMSBOX=enable
+        fi
+      ) >/var/lib/kannel/service-state
+    fi
+  fi
+  ;;
+abort-upgrade)
+  ;;
+*)
+  echo "preinst called with unknown argument '$1'" >&2
+  exit 1
+  ;;
+esac
+
+#DEBHELPER#
+
+exit 0

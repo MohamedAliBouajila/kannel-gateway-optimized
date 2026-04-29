@@ -1,0 +1,46 @@
+From: Guillem Jover <gjover@sipwise.com>
+Date: Sat, 15 Nov 2025 00:09:35 +0100
+Subject: Fix python scripts shebangs
+
+Use python3 instead of python in the scripts shebang lines.
+
+Warned-by: lintian
+---
+ contrib/fortune.cgi   |    2 +-
+ contrib/ping.cgi      |    2 +-
+ contrib/sendsms       |    2 +-
+ contrib/smstomail.cgi |    2 +-
+ 4 files changed, 4 insertions(+), 4 deletions(-)
+
+--- a/contrib/fortune.cgi
++++ b/contrib/fortune.cgi
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python
++#!/usr/bin/python3
+ 
+ FORTUNE_MAX_TRIES = 10
+ SMS_MAX = 160
+--- a/contrib/ping.cgi
++++ b/contrib/ping.cgi
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python
++#!/usr/bin/python3
+ 
+ """PING cgi.
+ 
+--- a/contrib/sendsms
++++ b/contrib/sendsms
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python
++#!/usr/bin/python3
+ 
+ import os, string, sys, urllib
+ 
+--- a/contrib/smstomail.cgi
++++ b/contrib/smstomail.cgi
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python
++#!/usr/bin/python3
+ 
+ MAIL_SENDER = "liw"
+ MAIL_RECEIVER = "liw"

@@ -1,0 +1,3 @@
+usr/bin/gw-config
+usr/include/kannel
+usr/lib/*/kannel/*.a

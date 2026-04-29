@@ -1,0 +1,22 @@
+From: Steven Chamberlain <steven@pyro.eu.org>
+Date: Fri, 27 Sep 2024 23:19:10 +0200
+Subject: Support GNU/kFreeBSD using FreeBSD code
+
+Bug-Debian: https://bugs.debian.org/820155
+---
+ utils/start-stop-daemon.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/utils/start-stop-daemon.c b/utils/start-stop-daemon.c
+index c913369..0663851 100644
+--- a/utils/start-stop-daemon.c
++++ b/utils/start-stop-daemon.c
+@@ -88,7 +88,7 @@
+ #define OSHURD
+ #elif defined(SunOS)
+ #elif defined(__CYGWIN__)
+-#elif defined(__FreeBSD__) || defined(__APPLE__)
++#elif defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__APPLE__)
+ #define FreeBSD
+ #else
+ #error Unknown architecture - cannot build start-stop-daemon

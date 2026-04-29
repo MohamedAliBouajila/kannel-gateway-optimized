@@ -1,0 +1,65 @@
+#!/bin/sh
+#
+# Copyright © 2025 Sipwise GmbH, Austria
+#
+# This file is free software; you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# General Public License for more details.
+# .
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, see <https://www.gnu.org/licenses/>.
+
+set -e
+
+conf=/etc/kannel/kannel.conf
+addr="$(sed -ne 's/admin-interface *= *//p' $conf)"
+addr="${addr:-127.0.0.1}"
+port="$(sed -ne 's/admin-port *= *//p' $conf)"
+url="$addr:$port/status"
+
+timeout_http=10
+timeout_func=20
+timeout=0
+delayinc=0.2
+
+
+while [ $timeout -lt $timeout_http ] && ! GET -d "$url" ; do
+  sleep $delayinc
+  timeout=$((timeout + 1))
+done
+
+if [ $timeout -eq $timeout_http ]; then
+  exit 3
+fi
+
+timeout=0
+
+while [ $timeout -lt $timeout_func ]; do
+  status="$(GET "$url" | sed -ne 's/^Status: \([a-z ]*\),.*$/\1/p' || true)"
+  case "$status" in
+  filled)
+    # Message queue full, retry.
+    ;;
+  running)
+    exit 0
+    ;;
+  suspended|isolated)
+    # Not accepting or receiving messages, not giving service.
+    exit 1
+    ;;
+  "going down")
+    # Shutting down or dead, not giving service.
+    exit 2
+    ;;
+  esac
+  sleep $delayinc
+  timeout=$((timeout + 1))
+done
+
+exit 3

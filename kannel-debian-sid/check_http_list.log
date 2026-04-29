@@ -1,0 +1,9 @@
+2026-04-27 11:45:12 [158395] [0] INFO: HTTP: Opening server at port 18082.
+2026-04-27 11:45:12 [158395] [0] DEBUG: Started thread 1 (gwlib/fdset.c:poller)
+2026-04-27 11:45:12 [158395] [0] DEBUG: Started thread 2 (gwlib/http.c:server_thread)
+2026-04-27 11:45:12 [158395] [0] DEBUG: Started thread 3 (test/test_http_server.c:client_thread)
+2026-04-27 11:45:12 [158395] [2] DEBUG: Thread 2 (gwlib/http.c:server_thread) maps to pid 158395.
+2026-04-27 11:45:12 [158395] [2] DEBUG: HTTP: Including port 18082, fd 8 for polling in server thread
+2026-04-27 11:45:12 [158395] [1] DEBUG: Thread 1 (gwlib/fdset.c:poller) maps to pid 158395.
+2026-04-27 11:45:12 [158395] [3] DEBUG: Thread 3 (test/test_http_server.c:client_thread) maps to pid 158395.
+2026-04-28 00:08:20 [158395] [0] DEBUG: Signal 15 received, quitting.

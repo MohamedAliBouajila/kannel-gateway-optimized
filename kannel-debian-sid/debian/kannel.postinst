@@ -1,0 +1,48 @@
+#!/bin/sh
+# postinst script for kannel
+#
+# see: dh_installdeb(1)
+
+set -e
+
+case "$1" in
+configure)
+  adduser \
+    --system \
+    --home /usr/lib/kannel --no-create-home \
+    --gecos "Kannel" \
+    kannel
+  chown -c kannel:root /var/log/kannel
+  ;;
+abort-upgrade|abort-remove|abort-deconfigure)
+  ;;
+*)
+  echo "postinst called with unknown argument '$1'" >&2
+  exit 1
+  ;;
+esac
+
+#DEBHELPER#
+
+case "$1" in
+configure)
+  # Remove obsolete symlinks
+  update-rc.d -f kannel remove >/dev/null
+
+  if [ -e /var/lib/kannel/service-state ]; then
+    . /var/lib/kannel/service-state
+
+    echo "Preserving previous kannel wapbox service $STATE_WAPBOX state"
+    update-rc.d kannel-wapbox $STATE_WAPBOX >/dev/null
+    deb-systemd-helper $STATE_WAPBOX kannel-wapbox.service >/dev/null
+    echo "Preserving previous kannel smsbox service $STATE_SMSBOX state"
+    update-rc.d kannel-smsbox $STATE_SMSBOX >/dev/null
+    deb-systemd-helper $STATE_SMSBOX kannel-smsbox.service >/dev/null
+
+    rm -f /var/lib/kannel/service-state
+    rmdir /var/lib/kannel || true
+  fi
+  ;;
+esac
+
+exit 0

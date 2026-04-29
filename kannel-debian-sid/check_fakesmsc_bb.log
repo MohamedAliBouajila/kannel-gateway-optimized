@@ -1,0 +1,58 @@
+2026-04-28 15:52:41 [373081] [0] INFO: Debug_lvl = 0, log_file = <none>, log_lvl = 0
+2026-04-28 15:52:41 [373081] [0] WARNING: DLR: using default 'internal' for storage type.
+2026-04-28 15:52:41 [373081] [0] INFO: DLR using storage type: internal
+2026-04-28 15:52:41 [373081] [0] DEBUG: Kannel bearerbox version `1.4.5'.
+Compiler `13.3.0'.
+System Linux, release 6.17.0-22-generic, version #22~24.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Mar 26 15:25:54 UTC 2, machine x86_64.
+Hostname medali, IP 192.168.1.79.
+Libxml version 2.9.14.
+Using OpenSSL 3.0.13 30 Jan 2024.
+Compiled with MySQL 8.0.45, using MySQL 8.0.45.
+Compiled with PostgreSQL 18.3 (Ubuntu 18.3-1.pgdg24.04+1).
+Using SQLite 3.45.1.
+Using hiredis API 1.2.0
+Using native malloc.
+
+2026-04-28 15:52:41 [373081] [0] INFO: HTTP: Opening server at port 13000.
+2026-04-28 15:52:41 [373081] [0] DEBUG: Started thread 1 (gwlib/fdset.c:poller)
+2026-04-28 15:52:41 [373081] [0] ERROR: bind failed
+2026-04-28 15:52:41 [373081] [0] ERROR: System error 98: Address already in use
+2026-04-28 15:52:41 [373081] [1] DEBUG: Thread 1 (gwlib/fdset.c:poller) maps to pid 373081.
+2026-04-28 15:52:41 [373081] [1] DEBUG: Thread 1 (gwlib/fdset.c:poller) terminates.
+2026-04-28 15:52:41 [373081] [0] DEBUG: Started thread 2 (gw/bb_http.c:httpadmin_run)
+2026-04-28 15:52:41 [373081] [2] DEBUG: Thread 2 (gw/bb_http.c:httpadmin_run) maps to pid 373081.
+2026-04-28 15:52:41 [373081] [2] DEBUG: HTTP: No clients with requests, quitting.
+2026-04-28 15:52:41 [373081] [0] DEBUG: starting smsbox connection module
+2026-04-28 15:52:41 [373081] [2] DEBUG: Thread 2 (gw/bb_http.c:httpadmin_run) terminates.
+2026-04-28 15:52:41 [373081] [0] INFO: BOXC: 'smsbox-max-pending' not set, using default (4096).
+2026-04-28 15:52:41 [373081] [0] DEBUG: Started thread 3 (gw/bb_boxc.c:sms_to_smsboxes)
+2026-04-28 15:52:41 [373081] [3] DEBUG: Thread 3 (gw/bb_boxc.c:sms_to_smsboxes) maps to pid 373081.
+2026-04-28 15:52:41 [373081] [0] DEBUG: Started thread 4 (gw/bb_boxc.c:sms_to_smsboxes)
+2026-04-28 15:52:41 [373081] [4] DEBUG: Thread 4 (gw/bb_boxc.c:sms_to_smsboxes) maps to pid 373081.
+2026-04-28 15:52:41 [373081] [0] DEBUG: Started thread 5 (gw/bb_boxc.c:sms_to_smsboxes)
+2026-04-28 15:52:41 [373081] [5] DEBUG: Thread 5 (gw/bb_boxc.c:sms_to_smsboxes) maps to pid 373081.
+2026-04-28 15:52:41 [373081] [0] DEBUG: Started thread 6 (gw/bb_boxc.c:sms_to_smsboxes)
+2026-04-28 15:52:41 [373081] [6] DEBUG: Thread 6 (gw/bb_boxc.c:sms_to_smsboxes) maps to pid 373081.
+2026-04-28 15:52:41 [373081] [0] DEBUG: Started thread 7 (gw/bb_boxc.c:smsboxc_run)
+2026-04-28 15:52:41 [373081] [7] DEBUG: Thread 7 (gw/bb_boxc.c:smsboxc_run) maps to pid 373081.
+2026-04-28 15:52:41 [373081] [7] ERROR: bind failed
+2026-04-28 15:52:41 [373081] [7] ERROR: System error 98: Address already in use
+2026-04-28 15:52:41 [373081] [0] INFO: Set SMS resend frequency to 60 seconds.
+2026-04-28 15:52:41 [373081] [0] INFO: SMS resend retry set to unlimited.
+2026-04-28 15:52:41 [373081] [7] PANIC: Could not open smsbox port 13001
+2026-04-28 15:52:41 [373081] [0] DEBUG: MO concatenated message handling enabled
+2026-04-28 15:52:41 [373081] [0] INFO: DLR rerouting for smsc id <FAKE> disabled.
+2026-04-28 15:52:41 [373081] [7] PANIC: gw/bearerbox(gw_backtrace+0xe4) [0x644e30f67834]
+2026-04-28 15:52:41 [373081] [7] PANIC: gw/bearerbox(gw_panic+0x16d) [0x644e30f679bd]
+2026-04-28 15:52:41 [373081] [7] PANIC: gw/bearerbox(+0x197b7) [0x644e30e907b7]
+2026-04-28 15:52:41 [373081] [7] PANIC: gw/bearerbox(+0xde715) [0x644e30f55715]
+2026-04-28 15:52:41 [373081] [7] PANIC: /lib/x86_64-linux-gnu/libc.so.6(+0x9caa4) [0x76205789caa4]
+2026-04-28 15:52:41 [373081] [7] PANIC: /lib/x86_64-linux-gnu/libc.so.6(+0x129c6c) [0x762057929c6c]
+2026-04-28 15:52:41 [373081] [0] DEBUG: Started thread 8 (gw/smsc/smsc_fake.c:fake_listener)
+2026-04-28 15:52:41 [373081] [8] DEBUG: Thread 8 (gw/smsc/smsc_fake.c:fake_listener) maps to pid 373081.
+2026-04-28 15:52:41 [373081] [0] DEBUG: Started thread 9 (gw/bb_smscconn.c:sms_router)
+2026-04-28 15:52:41 [373081] [0] INFO: ----------------------------------------
+2026-04-28 15:52:41 [373081] [0] INFO: Kannel bearerbox II version 1.4.5 starting
+2026-04-28 15:52:41 [373081] [0] INFO: MAIN: Start-up done, entering mainloop
+2026-04-28 15:52:41 [373081] [0] DEBUG: smsc_fake: start called
+2026-04-28 15:52:41 [373081] [9] DEBUG: Thread 9 (gw/bb_smscconn.c:sms_router) maps to pid 373081.
