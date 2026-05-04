@@ -80,6 +80,7 @@ typedef struct {
 	enum msg_type type;
 
 	#define INTEGER(name) long name;
+	#define TIME(name) time_t name;
 	#define OCTSTR(name) Octstr *name;
 	#define UUID(name) uuid_t name;
 	#define VOID(name) void *name;

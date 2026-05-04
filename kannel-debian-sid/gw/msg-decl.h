@@ -83,7 +83,7 @@ MSG(sms,
         OCTSTR(receiver)
         OCTSTR(udhdata)
         OCTSTR(msgdata)
-        INTEGER(time)
+        TIME(time)
         OCTSTR(smsc_id)
         OCTSTR(smsc_number)
         OCTSTR(foreign_id)
@@ -109,14 +109,14 @@ MSG(sms,
         VOID(split_parts)
         INTEGER(priority)
         INTEGER(resend_try)
-        INTEGER(resend_time)
+        TIME(resend_time)
         OCTSTR(meta_data)
     })
 
 MSG(ack,
     {
         INTEGER(nack)
-        INTEGER(time)
+        TIME(time)
         UUID(id)
     })
     
@@ -131,6 +131,7 @@ MSG(wdp_datagram,
 
 #undef MSG
 #undef INTEGER
+#undef TIME
 #undef OCTSTR
 #undef UUID
 #undef VOID
