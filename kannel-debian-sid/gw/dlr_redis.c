@@ -213,6 +213,9 @@ static void dlr_redis_add(struct dlr_entry *entry)
         if (redisGetReply(rctx, (void**)&reply1) != REDIS_OK) {
             error(0, "DLR: REDIS: pipeline read error for %s: %s",
                   octstr_get_cstr(key), rctx->errstr);
+            /* Drain the second pending reply so the connection is not left dirty */
+            redisGetReply(rctx, (void**)&reply2);
+            if (reply2) freeReplyObject(reply2);
             goto pipeline_cleanup;
         }
         if (reply1->type == REDIS_REPLY_ERROR)

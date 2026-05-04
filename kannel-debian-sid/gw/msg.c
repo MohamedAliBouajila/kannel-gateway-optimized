@@ -64,6 +64,7 @@
  */
 
 #include <errno.h>
+#include <stdint.h>
 #include <stdlib.h>
 #include <sys/types.h>
 #include <netinet/in.h>
@@ -284,10 +285,14 @@ static void append_integer(Octstr *os, long i)
 
 static void append_time(Octstr *os, time_t t)
 {
-    unsigned char buf[4];
+    unsigned char buf[8];
+    uint64_t v = (uint64_t)(int64_t)t;
 
-    encode_network_long(buf, t);
-    octstr_append_data(os, (char *)buf, 4);
+    buf[0] = (v >> 56) & 0xff; buf[1] = (v >> 48) & 0xff;
+    buf[2] = (v >> 40) & 0xff; buf[3] = (v >> 32) & 0xff;
+    buf[4] = (v >> 24) & 0xff; buf[5] = (v >> 16) & 0xff;
+    buf[6] = (v >>  8) & 0xff; buf[7] =  v        & 0xff;
+    octstr_append_data(os, (char *)buf, 8);
 }
 
 static void append_string(Octstr *os, Octstr *field)
@@ -327,17 +332,22 @@ static int parse_integer(long *i, Octstr *packed, int *off)
 
 static int parse_time(time_t *t, Octstr *packed, int *off)
 {
-    unsigned char buf[4];
+    unsigned char buf[8];
+    uint64_t v;
 
     gw_assert(*off >= 0);
-    if (*off + 4 > octstr_len(packed)) {
+    if (*off + 8 > octstr_len(packed)) {
         error(0, "Packet too short while unpacking Msg.");
         return -1;
     }
 
-    octstr_get_many_chars((char *)buf, packed, *off, 4);
-    *t = decode_network_long(buf);
-    *off += 4;
+    octstr_get_many_chars((char *)buf, packed, *off, 8);
+    v = ((uint64_t)buf[0] << 56) | ((uint64_t)buf[1] << 48) |
+        ((uint64_t)buf[2] << 40) | ((uint64_t)buf[3] << 32) |
+        ((uint64_t)buf[4] << 24) | ((uint64_t)buf[5] << 16) |
+        ((uint64_t)buf[6] <<  8) |  (uint64_t)buf[7];
+    *t = (time_t)(int64_t)v;
+    *off += 8;
     return 0;
 }
 
