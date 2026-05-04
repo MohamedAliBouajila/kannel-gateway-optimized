@@ -87,6 +87,7 @@
 
 #include "gw-config.h"
 
+#include <limits.h>
 #include <string.h>
 #include <unistd.h>
 #include <stdlib.h>
@@ -403,6 +404,8 @@ void gwlist_remove_producer(List *list)
     lock(list);
     gw_assert(list->num_producers > 0);
     --list->num_producers;
+    /* broadcast needed here: all consumers must wake to check num_producers == 0
+     * so they can return NULL and exit cleanly */
     pthread_cond_broadcast(&list->nonempty);
     unlock(list);
 }
@@ -618,7 +621,14 @@ static void make_bigger(List *list, long items)
         return;
 
     old_size = list->tab_size;
-    new_size = old_size + items;
+    /* Exponential growth reduces realloc frequency under high load.
+     * Guard against signed overflow before doubling. */
+    if (old_size > 0 && old_size <= LONG_MAX / 2)
+        new_size = old_size * 2;
+    else
+        new_size = old_size + items;
+    if (new_size < old_size + items)
+        new_size = old_size + items;
     list->tab = gw_realloc(list->tab, new_size * sizeof(void *));
     list->tab_size = new_size;
 

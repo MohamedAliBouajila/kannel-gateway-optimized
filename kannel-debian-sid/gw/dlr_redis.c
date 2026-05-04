@@ -69,6 +69,7 @@
 #include "dlr_p.h"
 
 #ifdef HAVE_REDIS
+#include <hiredis.h>
 
 /*
  * Some SMSCs (such as the Logica SMPP simulator when bound multiple times
@@ -176,29 +177,61 @@ static void dlr_redis_add(struct dlr_entry *entry)
     gwlist_append(binds, fields->field_boxc);
     gwlist_append(binds, entry->boxc_id);
 
-    res = dbpool_conn_update(pconn, sql, binds);
+    if (fields->ttl) {
+        /*
+         * Pipeline HMSET + EXPIRE as two back-to-back commands on the same
+         * connection, then collect both replies in one round-trip.
+         */
+        redisContext *rctx = (redisContext *) pconn->conn;
+        int binds_len = gwlist_len(binds);
+        const char **argv = gw_malloc(sizeof(*argv) * binds_len);
+        size_t *argvlen = gw_malloc(sizeof(*argvlen) * binds_len);
+        int j;
+        redisReply *reply1, *reply2;
+        Octstr *ttl_str = octstr_format("%ld", fields->ttl);
+        const char *expire_argv[3];
+        size_t expire_argvlen[3];
 
-    if (res == -1) {
-        error(0, "DLR: REDIS: Error while adding dlr entry %s",
-              octstr_get_cstr(key));
-    }
-    else  {
-        /* HMSET returned OK. Set EXPIRE if applicable and then
-         * increment the DLR counter */
-        if (fields->ttl) {
-            gwlist_destroy(binds, NULL);
-            binds = gwlist_create();
-            gwlist_append(binds, octstr_imm("EXPIRE"));
-            gwlist_append(binds, key);
-            octstr_destroy(os);
-            os = octstr_format("%ld", fields->ttl);
-            gwlist_append(binds, os);
-            res = dbpool_conn_update(pconn, sql, binds);
+        for (j = 0; j < binds_len; j++) {
+            Octstr *arg = gwlist_get(binds, j);
+            argv[j] = arg ? (char*)octstr_get_cstr(arg) : "";
+            argvlen[j] = arg ? (size_t)octstr_len(arg) : 0;
         }
-        /* We are not performing an 'INCR <table>:Count'
-         * operation here, since we can't be accurate due
-         * to TTL'ed expiration. Rather use 'DBSIZE' based
-         * on seperated databases in redis. */
+
+        expire_argv[0] = "EXPIRE";
+        expire_argvlen[0] = 6;
+        expire_argv[1] = octstr_get_cstr(key);
+        expire_argvlen[1] = (size_t)octstr_len(key);
+        expire_argv[2] = octstr_get_cstr(ttl_str);
+        expire_argvlen[2] = (size_t)octstr_len(ttl_str);
+
+        /* Queue both commands without waiting for replies */
+        redisAppendCommandArgv(rctx, binds_len, argv, argvlen);
+        redisAppendCommandArgv(rctx, 3, expire_argv, expire_argvlen);
+
+        /* Collect replies in one read */
+        if (redisGetReply(rctx, (void**)&reply1) == REDIS_OK) {
+            if (reply1->type == REDIS_REPLY_ERROR)
+                error(0, "DLR: REDIS: HMSET failed for %s: %s",
+                      octstr_get_cstr(key), reply1->str);
+            freeReplyObject(reply1);
+        }
+        if (redisGetReply(rctx, (void**)&reply2) == REDIS_OK) {
+            if (reply2->type == REDIS_REPLY_ERROR)
+                error(0, "DLR: REDIS: EXPIRE failed for %s: %s",
+                      octstr_get_cstr(key), reply2->str);
+            freeReplyObject(reply2);
+        }
+
+        gw_free(argv);
+        gw_free(argvlen);
+        octstr_destroy(ttl_str);
+        res = 1;
+    } else {
+        res = dbpool_conn_update(pconn, sql, binds);
+        if (res == -1)
+            error(0, "DLR: REDIS: Error while adding dlr entry %s",
+                  octstr_get_cstr(key));
     }
 
     dbpool_conn_produce(pconn);

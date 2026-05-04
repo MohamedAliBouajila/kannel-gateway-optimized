@@ -112,7 +112,18 @@ static Dict *smsbox_by_smsc;
 static Dict *smsbox_by_receiver;
 static Dict *smsbox_by_smsc_receiver;
 
-#define NUM_ROUTING_THREADS 4
+/* Use all available CPU cores for routing threads, capped at 16 */
+static int num_routing_threads = 0;
+static void init_routing_threads(void) {
+    int cpus = (int)sysconf(_SC_NPROCESSORS_ONLN);
+    if (cpus < 1) cpus = 1; /* sysconf returns -1 on error */
+    num_routing_threads = cpus > 1 ? cpus : 2;
+    if (num_routing_threads > 16) num_routing_threads = 16;
+    info(0, "Using %d routing threads (detected %d CPU cores)", num_routing_threads, cpus);
+}
+
+/* Atomic round-robin counter for smsbox selection */
+static volatile unsigned long rr_smsbox_counter = 0;
 
 static long	smsbox_port;
 static int smsbox_port_ssl;
@@ -1304,7 +1315,8 @@ int smsbox_start(Cfg *cfg)
     smsbox_running = 1;
     sms_dequeue_threads = gwlist_create();
 
-    for (i = 0; i < NUM_ROUTING_THREADS; i++) {
+    init_routing_threads();
+    for (i = 0; i < num_routing_threads; i++) {
         long tid = gwthread_create(sms_to_smsboxes, NULL);
         if (tid == -1)
             panic(0, "Failed to start a new thread for smsbox routing");
@@ -1653,7 +1665,8 @@ static int _route_incoming_to_boxc_unlocked(Msg *msg)
      */
     len = gwlist_len(smsbox_list);
     if (len == 0) return 0; /* No boxes */
-    b = gw_rand() % len;
+    /* Round-robin start avoids hot-spotting one smsbox and eliminates gw_rand() cost */
+    b = (long)(__sync_fetch_and_add(&rr_smsbox_counter, 1) % (unsigned long)len);
 
     for (i = 0; i < len; i++) {
         bc = gwlist_get(smsbox_list, (i+b) % len);
