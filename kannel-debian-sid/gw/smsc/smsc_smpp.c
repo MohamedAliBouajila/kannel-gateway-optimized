@@ -1170,7 +1170,7 @@ static SMPP_PDU *msg_to_pdu(SMPP *smpp, Msg *msg)
 }
 
 
-static int send_enquire_link(SMPP *smpp, Connection *conn, long *last_sent)
+static int send_enquire_link(SMPP *smpp, Connection *conn, time_t *last_sent)
 {
     SMPP_PDU *pdu;
     Octstr *os;

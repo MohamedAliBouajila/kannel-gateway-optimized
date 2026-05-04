@@ -115,6 +115,7 @@ static Dict *hash_msg_pack(Msg *msg)
     h = dict_create(32, octstr_destroy_item);
 
 #define INTEGER(name) dict_put(h, octstr_imm(#name), octstr_format("%ld", p->name));
+#define TIME(name) dict_put(h, octstr_imm(#name), octstr_format("%lld", (long long)p->name));
 #define OCTSTR(name) dict_put(h, octstr_imm(#name), octstr_duplicate(p->name));
 #define UUID(name) { \
         char id[UUID_STR_LEN + 1]; \
@@ -149,6 +150,9 @@ static Msg *hash_msg_unpack(Dict *hash)
 #define INTEGER(name) \
     if ((os = dict_get(hash, octstr_imm(#name))) != NULL) \
         p->name = atol(octstr_get_cstr(os));
+#define TIME(name) \
+    if ((os = dict_get(hash, octstr_imm(#name))) != NULL) \
+        p->name = atoll(octstr_get_cstr(os));
 #define OCTSTR(name) p->name = octstr_duplicate(dict_get(hash, octstr_imm(#name)));
 #define UUID(name) \
     if ((os = dict_get(hash, octstr_imm(#name))) != NULL) \
@@ -272,6 +276,11 @@ static void store_redis_add_msg(Octstr *id, Msg *msg)
     if (p->name != MSG_PARAM_UNDEFINED) { \
         gwlist_produce(b, octstr_imm(#name)); \
         gwlist_produce(b, octstr_format("%ld", p->name)); \
+    }
+#define TIME(name) \
+    if (p->name != MSG_PARAM_UNDEFINED) { \
+        gwlist_produce(b, octstr_imm(#name)); \
+        gwlist_produce(b, octstr_format("%lld", (long long)p->name)); \
     }
 #define OCTSTR(name) \
     if (p->name != NULL) { \

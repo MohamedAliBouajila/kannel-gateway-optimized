@@ -76,10 +76,12 @@
  */
 
 static void append_integer(Octstr *os, long i);
+static void append_time(Octstr *os, time_t t);
 static void append_string(Octstr *os, Octstr *field);
 static void append_uuid(Octstr *os, uuid_t id);
 
 static int parse_integer(long *i, Octstr *packed, int *off);
+static int parse_time(time_t *t, Octstr *packed, int *off);
 static int parse_string(Octstr **os, Octstr *packed, int *off);
 static int parse_uuid(uuid_t id, Octstr *packed, int *off);
 
@@ -99,6 +101,7 @@ Msg *msg_create_real(enum msg_type type, const char *file, long line,
 
     msg->type = type;
 #define INTEGER(name) p->name = MSG_PARAM_UNDEFINED;
+#define TIME(name) INTEGER(name)
 #define OCTSTR(name) p->name = NULL;
 #define UUID(name) uuid_generate(p->name);
 #define VOID(name) p->name = NULL;
@@ -115,6 +118,7 @@ Msg *msg_duplicate(Msg *msg)
     new = msg_create(msg->type);
 
 #define INTEGER(name) p->name = q->name;
+#define TIME(name) INTEGER(name)
 #define OCTSTR(name) \
     if (q->name == NULL) p->name = NULL; \
     else p->name = octstr_duplicate(q->name);
@@ -135,6 +139,7 @@ void msg_destroy(Msg *msg)
         return;
 
 #define INTEGER(name) p->name = 0;
+#define TIME(name) INTEGER(name)
 #define OCTSTR(name) octstr_destroy(p->name);
 #define UUID(name) uuid_clear(p->name);
 #define VOID(name)
@@ -157,6 +162,8 @@ void msg_dump(Msg *msg, int level)
     debug("gw.msg", 0, "%*s type: %s", level, "", type_as_str(msg));
 #define INTEGER(name) \
     debug("gw.msg", 0, "%*s %s.%s: %ld", level, "", t, #name, (long) p->name);
+#define TIME(name) \
+    debug("gw.msg", 0, "%*s %s.%s: %lld", level, "", t, #name, (long long) p->name);
 #define OCTSTR(name) \
     debug("gw.msg", 0, "%*s %s.%s:", level, "", t, #name); \
     octstr_dump(p->name, level + 1);
@@ -186,6 +193,7 @@ Octstr *msg_pack(Msg *msg)
     append_integer(os, msg->type);
 
 #define INTEGER(name) append_integer(os, p->name);
+#define TIME(name) append_time(os, p->name);
 #define OCTSTR(name) append_string(os, p->name);
 #define UUID(name) append_uuid(os, p->name);
 #define VOID(name)
@@ -221,6 +229,8 @@ Msg *msg_unpack_real(Octstr *os, const char *file, long line, const char *func)
 
 #define INTEGER(name) \
     if (parse_integer(&(p->name), os, &off) == -1) goto error;
+#define TIME(name) \
+    if (parse_time(&(p->name), os, &off) == -1) goto error;
 #define OCTSTR(name) \
     if (parse_string(&(p->name), os, &off) == -1) goto error;
 #define UUID(name) \
@@ -272,6 +282,14 @@ static void append_integer(Octstr *os, long i)
     octstr_append_data(os, (char *)buf, 4);
 }
 
+static void append_time(Octstr *os, time_t t)
+{
+    unsigned char buf[4];
+
+    encode_network_long(buf, t);
+    octstr_append_data(os, (char *)buf, 4);
+}
+
 static void append_string(Octstr *os, Octstr *field)
 {
     if (field == NULL)
@@ -307,6 +325,21 @@ static int parse_integer(long *i, Octstr *packed, int *off)
     return 0;
 }
 
+static int parse_time(time_t *t, Octstr *packed, int *off)
+{
+    unsigned char buf[4];
+
+    gw_assert(*off >= 0);
+    if (*off + 4 > octstr_len(packed)) {
+        error(0, "Packet too short while unpacking Msg.");
+        return -1;
+    }
+
+    octstr_get_many_chars((char *)buf, packed, *off, 4);
+    *t = decode_network_long(buf);
+    *off += 4;
+    return 0;
+}
 
 static int parse_string(Octstr **os, Octstr *packed, int *off)
 {

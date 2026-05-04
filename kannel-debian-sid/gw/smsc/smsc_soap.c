@@ -2052,9 +2052,9 @@ static Octstr* soap_convert_token(Msg* msg, Octstr* name, PrivData* privdata)
                 sprintf(buf,"%ld", p->fieldname); \
                 return octstr_create(buf); \
         }
-#define INT64(fieldname) \
+#define TIME(fieldname) \
         if (!octstr_str_compare(name, #fieldname)) { \
-                sprintf(buf,"%lld", p->fieldname); \
+                sprintf(buf,"%lld", (long long)p->fieldname); \
                 return octstr_create(buf); \
         }
 #define OCTSTR(fieldname) \
