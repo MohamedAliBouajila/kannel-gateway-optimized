@@ -210,18 +210,27 @@ static void dlr_redis_add(struct dlr_entry *entry)
         redisAppendCommandArgv(rctx, 3, expire_argv, expire_argvlen);
 
         /* Collect replies in one read */
-        if (redisGetReply(rctx, (void**)&reply1) == REDIS_OK) {
-            if (reply1->type == REDIS_REPLY_ERROR)
-                error(0, "DLR: REDIS: HMSET failed for %s: %s",
-                      octstr_get_cstr(key), reply1->str);
-            freeReplyObject(reply1);
+        if (redisGetReply(rctx, (void**)&reply1) != REDIS_OK) {
+            error(0, "DLR: REDIS: pipeline read error for %s: %s",
+                  octstr_get_cstr(key), rctx->errstr);
+            goto pipeline_cleanup;
         }
-        if (redisGetReply(rctx, (void**)&reply2) == REDIS_OK) {
-            if (reply2->type == REDIS_REPLY_ERROR)
-                error(0, "DLR: REDIS: EXPIRE failed for %s: %s",
-                      octstr_get_cstr(key), reply2->str);
-            freeReplyObject(reply2);
+        if (reply1->type == REDIS_REPLY_ERROR)
+            error(0, "DLR: REDIS: HMSET failed for %s: %s",
+                  octstr_get_cstr(key), reply1->str);
+        freeReplyObject(reply1);
+
+        if (redisGetReply(rctx, (void**)&reply2) != REDIS_OK) {
+            error(0, "DLR: REDIS: pipeline read error (EXPIRE) for %s: %s",
+                  octstr_get_cstr(key), rctx->errstr);
+            goto pipeline_cleanup;
         }
+        if (reply2->type == REDIS_REPLY_ERROR)
+            error(0, "DLR: REDIS: EXPIRE failed for %s: %s",
+                  octstr_get_cstr(key), reply2->str);
+        freeReplyObject(reply2);
+
+pipeline_cleanup:
 
         gw_free(argv);
         gw_free(argvlen);
