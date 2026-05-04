@@ -170,7 +170,7 @@ lock_old_archive_extraction=no
 LTCC="gcc"
 
 # LTCC compiler flags.
-LTCFLAGS="-g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/usr/include/libxml2 -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -I/usr/include -I/usr/include/mysql  -I/usr/include/postgresql -I/usr/include/hiredis -I/usr/include"
+LTCFLAGS="-g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/home/medali/miniconda3/include/libxml2 -I/home/medali/miniconda3/include -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -I/usr/include -I/usr/include/mysql  -I/usr/include/postgresql -I/usr/include/hiredis -I/usr/include"
 
 # Take the output of nm and produce a listing of raw symbols and C names.
 global_symbol_pipe="/usr/bin/sed -n -e 's/^.*[	 ]\\([ABCDGIRSTW][ABCDGIRSTW]*\\)[	 ][	 ]*\\([_A-Za-z][_A-Za-z0-9]*\\)\$/\\1 \\2 \\2/p' | /usr/bin/sed '/ __gnu_lto/d'"

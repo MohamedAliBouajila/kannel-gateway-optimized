@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 MAIL_SENDER = "liw"
 MAIL_RECEIVER = "liw"

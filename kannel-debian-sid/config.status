@@ -595,7 +595,7 @@ old_postuninstall_cmds=''
 old_archive_cmds='$AR $AR_FLAGS $oldlib$oldobjs~$RANLIB $tool_oldlib'
 lock_old_archive_extraction='no'
 CC='gcc'
-CFLAGS='-g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/usr/include/libxml2 -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -I/usr/include -I/usr/include/mysql  -I/usr/include/postgresql -I/usr/include/hiredis -I/usr/include'
+CFLAGS='-g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/home/medali/miniconda3/include/libxml2 -I/home/medali/miniconda3/include -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -I/usr/include -I/usr/include/mysql  -I/usr/include/postgresql -I/usr/include/hiredis -I/usr/include'
 compiler='gcc'
 GCC='yes'
 lt_cv_sys_global_symbol_pipe='/usr/bin/sed -n -e '\''s/^.*[	 ]\([ABCDGIRSTW][ABCDGIRSTW]*\)[	 ][	 ]*\([_A-Za-z][_A-Za-z0-9]*\)$/\1 \2 \2/p'\'' | /usr/bin/sed '\''/ __gnu_lto/d'\'''
@@ -822,13 +822,13 @@ S["SOAPCPP"]=""
 S["WSDL2H"]=""
 S["REDIS_CONFIG"]="no"
 S["PGSQL_CONFIG"]="/usr/bin/pg_config"
-S["SQLITE3"]="/usr/bin/sqlite3"
+S["SQLITE3"]="/home/medali/miniconda3/bin/sqlite3"
 S["SQLITE"]=""
 S["SDB_CONFIG"]=""
 S["MYSQL_CONFIG"]=""
 S["MYSQLCLIENT_LIBS"]="-lmysqlclient "
 S["MYSQLCLIENT_CFLAGS"]="-I/usr/include/mysql "
-S["OPENSSL"]="/usr/bin/openssl"
+S["OPENSSL"]="/home/medali/miniconda3/bin/openssl"
 S["BUILD_STARTSTOPDAEMON_FALSE"]=""
 S["BUILD_STARTSTOPDAEMON_TRUE"]="#"
 S["SUFFIX"]=""
@@ -843,7 +843,7 @@ S["PDFJADETEX"]="pdfjadetex"
 S["JADETEX"]="jadetex"
 S["JADE"]="openjade"
 S["PCRE_CONFIG"]=""
-S["XML2_CONFIG"]="/usr/bin/xml2-config"
+S["XML2_CONFIG"]="/home/medali/miniconda3/bin/xml2-config"
 S["LIBOBJS"]=""
 S["LTLIBICONV"]=""
 S["LIBICONV"]=""
@@ -905,9 +905,10 @@ S["CPPFLAGS"]="-Wdate-time -D_FORTIFY_SOURCE=3 -I/usr/include/postgresql"
 S["LDFLAGS"]="-Wl,-Bsymbolic-functions -flto=auto -ffat-lto-objects -Wl,-z,relro -Wl,-z,now -rdynamic"
 S["CFLAGS"]="-g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto"\
 " -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medal"\
-"i/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/usr/i"\
-"nclude/libxml2 -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -I/"\
-"usr/include -I/usr/include/mysql  -I/usr/include/postgresql -I/usr/include/hiredis -I/usr/include"
+"i/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/home/"\
+"medali/miniconda3/include/libxml2 -I/home/medali/miniconda3/include -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wfo"\
+"rmat -Wformat-security -Wmissing-format-attribute -I/usr/include -I/usr/include/mysql  -I/usr/include/postgresql -I/usr/include/hiredis -I/usr/inclu"\
+"de"
 S["CC"]="gcc"
 S["host_os"]="linux-gnu"
 S["host_vendor"]="pc"
@@ -953,8 +954,9 @@ S["BUILD_DATE"]="2025-11-20"
 S["target_alias"]=""
 S["host_alias"]=""
 S["build_alias"]="x86_64-linux-gnu"
-S["LIBS"]="-lpq -lmysqlclient -lssl -ldl -lpam -lrt -lresolv -lm  -lpthread -lxml2 -L/usr/lib -lcrypto -lssl -lmysqlclient  -L/usr/local/lib -lsqlite3 -L/usr/l"\
-"ib/x86_64-linux-gnu -L/usr/lib -lhiredis -L/usr/lib -lct"
+S["LIBS"]="-lpq -lmysqlclient -lssl -ldl -lpam -lrt -lresolv -lm  -lpthread -L/home/medali/miniconda3/lib -lxml2 -L/home/medali/miniconda3/lib -lz -L/home/meda"\
+"li/miniconda3/lib -llzma -L/home/medali/miniconda3/lib -licui18n -licuuc -licudata -L/home/medali/miniconda3/lib -lm -ldl -L/usr/lib -lcrypto -lssl "\
+"-lmysqlclient  -L/usr/local/lib -lsqlite3 -L/usr/lib/x86_64-linux-gnu -L/usr/lib -lhiredis -L/usr/lib -lct"
 S["ECHO_T"]=""
 S["ECHO_N"]="-n"
 S["ECHO_C"]=""

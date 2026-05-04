@@ -27,12 +27,28 @@ uname -v = #22~24.04.1-Ubuntu SMP PREEMPT_DYNAMIC Thu Mar 26 15:25:54 UTC 2
 /usr/bin/oslevel       = unknown
 /bin/universe          = unknown
 
+PATH: /home/medali/.local/bin/
+PATH: /home/medali/miniconda3/bin/
+PATH: /home/medali/miniconda3/condabin/
+PATH: /home/medali/development/flutter/bin/
+PATH: /home/medali/.sdkman/candidates/java/current/bin/
+PATH: /home/medali/.nvm/versions/node/v22.15.0/bin/
+PATH: /home/medali/development/flutter/bin/
+PATH: /home/medali/.local/bin/
 PATH: /usr/local/sbin/
 PATH: /usr/local/bin/
 PATH: /usr/sbin/
 PATH: /usr/bin/
 PATH: /sbin/
 PATH: /bin/
+PATH: /usr/games/
+PATH: /usr/local/games/
+PATH: /snap/bin/
+PATH: /snap/bin/
+PATH: /usr/local/go/bin/
+PATH: /usr/local/go/bin/
+PATH: /usr/local/go/bin/
+PATH: /usr/local/go/bin/
 
 
 ## ----------- ##
@@ -1234,10 +1250,10 @@ configure:18037: ./conftest
 configure:18037: $? = 0
 configure:18039: result: yes
 configure:18063: checking for xml2-config
-configure:18086: found /usr/bin/xml2-config
-configure:18099: result: /usr/bin/xml2-config
+configure:18086: found /home/medali/miniconda3/bin/xml2-config
+configure:18099: result: /home/medali/miniconda3/bin/xml2-config
 configure:18108: checking for libxml2 >= 2.6.0 via xml2-config
-configure:18134: result: found 2.9.14
+configure:18134: result: found 2.13.9
 configure:18177: checking whether to compile with PCRE support
 configure:18330: result: disabled
 configure:18347: checking for jade
@@ -1263,11 +1279,11 @@ configure:18726: result: Documentation will be built as well.
 configure:18832: checking which malloc to use
 configure:18879: result: native malloc
 configure:18922: checking for pam_end in -lpam
-configure:18945: gcc -o conftest -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/usr/include/libxml2 -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -Wdate-time -D_FORTIFY_SOURCE=3 -Wl,-Bsymbolic-functions -flto=auto -ffat-lto-objects -Wl,-z,relro -Wl,-z,now -rdynamic conftest.c -lpam  -lrt -lresolv -lm  -lpthread -lxml2 >&5
+configure:18945: gcc -o conftest -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/home/medali/miniconda3/include/libxml2 -I/home/medali/miniconda3/include -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -Wdate-time -D_FORTIFY_SOURCE=3 -Wl,-Bsymbolic-functions -flto=auto -ffat-lto-objects -Wl,-z,relro -Wl,-z,now -rdynamic conftest.c -lpam  -lrt -lresolv -lm  -lpthread -L/home/medali/miniconda3/lib -lxml2 -L/home/medali/miniconda3/lib -lz -L/home/medali/miniconda3/lib -llzma -L/home/medali/miniconda3/lib -licui18n -licuuc -licudata -L/home/medali/miniconda3/lib -lm -ldl >&5
 configure:18945: $? = 0
 configure:18955: result: yes
 configure:18965: checking for main in -ldl
-configure:18985: gcc -o conftest -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/usr/include/libxml2 -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -Wdate-time -D_FORTIFY_SOURCE=3 -Wl,-Bsymbolic-functions -flto=auto -ffat-lto-objects -Wl,-z,relro -Wl,-z,now -rdynamic conftest.c -ldl  -lpam -lrt -lresolv -lm  -lpthread -lxml2 >&5
+configure:18985: gcc -o conftest -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/home/medali/miniconda3/include/libxml2 -I/home/medali/miniconda3/include -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -Wdate-time -D_FORTIFY_SOURCE=3 -Wl,-Bsymbolic-functions -flto=auto -ffat-lto-objects -Wl,-z,relro -Wl,-z,now -rdynamic conftest.c -ldl  -lpam -lrt -lresolv -lm  -lpthread -L/home/medali/miniconda3/lib -lxml2 -L/home/medali/miniconda3/lib -lz -L/home/medali/miniconda3/lib -llzma -L/home/medali/miniconda3/lib -licui18n -licuuc -licudata -L/home/medali/miniconda3/lib -lm -ldl >&5
 conftest.c: In function 'main':
 conftest.c:81:1: warning: infinite recursion detected [-Winfinite-recursion]
    81 | main (void)
@@ -1278,7 +1294,7 @@ conftest.c:83:8: note: recursive call
 configure:18985: $? = 0
 configure:18995: result: yes
 configure:19005: checking for security/pam_appl.h
-configure:19005: gcc -c -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/usr/include/libxml2 -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -Wdate-time -D_FORTIFY_SOURCE=3 conftest.c >&5
+configure:19005: gcc -c -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/home/medali/miniconda3/include/libxml2 -I/home/medali/miniconda3/include -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -Wdate-time -D_FORTIFY_SOURCE=3 conftest.c >&5
 configure:19005: $? = 0
 configure:19005: result: yes
 configure:19131: checking whether to compile start-stop-daemon
@@ -1286,52 +1302,52 @@ configure:19152: result: disabled
 configure:19220: checking whether to compile with SSL support
 configure:19263: result: trying /usr/lib /usr/include
 configure:19275: checking for openssl
-configure:19298: found /usr/bin/openssl
-configure:19311: result: /usr/bin/openssl
+configure:19298: found /home/medali/miniconda3/bin/openssl
+configure:19311: result: /home/medali/miniconda3/bin/openssl
 configure:19320: checking openssl version
-configure:19324: result: 3.0.13
+configure:19324: result: 3.0.18
 configure:19360: checking for HMAC_Update in -lcrypto
-configure:19383: gcc -o conftest -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/usr/include/libxml2 -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -I/usr/include -Wdate-time -D_FORTIFY_SOURCE=3 -Wl,-Bsymbolic-functions -flto=auto -ffat-lto-objects -Wl,-z,relro -Wl,-z,now -rdynamic conftest.c -lcrypto  -ldl -lpam -lrt -lresolv -lm  -lpthread -lxml2 -L/usr/lib >&5
+configure:19383: gcc -o conftest -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/home/medali/miniconda3/include/libxml2 -I/home/medali/miniconda3/include -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -I/usr/include -Wdate-time -D_FORTIFY_SOURCE=3 -Wl,-Bsymbolic-functions -flto=auto -ffat-lto-objects -Wl,-z,relro -Wl,-z,now -rdynamic conftest.c -lcrypto  -ldl -lpam -lrt -lresolv -lm  -lpthread -L/home/medali/miniconda3/lib -lxml2 -L/home/medali/miniconda3/lib -lz -L/home/medali/miniconda3/lib -llzma -L/home/medali/miniconda3/lib -licui18n -licuuc -licudata -L/home/medali/miniconda3/lib -lm -ldl -L/usr/lib >&5
 configure:19383: $? = 0
 configure:19394: result: yes
 configure:19400: checking for OPENSSL_init_ssl in -lssl
-configure:19423: gcc -o conftest -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/usr/include/libxml2 -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -I/usr/include -Wdate-time -D_FORTIFY_SOURCE=3 -Wl,-Bsymbolic-functions -flto=auto -ffat-lto-objects -Wl,-z,relro -Wl,-z,now -rdynamic conftest.c -lssl  -ldl -lpam -lrt -lresolv -lm  -lpthread -lxml2 -L/usr/lib -lcrypto >&5
+configure:19423: gcc -o conftest -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/home/medali/miniconda3/include/libxml2 -I/home/medali/miniconda3/include -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -I/usr/include -Wdate-time -D_FORTIFY_SOURCE=3 -Wl,-Bsymbolic-functions -flto=auto -ffat-lto-objects -Wl,-z,relro -Wl,-z,now -rdynamic conftest.c -lssl  -ldl -lpam -lrt -lresolv -lm  -lpthread -L/home/medali/miniconda3/lib -lxml2 -L/home/medali/miniconda3/lib -lz -L/home/medali/miniconda3/lib -llzma -L/home/medali/miniconda3/lib -licui18n -licuuc -licudata -L/home/medali/miniconda3/lib -lm -ldl -L/usr/lib -lcrypto >&5
 configure:19423: $? = 0
 configure:19434: result: yes
 configure:19438: checking for SSL_connect in -lssl
-configure:19461: gcc -o conftest -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/usr/include/libxml2 -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -I/usr/include -Wdate-time -D_FORTIFY_SOURCE=3 -Wl,-Bsymbolic-functions -flto=auto -ffat-lto-objects -Wl,-z,relro -Wl,-z,now -rdynamic conftest.c -lssl  -ldl -lpam -lrt -lresolv -lm  -lpthread -lxml2 -L/usr/lib -lcrypto >&5
+configure:19461: gcc -o conftest -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/home/medali/miniconda3/include/libxml2 -I/home/medali/miniconda3/include -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -I/usr/include -Wdate-time -D_FORTIFY_SOURCE=3 -Wl,-Bsymbolic-functions -flto=auto -ffat-lto-objects -Wl,-z,relro -Wl,-z,now -rdynamic conftest.c -lssl  -ldl -lpam -lrt -lresolv -lm  -lpthread -L/home/medali/miniconda3/lib -lxml2 -L/home/medali/miniconda3/lib -lz -L/home/medali/miniconda3/lib -llzma -L/home/medali/miniconda3/lib -licui18n -licuuc -licudata -L/home/medali/miniconda3/lib -lm -ldl -L/usr/lib -lcrypto >&5
 configure:19461: $? = 0
 configure:19471: result: yes
 configure:19481: checking for openssl/x509.h
-configure:19481: gcc -c -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/usr/include/libxml2 -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -I/usr/include -Wdate-time -D_FORTIFY_SOURCE=3 conftest.c >&5
+configure:19481: gcc -c -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/home/medali/miniconda3/include/libxml2 -I/home/medali/miniconda3/include -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -I/usr/include -Wdate-time -D_FORTIFY_SOURCE=3 conftest.c >&5
 configure:19481: $? = 0
 configure:19481: result: yes
 configure:19487: checking for openssl/rsa.h
-configure:19487: gcc -c -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/usr/include/libxml2 -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -I/usr/include -Wdate-time -D_FORTIFY_SOURCE=3 conftest.c >&5
+configure:19487: gcc -c -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/home/medali/miniconda3/include/libxml2 -I/home/medali/miniconda3/include -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -I/usr/include -Wdate-time -D_FORTIFY_SOURCE=3 conftest.c >&5
 configure:19487: $? = 0
 configure:19487: result: yes
 configure:19493: checking for openssl/crypto.h
-configure:19493: gcc -c -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/usr/include/libxml2 -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -I/usr/include -Wdate-time -D_FORTIFY_SOURCE=3 conftest.c >&5
+configure:19493: gcc -c -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/home/medali/miniconda3/include/libxml2 -I/home/medali/miniconda3/include -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -I/usr/include -Wdate-time -D_FORTIFY_SOURCE=3 conftest.c >&5
 configure:19493: $? = 0
 configure:19493: result: yes
 configure:19499: checking for openssl/pem.h
-configure:19499: gcc -c -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/usr/include/libxml2 -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -I/usr/include -Wdate-time -D_FORTIFY_SOURCE=3 conftest.c >&5
+configure:19499: gcc -c -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/home/medali/miniconda3/include/libxml2 -I/home/medali/miniconda3/include -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -I/usr/include -Wdate-time -D_FORTIFY_SOURCE=3 conftest.c >&5
 configure:19499: $? = 0
 configure:19499: result: yes
 configure:19505: checking for openssl/ssl.h
-configure:19505: gcc -c -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/usr/include/libxml2 -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -I/usr/include -Wdate-time -D_FORTIFY_SOURCE=3 conftest.c >&5
+configure:19505: gcc -c -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/home/medali/miniconda3/include/libxml2 -I/home/medali/miniconda3/include -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -I/usr/include -Wdate-time -D_FORTIFY_SOURCE=3 conftest.c >&5
 configure:19505: $? = 0
 configure:19505: result: yes
 configure:19511: checking for openssl/err.h
-configure:19511: gcc -c -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/usr/include/libxml2 -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -I/usr/include -Wdate-time -D_FORTIFY_SOURCE=3 conftest.c >&5
+configure:19511: gcc -c -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/home/medali/miniconda3/include/libxml2 -I/home/medali/miniconda3/include -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -I/usr/include -Wdate-time -D_FORTIFY_SOURCE=3 conftest.c >&5
 configure:19511: $? = 0
 configure:19511: result: yes
 configure:19517: checking for openssl/hmac.h
-configure:19517: gcc -c -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/usr/include/libxml2 -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -I/usr/include -Wdate-time -D_FORTIFY_SOURCE=3 conftest.c >&5
+configure:19517: gcc -c -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/home/medali/miniconda3/include/libxml2 -I/home/medali/miniconda3/include -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -I/usr/include -Wdate-time -D_FORTIFY_SOURCE=3 conftest.c >&5
 configure:19517: $? = 0
 configure:19517: result: yes
 configure:19524: checking whether the OpenSSL library is multithread-enabled
-configure:19548: gcc -o conftest -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/usr/include/libxml2 -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -I/usr/include -Wdate-time -D_FORTIFY_SOURCE=3 -Wl,-Bsymbolic-functions -flto=auto -ffat-lto-objects -Wl,-z,relro -Wl,-z,now -rdynamic conftest.c -lssl -ldl -lpam -lrt -lresolv -lm  -lpthread -lxml2 -L/usr/lib -lcrypto >&5
+configure:19548: gcc -o conftest -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/home/medali/miniconda3/include/libxml2 -I/home/medali/miniconda3/include -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -I/usr/include -Wdate-time -D_FORTIFY_SOURCE=3 -Wl,-Bsymbolic-functions -flto=auto -ffat-lto-objects -Wl,-z,relro -Wl,-z,now -rdynamic conftest.c -lssl -ldl -lpam -lrt -lresolv -lm  -lpthread -L/home/medali/miniconda3/lib -lxml2 -L/home/medali/miniconda3/lib -lz -L/home/medali/miniconda3/lib -llzma -L/home/medali/miniconda3/lib -licui18n -licuuc -licudata -L/home/medali/miniconda3/lib -lm -ldl -L/usr/lib -lcrypto >&5
 configure:19548: $? = 0
 configure:19548: ./conftest
 configure:19548: $? = 0
@@ -1351,15 +1367,15 @@ configure:19791: $PKG_CONFIG --exists --print-errors "mysqlclient"
 configure:19794: $? = 0
 configure:19852: result: yes
 configure:20052: checking for mysql/mysql.h
-configure:20052: gcc -c -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/usr/include/libxml2 -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -I/usr/include -I/usr/include/mysql  -Wdate-time -D_FORTIFY_SOURCE=3 conftest.c >&5
+configure:20052: gcc -c -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/home/medali/miniconda3/include/libxml2 -I/home/medali/miniconda3/include -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -I/usr/include -I/usr/include/mysql  -Wdate-time -D_FORTIFY_SOURCE=3 conftest.c >&5
 configure:20052: $? = 0
 configure:20052: result: yes
 configure:20058: checking for mysql/mysql_version.h
-configure:20058: gcc -c -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/usr/include/libxml2 -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -I/usr/include -I/usr/include/mysql  -Wdate-time -D_FORTIFY_SOURCE=3 conftest.c >&5
+configure:20058: gcc -c -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/home/medali/miniconda3/include/libxml2 -I/home/medali/miniconda3/include -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -I/usr/include -I/usr/include/mysql  -Wdate-time -D_FORTIFY_SOURCE=3 conftest.c >&5
 configure:20058: $? = 0
 configure:20058: result: yes
 configure:20065: checking for mysql_stmt_init in -lmysqlclient_r
-configure:20088: gcc -o conftest -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/usr/include/libxml2 -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -I/usr/include -I/usr/include/mysql  -Wdate-time -D_FORTIFY_SOURCE=3 -Wl,-Bsymbolic-functions -flto=auto -ffat-lto-objects -Wl,-z,relro -Wl,-z,now -rdynamic conftest.c -lmysqlclient_r  -lssl -ldl -lpam -lrt -lresolv -lm  -lpthread -lxml2 -L/usr/lib -lcrypto -lssl -lmysqlclient  >&5
+configure:20088: gcc -o conftest -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/home/medali/miniconda3/include/libxml2 -I/home/medali/miniconda3/include -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -I/usr/include -I/usr/include/mysql  -Wdate-time -D_FORTIFY_SOURCE=3 -Wl,-Bsymbolic-functions -flto=auto -ffat-lto-objects -Wl,-z,relro -Wl,-z,now -rdynamic conftest.c -lmysqlclient_r  -lssl -ldl -lpam -lrt -lresolv -lm  -lpthread -L/home/medali/miniconda3/lib -lxml2 -L/home/medali/miniconda3/lib -lz -L/home/medali/miniconda3/lib -llzma -L/home/medali/miniconda3/lib -licui18n -licuuc -licudata -L/home/medali/miniconda3/lib -lm -ldl -L/usr/lib -lcrypto -lssl -lmysqlclient  >&5
 /usr/bin/ld: cannot find -lmysqlclient_r: No such file or directory
 collect2: error: ld returned 1 exit status
 configure:20088: $? = 1
@@ -1471,7 +1487,7 @@ configure: failed program was:
 | }
 configure:20098: result: no
 configure:20107: checking for mysql_stmt_init in -lmysqlclient
-configure:20130: gcc -o conftest -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/usr/include/libxml2 -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -I/usr/include -I/usr/include/mysql  -Wdate-time -D_FORTIFY_SOURCE=3 -Wl,-Bsymbolic-functions -flto=auto -ffat-lto-objects -Wl,-z,relro -Wl,-z,now -rdynamic conftest.c -lmysqlclient  -lssl -ldl -lpam -lrt -lresolv -lm  -lpthread -lxml2 -L/usr/lib -lcrypto -lssl -lmysqlclient  >&5
+configure:20130: gcc -o conftest -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/home/medali/miniconda3/include/libxml2 -I/home/medali/miniconda3/include -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -I/usr/include -I/usr/include/mysql  -Wdate-time -D_FORTIFY_SOURCE=3 -Wl,-Bsymbolic-functions -flto=auto -ffat-lto-objects -Wl,-z,relro -Wl,-z,now -rdynamic conftest.c -lmysqlclient  -lssl -ldl -lpam -lrt -lresolv -lm  -lpthread -L/home/medali/miniconda3/lib -lxml2 -L/home/medali/miniconda3/lib -lz -L/home/medali/miniconda3/lib -llzma -L/home/medali/miniconda3/lib -licui18n -licuuc -licudata -L/home/medali/miniconda3/lib -lm -ldl -L/usr/lib -lcrypto -lssl -lmysqlclient  >&5
 configure:20130: $? = 0
 configure:20140: result: yes
 configure:20158: checking whether to compile with MySQL support
@@ -1483,18 +1499,18 @@ configure:20327: result: disabled
 configure:20460: checking whether to compile with SQLite3 support
 configure:20471: result: searching
 configure:20473: checking for sqlite3.h
-configure:20473: gcc -c -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/usr/include/libxml2 -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -I/usr/include -I/usr/include/mysql  -Wdate-time -D_FORTIFY_SOURCE=3 conftest.c >&5
+configure:20473: gcc -c -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/home/medali/miniconda3/include/libxml2 -I/home/medali/miniconda3/include -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -I/usr/include -I/usr/include/mysql  -Wdate-time -D_FORTIFY_SOURCE=3 conftest.c >&5
 configure:20473: $? = 0
 configure:20473: result: yes
 configure:20481: checking for sqlite3_open in -lsqlite3
-configure:20504: gcc -o conftest -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/usr/include/libxml2 -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -I/usr/include -I/usr/include/mysql  -Wdate-time -D_FORTIFY_SOURCE=3 -Wl,-Bsymbolic-functions -flto=auto -ffat-lto-objects -Wl,-z,relro -Wl,-z,now -rdynamic conftest.c -lsqlite3  -lmysqlclient -lssl -ldl -lpam -lrt -lresolv -lm  -lpthread -lxml2 -L/usr/lib -lcrypto -lssl -lmysqlclient  -L/usr/local/lib >&5
+configure:20504: gcc -o conftest -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/home/medali/miniconda3/include/libxml2 -I/home/medali/miniconda3/include -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -I/usr/include -I/usr/include/mysql  -Wdate-time -D_FORTIFY_SOURCE=3 -Wl,-Bsymbolic-functions -flto=auto -ffat-lto-objects -Wl,-z,relro -Wl,-z,now -rdynamic conftest.c -lsqlite3  -lmysqlclient -lssl -ldl -lpam -lrt -lresolv -lm  -lpthread -L/home/medali/miniconda3/lib -lxml2 -L/home/medali/miniconda3/lib -lz -L/home/medali/miniconda3/lib -llzma -L/home/medali/miniconda3/lib -licui18n -licuuc -licudata -L/home/medali/miniconda3/lib -lm -ldl -L/usr/lib -lcrypto -lssl -lmysqlclient  -L/usr/local/lib >&5
 configure:20504: $? = 0
 configure:20514: result: yes
 configure:20532: checking for sqlite3
-configure:20555: found /usr/bin/sqlite3
-configure:20567: result: /usr/bin/sqlite3
+configure:20555: found /home/medali/miniconda3/bin/sqlite3
+configure:20567: result: /home/medali/miniconda3/bin/sqlite3
 configure:20583: checking sqlite3 version
-configure:20586: result: 3.45.1
+configure:20586: result: 3.51.0
 configure:20601: checking whether to compile with Oracle support
 configure:20848: result: disabled
 configure:20855: checking whether to compile with PostgresSQL support
@@ -1509,11 +1525,11 @@ configure:20967: result: /usr/lib/x86_64-linux-gnu
 configure:20970: checking PostgreSQL includes
 configure:20976: result: /usr/include/postgresql
 configure:20981: checking for libpq-fe.h
-configure:20981: gcc -c -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/usr/include/libxml2 -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -I/usr/include -I/usr/include/mysql  -I/usr/include/postgresql -Wdate-time -D_FORTIFY_SOURCE=3 -I/usr/include/postgresql conftest.c >&5
+configure:20981: gcc -c -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/home/medali/miniconda3/include/libxml2 -I/home/medali/miniconda3/include -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -I/usr/include -I/usr/include/mysql  -I/usr/include/postgresql -Wdate-time -D_FORTIFY_SOURCE=3 -I/usr/include/postgresql conftest.c >&5
 configure:20981: $? = 0
 configure:20981: result: yes
 configure:20988: checking for PQconnectdb in -lpq
-configure:21011: gcc -o conftest -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/usr/include/libxml2 -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -I/usr/include -I/usr/include/mysql  -I/usr/include/postgresql -Wdate-time -D_FORTIFY_SOURCE=3 -I/usr/include/postgresql -Wl,-Bsymbolic-functions -flto=auto -ffat-lto-objects -Wl,-z,relro -Wl,-z,now -rdynamic conftest.c -lpq  -lmysqlclient -lssl -ldl -lpam -lrt -lresolv -lm  -lpthread -lxml2 -L/usr/lib -lcrypto -lssl -lmysqlclient  -L/usr/local/lib -lsqlite3 -L/usr/lib/x86_64-linux-gnu >&5
+configure:21011: gcc -o conftest -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/home/medali/miniconda3/include/libxml2 -I/home/medali/miniconda3/include -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -I/usr/include -I/usr/include/mysql  -I/usr/include/postgresql -Wdate-time -D_FORTIFY_SOURCE=3 -I/usr/include/postgresql -Wl,-Bsymbolic-functions -flto=auto -ffat-lto-objects -Wl,-z,relro -Wl,-z,now -rdynamic conftest.c -lpq  -lmysqlclient -lssl -ldl -lpam -lrt -lresolv -lm  -lpthread -L/home/medali/miniconda3/lib -lxml2 -L/home/medali/miniconda3/lib -lz -L/home/medali/miniconda3/lib -llzma -L/home/medali/miniconda3/lib -licui18n -licuuc -licudata -L/home/medali/miniconda3/lib -lm -ldl -L/usr/lib -lcrypto -lssl -lmysqlclient  -L/usr/local/lib -lsqlite3 -L/usr/lib/x86_64-linux-gnu >&5
 configure:21011: $? = 0
 configure:21021: result: yes
 configure:21034: checking whether to compile with PostgreSQL support
@@ -1525,7 +1541,7 @@ configure:21116: result: no
 configure:21128: checking for Redis include files in
 configure:21130: result: /usr
 configure:21212: checking for hiredis/hiredis.h
-configure:21212: gcc -c -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/usr/include/libxml2 -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -I/usr/include -I/usr/include/mysql  -I/usr/include/postgresql -I/usr/include/hiredis -Wdate-time -D_FORTIFY_SOURCE=3 -I/usr/include/postgresql conftest.c >&5
+configure:21212: gcc -c -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/home/medali/miniconda3/include/libxml2 -I/home/medali/miniconda3/include -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -I/usr/include -I/usr/include/mysql  -I/usr/include/postgresql -I/usr/include/hiredis -Wdate-time -D_FORTIFY_SOURCE=3 -I/usr/include/postgresql conftest.c >&5
 configure:21212: $? = 0
 configure:21212: result: yes
 configure:21222: checking whether to compile with Redis support
@@ -1555,13 +1571,13 @@ generated by GNU Autoconf 2.71.  Invocation command line was
 
 on medali
 
-config.status:1223: creating gwlib/gw_uuid_types.h
-config.status:1223: creating Makefile
-config.status:1223: creating soap/Makefile
-config.status:1223: creating utils/Makefile
-config.status:1223: creating gw-config.h
-config.status:1452: executing depfiles commands
-config.status:1452: executing libtool commands
+config.status:1225: creating gwlib/gw_uuid_types.h
+config.status:1225: creating Makefile
+config.status:1225: creating soap/Makefile
+config.status:1225: creating utils/Makefile
+config.status:1225: creating gw-config.h
+config.status:1454: executing depfiles commands
+config.status:1454: executing libtool commands
 
 ## ---------------- ##
 ## Cache variables. ##
@@ -1682,13 +1698,13 @@ ac_cv_path_CONVERT=/usr/bin/convert
 ac_cv_path_EGREP='/usr/bin/grep -E'
 ac_cv_path_FGREP='/usr/bin/grep -F'
 ac_cv_path_GREP=/usr/bin/grep
-ac_cv_path_OPENSSL=/usr/bin/openssl
+ac_cv_path_OPENSSL=/home/medali/miniconda3/bin/openssl
 ac_cv_path_PERL=/usr/bin/perl
 ac_cv_path_PGSQL_CONFIG=/usr/bin/pg_config
 ac_cv_path_REDIS_CONFIG=no
 ac_cv_path_SED=/usr/bin/sed
-ac_cv_path_SQLITE3=/usr/bin/sqlite3
-ac_cv_path_XML2_CONFIG=/usr/bin/xml2-config
+ac_cv_path_SQLITE3=/home/medali/miniconda3/bin/sqlite3
+ac_cv_path_XML2_CONFIG=/home/medali/miniconda3/bin/xml2-config
 ac_cv_path_ac_pt_PKG_CONFIG=/usr/bin/pkg-config
 ac_cv_path_install='/usr/bin/install -c'
 ac_cv_path_lt_DD=/usr/bin/dd
@@ -1789,7 +1805,7 @@ BUILD_STARTSTOPDAEMON_FALSE=''
 BUILD_STARTSTOPDAEMON_TRUE='#'
 CC='gcc'
 CCDEPMODE='depmode=none'
-CFLAGS='-g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/usr/include/libxml2 -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -I/usr/include -I/usr/include/mysql  -I/usr/include/postgresql -I/usr/include/hiredis -I/usr/include'
+CFLAGS='-g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/home/medali/miniconda3/include/libxml2 -I/home/medali/miniconda3/include -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -I/usr/include -I/usr/include/mysql  -I/usr/include/postgresql -I/usr/include/hiredis -I/usr/include'
 CONVERT='/usr/bin/convert'
 CPP='gcc -E'
 CPPFLAGS='-Wdate-time -D_FORTIFY_SOURCE=3 -I/usr/include/postgresql'
@@ -1831,7 +1847,7 @@ LEXLIB=''
 LEX_OUTPUT_ROOT=''
 LIBICONV=''
 LIBOBJS=''
-LIBS='-lpq -lmysqlclient -lssl -ldl -lpam -lrt -lresolv -lm  -lpthread -lxml2 -L/usr/lib -lcrypto -lssl -lmysqlclient  -L/usr/local/lib -lsqlite3 -L/usr/lib/x86_64-linux-gnu -L/usr/lib -lhiredis -L/usr/lib -lct'
+LIBS='-lpq -lmysqlclient -lssl -ldl -lpam -lrt -lresolv -lm  -lpthread -L/home/medali/miniconda3/lib -lxml2 -L/home/medali/miniconda3/lib -lz -L/home/medali/miniconda3/lib -llzma -L/home/medali/miniconda3/lib -licui18n -licuuc -licudata -L/home/medali/miniconda3/lib -lm -ldl -L/usr/lib -lcrypto -lssl -lmysqlclient  -L/usr/local/lib -lsqlite3 -L/usr/lib/x86_64-linux-gnu -L/usr/lib -lhiredis -L/usr/lib -lct'
 LIBTOOL='$(SHELL) $(top_builddir)/libtool'
 LIPO=''
 LN_S='ln -s'
@@ -1849,7 +1865,7 @@ NMEDIT=''
 OBJDUMP='objdump'
 OBJEXT='o'
 OLD_LIBTOOL='ar rc'
-OPENSSL='/usr/bin/openssl'
+OPENSSL='/home/medali/miniconda3/bin/openssl'
 OTOOL64=''
 OTOOL=''
 PACKAGE='Kannel'
@@ -1882,14 +1898,14 @@ SIZEOF_LONG_LONG='8'
 SIZEOF_SHORT='2'
 SOAPCPP=''
 SOAP_INCLUDE=''
-SQLITE3='/usr/bin/sqlite3'
+SQLITE3='/home/medali/miniconda3/bin/sqlite3'
 SQLITE=''
 STRIP='strip'
 SUFFIX=''
 TEX_DSL='/usr/share/sgml/docbook/stylesheet/dsssl/modular/print/docbook.dsl'
 VERSION='1.4.5'
 WSDL2H=''
-XML2_CONFIG='/usr/bin/xml2-config'
+XML2_CONFIG='/home/medali/miniconda3/bin/xml2-config'
 XML_DCL='/usr/share/sgml/declaration/xml.dcl'
 YACC='bison -y'
 YFLAGS=''

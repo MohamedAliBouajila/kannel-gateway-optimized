@@ -383,6 +383,9 @@ long dlr_messages(void)
     return -1;
 }
 
+long dlrmsg(void) {
+    
+}
 /*
  * Return type of used dlr storage
  */

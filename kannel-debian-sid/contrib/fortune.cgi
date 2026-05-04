@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
 FORTUNE_MAX_TRIES = 10
 SMS_MAX = 160

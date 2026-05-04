@@ -243,7 +243,7 @@ AWK = gawk
 BUILD_DATE = 2025-11-20
 CC = gcc
 CCDEPMODE = depmode=none
-CFLAGS = -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/usr/include/libxml2 -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -I/usr/include -I/usr/include/mysql  -I/usr/include/postgresql -I/usr/include/hiredis -I/usr/include
+CFLAGS = -g -O2 -fno-omit-frame-pointer -mno-omit-leaf-frame-pointer -ffile-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=. -flto=auto -ffat-lto-objects -fstack-protector-strong -fstack-clash-protection -Wformat -Werror=format-security -fcf-protection -fdebug-prefix-map=/home/medali/Downloads/kannel-optimized/kannel-debian-sid=/usr/src/kannel-1.4.5-22 -D_XOPEN_SOURCE=600 -D_BSD_SOURCE -D_DEFAULT_SOURCE -D_LARGE_FILES= -I/home/medali/miniconda3/include/libxml2 -I/home/medali/miniconda3/include -Wall -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Winline -Wformat -Wformat-security -Wmissing-format-attribute -I/usr/include -I/usr/include/mysql  -I/usr/include/postgresql -I/usr/include/hiredis -I/usr/include
 CONVERT = /usr/bin/convert
 CPP = gcc -E
 CPPFLAGS = -Wdate-time -D_FORTIFY_SOURCE=3 -I/usr/include/postgresql
@@ -286,7 +286,7 @@ LEXLIB =
 LEX_OUTPUT_ROOT = 
 LIBICONV = 
 LIBOBJS = 
-LIBS = -lpq -lmysqlclient -lssl -ldl -lpam -lrt -lresolv -lm  -lpthread -lxml2 -L/usr/lib -lcrypto -lssl -lmysqlclient  -L/usr/local/lib -lsqlite3 -L/usr/lib/x86_64-linux-gnu -L/usr/lib -lhiredis -L/usr/lib -lct
+LIBS = -lpq -lmysqlclient -lssl -ldl -lpam -lrt -lresolv -lm  -lpthread -L/home/medali/miniconda3/lib -lxml2 -L/home/medali/miniconda3/lib -lz -L/home/medali/miniconda3/lib -llzma -L/home/medali/miniconda3/lib -licui18n -licuuc -licudata -L/home/medali/miniconda3/lib -lm -ldl -L/usr/lib -lcrypto -lssl -lmysqlclient  -L/usr/local/lib -lsqlite3 -L/usr/lib/x86_64-linux-gnu -L/usr/lib -lhiredis -L/usr/lib -lct
 LIBTOOL = $(SHELL) $(top_builddir)/libtool
 LIPO = 
 LN_S = ln -s
@@ -304,7 +304,7 @@ NMEDIT =
 OBJDUMP = objdump
 OBJEXT = o
 OLD_LIBTOOL = ar rc
-OPENSSL = /usr/bin/openssl
+OPENSSL = /home/medali/miniconda3/bin/openssl
 OTOOL = 
 OTOOL64 = 
 PACKAGE = Kannel
@@ -338,13 +338,13 @@ SIZEOF_SHORT = 2
 SOAPCPP = 
 SOAP_INCLUDE = 
 SQLITE = 
-SQLITE3 = /usr/bin/sqlite3
+SQLITE3 = /home/medali/miniconda3/bin/sqlite3
 STRIP = strip
 SUFFIX = 
 TEX_DSL = /usr/share/sgml/docbook/stylesheet/dsssl/modular/print/docbook.dsl
 VERSION = 1.4.5
 WSDL2H = 
-XML2_CONFIG = /usr/bin/xml2-config
+XML2_CONFIG = /home/medali/miniconda3/bin/xml2-config
 XML_DCL = /usr/share/sgml/declaration/xml.dcl
 YACC = bison -y
 YFLAGS = 
